@@ -1,0 +1,26 @@
+package [%=packageName%].impl;
+
+import graphite.shared.ModelData;
+import graphite.shared.WorkbenchData;
+import [%=packageName%].[%=factoryClass%];
+[% for (type in attributeData.className.asOrderedSet()) {-%]
+	import [%=packageName%].[%=type%];
+[%}%]
+
+public class [%=xtextFactoryClassImpl%] extends [%=factoryClassImpl%] {
+
+	public static [%=factoryClass%] init() {
+		ModelData modelData = new ModelData(PropertiesData.xtextFactory, PropertiesData.packageName, PropertiesData.derivedPropertiesData, PropertiesData.derivedPairsMappings, PropertiesData.identifierByType);
+		WorkbenchData.setModelData(modelData);
+		return new [%=xtextFactoryClassImpl%]();
+	}
+	
+	[% for (a in attributeData) {-%]
+		@Override
+		public [%=a.className%] [%=a.createInstance%]() {
+			[%=a.classNameImpl%] [%=a.classNameVariable%] = new [%=a.xtextClassNameImpl%]();
+			return [%=a.classNameVariable%];
+		}
+		
+	[%}%]
+} //[%=xtextFactoryClassImpl%]

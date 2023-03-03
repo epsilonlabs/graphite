@@ -1,0 +1,209 @@
+pre {
+	var projectName = "org.netapp.pcs";
+	var projectPath = "../../../../" + projectName + "/";
+	var propertiesDataClassName = "PropertiesData";
+	var packageName;
+	var xtextPackageFactoryImpl;
+	var propertiesData : Sequence;
+	var grammarData : Sequence;
+	var derivedAttributeTypes : OrderedSet;
+	var transformationServices : OrderedSet;
+}
+
+
+rule XtextEntityImpl 
+	transform c : EClass {
+
+	guard: c.isValid()
+	
+	pre {
+		var className = c.name;	
+		packageName = c.eContainer().name.firstToLowerCase();
+		var attributePairs : Sequence;
+		for (eStructuralFeature in c.eStructuralFeatures) {
+			for (eAnnotation in eStructuralFeature.eAnnotations) {
+				if (eAnnotation.details.containsKey("derive")) {
+					var derivedAttribute = getDerivedFeature(eAnnotation.details.get("derive"), c.eStructuralFeatures);
+					var attributePair = new Tuple;
+					attributePair.parsedAttributeName = eStructuralFeature.name;
+					attributePair.parsedAttributeStaticVariable = className.toUpperCase() + "__" + attributePair.parsedAttributeName.getStringWithUnderscores().toUpperCase();
+					attributePair.derivedAttributeName = derivedAttribute.name;
+					attributePair.derivedAttributeNameWithUnderscores = derivedAttribute.name.getStringWithUnderscores();
+					attributePair.derivedAttributeNameStaticVariable = className.toUpperCase() + "__" + attributePair.derivedAttributeNameWithUnderscores.toUpperCase();
+					attributePair.derivedAttributeIsMany = derivedAttribute.many;
+					attributePair.derivedAttributeType = derivedAttribute.getEType().name;
+					attributePair.derivedAttributeTypeClass = attributePair.derivedAttributeType + ".class";
+					attributePair.getDerivedAttribute = "get" + attributePair.derivedAttributeName.firstToUpperCase();
+					attributePair.setParsedString = "set" + attributePair.parsedAttributeName.firstToUpperCase();
+					attributePair.grammarName = eAnnotation.details.get("grammar");
+					attributePair.grammarShortName = attributePair.grammarName.split('[.]').last();
+					attributePair.package = attributePair.grammarName.substring(0, attributePair.grammarName.length()-attributePair.grammarShortName.length()-1);
+					attributePair.grammarLastName = attributePair.package.split('[.]').last().firstToUpperCase();
+					attributePair.standaloneSetup = attributePair.grammarShortName + "StandaloneSetup";
+					attributePair.standaloneSetupFullyQualified = attributePair.package + "." + attributePair.standaloneSetup;
+					attributePair.activator = attributePair.grammarLastName + "Activator";
+					attributePair.activatorFullyQualified = attributePair.package + ".ui.internal." + attributePair.activator;
+					if (eAnnotation.details.containsKey("transformationService")) {
+						attributePair.transformationService = eAnnotation.details.get("transformationService");
+						transformationServices.add(attributePair.transformationService);
+					}					
+					derivedAttributeTypes.add(attributePair.derivedAttributeType);
+					attributePairs.add(attributePair);
+					
+					var grammarDataItem = new Tuple;
+					grammarDataItem.package = attributePair.grammarName.substring(0, attributePair.grammarName.length()-attributePair.grammarShortName.length()-1);
+					grammarDataItem.packageSequence = grammarDataItem.package.replace('\\.','/');
+					grammarDataItem.runtimeModule = attributePair.grammarShortName + "RuntimeModule";
+					grammarDataItem.abstractRuntimeModule = "Abstract" + attributePair.grammarShortName + "RuntimeModule";
+					grammarDataItem.standaloneSetupFullyQualified = attributePair.standaloneSetupFullyQualified;
+					grammarDataItem.activatorFullyQualified = attributePair.activatorFullyQualified;
+					grammarData.add(grammarDataItem);
+				}
+			}
+		}
+		var propertiesDataItem = new Tuple;
+		propertiesDataItem.className = className;
+		propertiesDataItem.classNameStaticVariable = propertiesDataItem.className.toUpperCase();
+		propertiesDataItem.classContainerName = "Xtext" + propertiesDataItem.className + "Impl";
+		propertiesDataItem.classContainer = propertiesDataItem.classContainerName + ".class";
+		propertiesDataItem.data = attributePairs;
+		propertiesData.add(propertiesDataItem);
+	}
+	
+	parameters : Map {
+		"packageName" = packageName,
+		"classNameImpl" = className + "Impl",
+		"classContainerName" = propertiesDataItem.classContainerName,
+		"attributePairs" = attributePairs
+	}
+
+    template : "XtextEntityImpl.egl"
+    target : projectPath + "src-gen/" + packageName + "/impl/Xtext" + className + "Impl.java"
+    append: false
+        
+}
+
+
+rule PropertiesData {
+
+	guard: propertiesData.size() > 0
+	
+	parameters : Map {
+		"packageName" = packageName,
+		"propertiesData" = propertiesData,
+		"propertiesDataClassName" = propertiesDataClassName,
+		"grammarData" = grammarData,
+		"derivedAttributeTypes" = derivedAttributeTypes,
+		"transformationServices" = transformationServices
+	}
+	
+	template : "PropertiesData.egl"
+	target : projectPath + "src-gen/" + packageName + "/impl/" + propertiesDataClassName + ".java"
+	append: false
+	
+}
+
+
+rule XtextPackageFactoryImpl {
+
+	guard: propertiesData.size() > 0
+	
+	pre {
+		var factoryClass = packageName.firstToUpperCase() + "Factory";
+		var factoryClassImpl = factoryClass + "Impl";
+		var xtextFactoryClassImpl = "Xtext" + factoryClassImpl;
+		xtextPackageFactoryImpl = "Xtext" + factoryClassImpl;
+		var factoryAttributeData : Sequence;
+		for (propertiesDataItem in propertiesData) {
+			var attributeTuple = new Tuple;
+			attributeTuple.className = propertiesDataItem.className;
+			attributeTuple.classNameImpl = attributeTuple.className + "Impl";
+			attributeTuple.xtextClassNameImpl = "Xtext" + attributeTuple.classNameImpl;
+			attributeTuple.classNameVariable = attributeTuple.className.toLowerCase();
+			attributeTuple.createInstance = "create" + attributeTuple.className;
+			factoryAttributeData.add(attributeTuple);
+		}
+	}
+	
+	parameters : Map {
+		"packageName" = packageName,
+		"factoryClass" = factoryClass,
+		"factoryClassImpl" = factoryClassImpl,
+		"xtextFactoryClassImpl" = xtextFactoryClassImpl,
+		"attributeData" = factoryAttributeData
+	}
+
+	template : "XtextPackageFactoryImpl.egl"
+	target : projectPath + "src-gen/" + packageName + "/impl/" + xtextPackageFactoryImpl + ".java"
+	append: false
+	
+}
+
+
+@patch
+rule PackageFactory {
+
+	guard: propertiesData.size() > 0
+	
+	pre {
+		var packageFactory = packageName.firstToUpperCase() + "Factory";
+	}
+	
+	parameters : Map {
+		"packageName" = packageName,
+		"packageFactory" = packageFactory,
+		"packageFactoryImpl" = packageFactory + "Impl",
+		"xtextPackageFactoryImpl" = xtextPackageFactoryImpl
+	}
+	
+	template : "PackageFactory.egl"
+	target : projectPath + "src/" + packageName + "/" + packageFactory + ".java"
+	append: false
+	
+}
+
+
+@patch
+rule GrammarRuntimeModule 
+	transform grammarDataItem: Tuple in: grammarData {
+
+	parameters : Map {
+		"grammarPackage" = grammarDataItem.package,
+		"grammarRuntimeModule" = grammarDataItem.runtimeModule,
+		"grammarAbstractRuntimeModule" = grammarDataItem.abstractRuntimeModule
+	}
+	
+	template : "GrammarRuntimeModule.egl"
+	target : "../../../../" +  grammarDataItem.package + "/src/" + grammarDataItem.packageSequence + "/" + grammarDataItem.runtimeModule + ".java" 
+	append: false
+	
+}
+
+
+operation EClass isValid() : Boolean {
+	for (eStructuralFeature in self.eStructuralFeatures)
+	 	if(eStructuralFeature.eAnnotations.exists(a|a.source = "syntax"))
+	   		return true;
+	return false;
+}
+
+operation getDerivedFeature(derivedAttribute: String, structuralFeatures: OrderedSet<EStructuralFeature>) : EStructuralFeature {
+	for (eStructuralFeature in structuralFeatures) {
+		if (eStructuralFeature.name == derivedAttribute) {
+			return eStructuralFeature;
+		}
+	}
+}
+
+operation String getStringWithUnderscores() : String {
+	var Character = Native("java.lang.Character");
+	var stringValue = new Native("java.lang.String")(self);
+	var stringWithUnderscores = "";
+	for (i in Sequence {0..stringValue.length()-1}) {
+		if (i>0 and Character.isUpperCase(stringValue.charAt(i)) and Character.isLowerCase(stringValue.charAt(i-1))) {
+			stringWithUnderscores += "_";
+		}
+		stringWithUnderscores += stringValue.characterAt(i);
+	}
+	return stringWithUnderscores;
+}

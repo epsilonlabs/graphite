@@ -1,0 +1,43 @@
+package graphite.shared;
+
+import java.util.Map;
+import org.eclipse.emf.ecore.EFactory;
+
+@SuppressWarnings("rawtypes")
+public class ModelData {
+	
+	private EFactory xtextFactory;
+	private String packageName;
+	private Map<Class, Map<String, DerivedPropertyData>> derivedPropertiesData;
+	private Map<Class, Map<String, String>> derivedPairsMappings;
+	private Map<Class, String> identifierByType;
+	
+	public ModelData(EFactory xtextFactory, String packageName, Map<Class, Map<String, DerivedPropertyData>> derivedPropertiesData, Map<Class, Map<String, String>> derivedPairsMappings, Map<Class, String> identifierByType) {
+		this.xtextFactory = xtextFactory;
+		this.packageName = packageName;
+		this.derivedPropertiesData = derivedPropertiesData;
+		this.derivedPairsMappings = derivedPairsMappings;
+		this.identifierByType = identifierByType;
+	}
+	
+	public EFactory getXtextFactory() {
+		return xtextFactory;
+	}
+	
+	public String getPackageName() {
+		return packageName;
+	}
+	
+	public Map<Class, Map<String, DerivedPropertyData>> getDerivedPropertiesData() {
+		return derivedPropertiesData;
+	}
+		
+	public Map<Class, Map<String, String>> getDerivedPairsMappings() {
+		return derivedPairsMappings;
+	}
+	
+	public Map<Class, String> getIdentifierByType() {
+		return identifierByType;
+	}
+
+}
