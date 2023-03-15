@@ -10,7 +10,7 @@ import [%=packageName%].[%=factoryClass%];
 public class [%=xtextFactoryClassImpl%] extends [%=factoryClassImpl%] {
 
 	public static [%=factoryClass%] init() {
-		ModelData modelData = new ModelData(PropertiesData.xtextFactory, PropertiesData.packageName, PropertiesData.derivedPropertiesData, PropertiesData.derivedPairsMappings, PropertiesData.identifierByType);
+		ModelData modelData = new ModelData(PropertiesData.xtextFactory, PropertiesData.derivedPropertiesData, PropertiesData.derivedPairsMappings, PropertiesData.identifierByType);
 		WorkbenchData.setModelData(modelData);
 		return new [%=xtextFactoryClassImpl%]();
 	}

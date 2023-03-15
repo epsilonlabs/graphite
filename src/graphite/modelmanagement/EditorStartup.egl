@@ -1,0 +1,16 @@
+package [%=packageName%].impl;
+
+import [%=packageName%].[%=packageClass%];
+
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.ui.IStartup;
+
+import graphite.shared.CustomValidator;
+
+public class [%=editorStartupClass%] implements IStartup {
+	
+	public void earlyStartup() {
+		EValidator.Registry.INSTANCE.put([%=packageClass%].eINSTANCE, new CustomValidator());
+	}
+	
+}

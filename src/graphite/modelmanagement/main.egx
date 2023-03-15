@@ -1,7 +1,9 @@
 pre {
-	var projectName = "org.netapp.pcs";
+	var projectName = "workload.emf";
 	var projectPath = "../../../../" + projectName + "/";
 	var propertiesDataClassName = "PropertiesData";
+	var directoryGraphiteCodeGeneration = "src-gen";
+	var directoryEmfCodeGeneration = "src"; //either "src" or "src-gen"
 	var packageName;
 	var xtextPackageFactoryImpl;
 	var propertiesData : Sequence;
@@ -78,7 +80,7 @@ rule XtextEntityImpl
 	}
 
     template : "XtextEntityImpl.egl"
-    target : projectPath + "src-gen/" + packageName + "/impl/Xtext" + className + "Impl.java"
+    target : projectPath + directoryGraphiteCodeGeneration + "/" + packageName + "/impl/Xtext" + className + "Impl.java"
     append: false
         
 }
@@ -98,7 +100,7 @@ rule PropertiesData {
 	}
 	
 	template : "PropertiesData.egl"
-	target : projectPath + "src-gen/" + packageName + "/impl/" + propertiesDataClassName + ".java"
+	target : projectPath + directoryGraphiteCodeGeneration + "/" + packageName + "/impl/" + propertiesDataClassName + ".java"
 	append: false
 	
 }
@@ -134,7 +136,29 @@ rule XtextPackageFactoryImpl {
 	}
 
 	template : "XtextPackageFactoryImpl.egl"
-	target : projectPath + "src-gen/" + packageName + "/impl/" + xtextPackageFactoryImpl + ".java"
+	target : projectPath + directoryGraphiteCodeGeneration + "/" + packageName + "/impl/" + xtextPackageFactoryImpl + ".java"
+	append: false
+	
+}
+
+
+rule EditorStartup {
+
+	guard: propertiesData.size() > 0
+	
+	pre {
+		var packageClass = packageName.firstToUpperCase() + "Package";
+		var editorStartupClass = packageName.firstToUpperCase() + "EditorStartup";
+	}
+	
+	parameters : Map {
+		"packageName" = packageName,
+		"packageClass" = packageClass,
+		"editorStartupClass" = editorStartupClass
+	}
+	
+	template : "EditorStartup.egl"
+	target : projectPath + directoryGraphiteCodeGeneration + "/" + packageName + "/impl/" + editorStartupClass + ".java"
 	append: false
 	
 }
@@ -157,7 +181,7 @@ rule PackageFactory {
 	}
 	
 	template : "PackageFactory.egl"
-	target : projectPath + "src/" + packageName + "/" + packageFactory + ".java"
+	target : projectPath + directoryEmfCodeGeneration + "/" + packageName + "/" + packageFactory + ".java"
 	append: false
 	
 }

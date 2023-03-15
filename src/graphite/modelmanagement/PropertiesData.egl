@@ -13,7 +13,6 @@ import graphite.shared.ITransformationService;
 	import [%=packageName%].transformation.[%=transformationService%];
 [%}%]
 
-import pcs.PcsPackage;
 [% for (type in derivedAttributeTypes) {-%]
 	import [%=packageName%].[%=type%];
 [%}%]
@@ -27,7 +26,6 @@ import pcs.PcsPackage;
 public class [%=propertiesDataClassName%] {
 
 	public static EFactory xtextFactory = [%=packageName%].impl.[%=packageName.firstToUpperCase()%]FactoryImpl.init();
-	public static String packageName = [%=packageName.firstToUpperCase()%]Package.eNS_URI;
 
 	public static class DerivedObjectClassContainer {
 		[% for (propertiesDataItem in propertiesData) {-%]
