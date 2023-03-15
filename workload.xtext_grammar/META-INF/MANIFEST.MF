@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: workload.xtext_grammar
+Bundle-ManifestVersion: 2
+Bundle-Name: workload.xtext_grammar
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: workload.xtext_grammar; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: workload.emf,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ graphite;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: workload.xtext_grammar.generator,
+ workload.xtext_grammar.serializer,
+ workload.xtext_grammar.parser.antlr.internal,
+ workload.xtext_grammar,
+ workload.xtext_grammar.formatting2,
+ workload.xtext_grammar.scoping,
+ workload.xtext_grammar.parser.antlr,
+ workload.xtext_grammar.validation,
+ workload.xtext_grammar.services
+Import-Package: org.apache.log4j

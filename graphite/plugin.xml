@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.eef.ide.ui.eefLifecycleManagerProvider">
+      <descriptor
+            class="graphite.xtextwidget.XtextPartialViewerLifecycleManagerProvider"
+            description="Xtext Textual Property Viewer"
+            id="graphite.xtextwidgetViewer"
+            label="Xtext Textual Widget">
+      </descriptor>
+   </extension>
+   <extension
+	 point="org.eclipse.xtext.extension_resourceServiceProvider">
+	<resourceServiceProvider
+		  class="graphite.xtextxmi.ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider"
+		  uriExtension="workload">
+	</resourceServiceProvider>
+</extension>
+
+</plugin>

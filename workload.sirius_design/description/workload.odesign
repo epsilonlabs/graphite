@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="workload" version="12.0.0.2017041100">
+  <ownedViewpoints name="MyViewpoint">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Project diagram" domainClass="workload::Project" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <nodeMappings name="Person node" labelDirectEdit="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='name']" domainClass="workload::Person">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/workload.sirius_design/icons/person.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Task node" labelDirectEdit="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='name']" domainClass="workload::Task">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/workload.sirius_design/icons/task.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Task Dependencies Edge" deletionDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Task%20Dependencies%20Edge']" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Task%20node']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Task%20node']" targetFinderExpression="feature:dependencies" reconnections="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Task%20Dependencies']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Task Leader Edge" deletionDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Task%20Leader%20Edge']" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Task%20node']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Person%20node']" targetFinderExpression="feature:leader" reconnections="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Task%20Leader']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Node Person" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Person%20node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="workload::Person" referenceName="people"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Node Task" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Task%20node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="workload::Task" referenceName="tasks"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="name">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Task Leader Edge">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="leader"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Task Dependencies Edge">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="dependencies" elementExpression="aql: elementView.targetNode.oclAsType(diagram::DNode).target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Task Leader">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="leader" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Task Dependencies">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="dependencies" elementExpression="var:source"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dependencies" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Task Leader" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Leader%20Edge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="leader" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Task Dependencies" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Dependencies%20Edge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dependencies" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="workload.sirius_design.Services"/>
+  </ownedViewpoints>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="Graphite Properties">
+    <categories name="graphite">
+      <pages name="graphite_rules_page" labelExpression="aql:input.emfEditServices(self).getTabName()" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@categories.0/@groups.0"/>
+      <groups name="graphite_rules_group" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
+        <controls xsi:type="properties:DynamicMappingForDescription" name="graphite_rules_structural_features_for" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs name="graphite_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature) and not self.isParsedString(eStructuralFeature)">
+            <widget xsi:type="properties:TextDescription" name="graphite_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="graphite_rules_multi_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature) and not self.isParsedString(eStructuralFeature)">
+            <widget xsi:type="properties:TextAreaDescription" name="graphite_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="graphite_rules_string_xtext" predicateExpression="aql:self.isParsedString(eStructuralFeature)">
+            <widget xsi:type="properties:CustomDescription" name="graphite.xtextwidgetViewer" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)"/>
+          </ifs>
+          <ifs name="sirius_default_rules_mono_boolean" predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
+            <widget xsi:type="properties:CheckboxDescription" name="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="sirius_default_rules_enum_if" predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
+            <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="sirius_default_rules_eattribute_many_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EAttribute) and eStructuralFeature.many">
+            <widget xsi:type="properties:ListDescription" name="sirius_default_rules_eattribute_many" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)" displayExpression="var:value"/>
+          </ifs>
+          <ifs name="sirius_default_rules_ereference_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
+            <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
+          </ifs>
+        </controls>
+      </groups>
+    </categories>
+  </extensions>
+</description:Group>

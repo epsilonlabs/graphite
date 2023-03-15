@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated workload -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="workload.presentation.WorkloadModelWizardID"
+            name="%_UI_WorkloadModelWizard_label"
+            class="workload.presentation.WorkloadModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/WorkloadModelFile.gif">
+         <description>%_UI_WorkloadModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated workload -->
+      <editor
+            id="workload.presentation.WorkloadEditorID"
+            name="%_UI_WorkloadEditor_label"
+            icon="icons/full/obj16/WorkloadModelFile.gif"
+            extensions="workload"
+            class="workload.presentation.WorkloadEditor"
+            contributorClass="workload.presentation.WorkloadActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="workload.impl.WorkloadEditorStartup">
+      </startup>
+   </extension>
+
+</plugin>

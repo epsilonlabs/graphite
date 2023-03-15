@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:workload="ProjectWorkloadsDSL" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_Di9PMMD3Ee2DV4TG7IzQLQ" selectedViews="_D1slAMD3Ee2DV4TG7IzQLQ" version="15.0.0.202209061200">
+    <semanticResources>model.workload</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_D1slAMD3Ee2DV4TG7IzQLQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_E8nJwMD3Ee2DV4TG7IzQLQ" name="new Project diagram" repPath="#_E8dYwMD3Ee2DV4TG7IzQLQ" changeId="aa082c6a-41bb-4df4-bcd4-18ab20fe30cf">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']"/>
+        <target xmi:type="workload:Project" href="model.workload#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_E8dYwMD3Ee2DV4TG7IzQLQ">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_E86rwMD3Ee2DV4TG7IzQLQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_E86rwcD3Ee2DV4TG7IzQLQ" type="Sirius" element="_E8dYwMD3Ee2DV4TG7IzQLQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_E9140MD3Ee2DV4TG7IzQLQ" type="2001" element="_E9G5AMD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E96KQMD3Ee2DV4TG7IzQLQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_E96KQcD3Ee2DV4TG7IzQLQ" x="12" y="65"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-QIgMD3Ee2DV4TG7IzQLQ" type="3005" element="_E9QqAMD3Ee2DV4TG7IzQLQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_E-QIgcD3Ee2DV4TG7IzQLQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-QIgsD3Ee2DV4TG7IzQLQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_E9140cD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E9140sD3Ee2DV4TG7IzQLQ" x="75" y="270" width="64" height="64"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_E-LQAMD3Ee2DV4TG7IzQLQ" type="2001" element="_E9WJkMD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E-LQA8D3Ee2DV4TG7IzQLQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_E-LQBMD3Ee2DV4TG7IzQLQ" x="15" y="65"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-QIg8D3Ee2DV4TG7IzQLQ" type="3005" element="_E9WJkcD3Ee2DV4TG7IzQLQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_E-QIhMD3Ee2DV4TG7IzQLQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-QIhcD3Ee2DV4TG7IzQLQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_E-LQAcD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-LQAsD3Ee2DV4TG7IzQLQ" x="315" y="270" width="64" height="64"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_E-L3EMD3Ee2DV4TG7IzQLQ" type="2001" element="_E9X-wMD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E-L3E8D3Ee2DV4TG7IzQLQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_E-L3FMD3Ee2DV4TG7IzQLQ" x="2" y="65"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-QvkMD3Ee2DV4TG7IzQLQ" type="3005" element="_E9X-wcD3Ee2DV4TG7IzQLQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_E-QvkcD3Ee2DV4TG7IzQLQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-QvksD3Ee2DV4TG7IzQLQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_E-L3EcD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-L3EsD3Ee2DV4TG7IzQLQ" x="555" y="270" width="64" height="64"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_E-MeIMD3Ee2DV4TG7IzQLQ" type="2001" element="_E9ZM4MD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E-MeI8D3Ee2DV4TG7IzQLQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_E-MeJMD3Ee2DV4TG7IzQLQ" y="-21"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-Qvk8D3Ee2DV4TG7IzQLQ" type="3005" element="_E9Zz8MD3Ee2DV4TG7IzQLQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_E-QvlMD3Ee2DV4TG7IzQLQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-QvlcD3Ee2DV4TG7IzQLQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_E-MeIcD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-MeIsD3Ee2DV4TG7IzQLQ" x="75" y="75" width="64" height="64"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_E-OTUMD3Ee2DV4TG7IzQLQ" type="2001" element="_E9abAcD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E-OTU8D3Ee2DV4TG7IzQLQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_E-OTVMD3Ee2DV4TG7IzQLQ" y="-21"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-QvlsD3Ee2DV4TG7IzQLQ" type="3005" element="_E9abAsD3Ee2DV4TG7IzQLQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_E-Qvl8D3Ee2DV4TG7IzQLQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-QvmMD3Ee2DV4TG7IzQLQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_E-OTUcD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-OTUsD3Ee2DV4TG7IzQLQ" x="315" y="75" width="64" height="64"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_E-O6YMD3Ee2DV4TG7IzQLQ" type="2001" element="_E9bCEMD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E-O6Y8D3Ee2DV4TG7IzQLQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_E-O6ZMD3Ee2DV4TG7IzQLQ" y="-21"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-RWoMD3Ee2DV4TG7IzQLQ" type="3005" element="_E9bCEcD3Ee2DV4TG7IzQLQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_E-RWocD3Ee2DV4TG7IzQLQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-RWosD3Ee2DV4TG7IzQLQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_E-O6YcD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-O6YsD3Ee2DV4TG7IzQLQ" x="555" y="75" width="64" height="64"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_E86rwsD3Ee2DV4TG7IzQLQ"/>
+        <edges xmi:type="notation:Edge" xmi:id="_E-c80MD3Ee2DV4TG7IzQLQ" type="4001" element="_E9ghoMD3Ee2DV4TG7IzQLQ" source="_E-OTUMD3Ee2DV4TG7IzQLQ" target="_E-MeIMD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E-dj4MD3Ee2DV4TG7IzQLQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-dj4cD3Ee2DV4TG7IzQLQ" x="19"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-eyAMD3Ee2DV4TG7IzQLQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-eyAcD3Ee2DV4TG7IzQLQ" x="-19" y="6"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-eyAsD3Ee2DV4TG7IzQLQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-eyA8D3Ee2DV4TG7IzQLQ" x="-11" y="5"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_E-c80cD3Ee2DV4TG7IzQLQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_E-c80sD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_E-c808D3Ee2DV4TG7IzQLQ" points="[-8, 0, 181, -1]$[-184, 0, 5, -1]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_E-jDcMD3Ee2DV4TG7IzQLQ" id="(0.125,0.515625)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_E-jDccD3Ee2DV4TG7IzQLQ" id="(0.921875,0.53125)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_E-jDcsD3Ee2DV4TG7IzQLQ" type="4001" element="_E9hItMD3Ee2DV4TG7IzQLQ" source="_E-O6YMD3Ee2DV4TG7IzQLQ" target="_E-OTUMD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E-jDdsD3Ee2DV4TG7IzQLQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-jDd8D3Ee2DV4TG7IzQLQ" x="17" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-jqgMD3Ee2DV4TG7IzQLQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-jqgcD3Ee2DV4TG7IzQLQ" x="-8" y="-4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-jqgsD3Ee2DV4TG7IzQLQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-jqg8D3Ee2DV4TG7IzQLQ" x="-7" y="-2"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_E-jDc8D3Ee2DV4TG7IzQLQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_E-jDdMD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_E-jDdcD3Ee2DV4TG7IzQLQ" points="[-2, 0, 177, -3]$[-178, 2, 1, -1]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_E-jqhMD3Ee2DV4TG7IzQLQ" id="(0.03125,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_E-jqhcD3Ee2DV4TG7IzQLQ" id="(0.984375,0.546875)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_E-jqhsD3Ee2DV4TG7IzQLQ" type="4001" element="_E9iW1MD3Ee2DV4TG7IzQLQ" source="_E-MeIMD3Ee2DV4TG7IzQLQ" target="_E9140MD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E-jqisD3Ee2DV4TG7IzQLQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-jqi8D3Ee2DV4TG7IzQLQ" x="-58" y="11"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-jqjMD3Ee2DV4TG7IzQLQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-jqjcD3Ee2DV4TG7IzQLQ" x="-19" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-jqjsD3Ee2DV4TG7IzQLQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-jqj8D3Ee2DV4TG7IzQLQ" x="-89" y="-10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_E-jqh8D3Ee2DV4TG7IzQLQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_E-jqiMD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_E-jqicD3Ee2DV4TG7IzQLQ" points="[0, 64, 0, -195]$[0, 259, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_E-kRkMD3Ee2DV4TG7IzQLQ" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_E-kRkcD3Ee2DV4TG7IzQLQ" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_E-kRksD3Ee2DV4TG7IzQLQ" type="4001" element="_E9i94sD3Ee2DV4TG7IzQLQ" source="_E-OTUMD3Ee2DV4TG7IzQLQ" target="_E-LQAMD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E-kRlsD3Ee2DV4TG7IzQLQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-kRl8D3Ee2DV4TG7IzQLQ" x="-103" y="-1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-kRmMD3Ee2DV4TG7IzQLQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-kRmcD3Ee2DV4TG7IzQLQ" x="-1" y="1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-kRmsD3Ee2DV4TG7IzQLQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-kRm8D3Ee2DV4TG7IzQLQ" x="-56" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_E-kRk8D3Ee2DV4TG7IzQLQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_E-kRlMD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_E-kRlcD3Ee2DV4TG7IzQLQ" points="[0, 64, 0, -195]$[0, 259, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_E-kRnMD3Ee2DV4TG7IzQLQ" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_E-kRncD3Ee2DV4TG7IzQLQ" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_E-kRnsD3Ee2DV4TG7IzQLQ" type="4001" element="_E9i958D3Ee2DV4TG7IzQLQ" source="_E-O6YMD3Ee2DV4TG7IzQLQ" target="_E-L3EMD3Ee2DV4TG7IzQLQ">
+          <children xmi:type="notation:Node" xmi:id="_E-k4oMD3Ee2DV4TG7IzQLQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-k4ocD3Ee2DV4TG7IzQLQ" x="-36"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-k4osD3Ee2DV4TG7IzQLQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-k4o8D3Ee2DV4TG7IzQLQ" x="-48" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_E-k4pMD3Ee2DV4TG7IzQLQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E-k4pcD3Ee2DV4TG7IzQLQ" x="-109" y="2"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_E-kRn8D3Ee2DV4TG7IzQLQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_E-kRoMD3Ee2DV4TG7IzQLQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_E-kRocD3Ee2DV4TG7IzQLQ" points="[0, 64, 0, -195]$[0, 259, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_E-k4psD3Ee2DV4TG7IzQLQ" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_E-k4p8D3Ee2DV4TG7IzQLQ" id="(0.5,1.0)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_E9kzEMD3Ee2DV4TG7IzQLQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_E9kzEcD3Ee2DV4TG7IzQLQ"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_E9G5AMD3Ee2DV4TG7IzQLQ" name="Alice" incomingEdges="_E9iW1MD3Ee2DV4TG7IzQLQ" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="workload:Person" href="model.workload#//@people.0"/>
+      <semanticElements xmi:type="workload:Person" href="model.workload#//@people.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_E9QqAMD3Ee2DV4TG7IzQLQ" labelSize="12" showIcon="false" workspacePath="/workload.sirius_design/icons/person.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Person%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Person%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_E9WJkMD3Ee2DV4TG7IzQLQ" name="Bob" incomingEdges="_E9i94sD3Ee2DV4TG7IzQLQ" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="workload:Person" href="model.workload#//@people.1"/>
+      <semanticElements xmi:type="workload:Person" href="model.workload#//@people.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_E9WJkcD3Ee2DV4TG7IzQLQ" labelSize="12" showIcon="false" workspacePath="/workload.sirius_design/icons/person.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Person%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Person%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_E9X-wMD3Ee2DV4TG7IzQLQ" name="Charlie" incomingEdges="_E9i958D3Ee2DV4TG7IzQLQ" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="workload:Person" href="model.workload#//@people.2"/>
+      <semanticElements xmi:type="workload:Person" href="model.workload#//@people.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_E9X-wcD3Ee2DV4TG7IzQLQ" labelSize="12" showIcon="false" workspacePath="/workload.sirius_design/icons/person.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Person%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Person%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_E9ZM4MD3Ee2DV4TG7IzQLQ" name="Analysis" outgoingEdges="_E9iW1MD3Ee2DV4TG7IzQLQ" incomingEdges="_E9ghoMD3Ee2DV4TG7IzQLQ" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="workload:Task" href="model.workload#//@tasks.0"/>
+      <semanticElements xmi:type="workload:Task" href="model.workload#//@tasks.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_E9Zz8MD3Ee2DV4TG7IzQLQ" labelSize="12" showIcon="false" workspacePath="/workload.sirius_design/icons/task.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Task%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Task%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_E9abAcD3Ee2DV4TG7IzQLQ" name="Design" outgoingEdges="_E9ghoMD3Ee2DV4TG7IzQLQ _E9i94sD3Ee2DV4TG7IzQLQ" incomingEdges="_E9hItMD3Ee2DV4TG7IzQLQ" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="workload:Task" href="model.workload#//@tasks.1"/>
+      <semanticElements xmi:type="workload:Task" href="model.workload#//@tasks.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_E9abAsD3Ee2DV4TG7IzQLQ" labelSize="12" showIcon="false" workspacePath="/workload.sirius_design/icons/task.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Task%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Task%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_E9bCEMD3Ee2DV4TG7IzQLQ" name="Implementation" outgoingEdges="_E9hItMD3Ee2DV4TG7IzQLQ _E9i958D3Ee2DV4TG7IzQLQ" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="workload:Task" href="model.workload#//@tasks.2"/>
+      <semanticElements xmi:type="workload:Task" href="model.workload#//@tasks.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_E9bCEcD3Ee2DV4TG7IzQLQ" labelSize="12" showIcon="false" workspacePath="/workload.sirius_design/icons/task.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Task%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@nodeMappings[name='Task%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_E9ghoMD3Ee2DV4TG7IzQLQ" sourceNode="_E9abAcD3Ee2DV4TG7IzQLQ" targetNode="_E9ZM4MD3Ee2DV4TG7IzQLQ">
+      <target xmi:type="workload:Task" href="model.workload#//@tasks.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_E9hIsMD3Ee2DV4TG7IzQLQ" size="2" strokeColor="77,137,20">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Dependencies%20Edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_E9hIscD3Ee2DV4TG7IzQLQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Dependencies%20Edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_E9hItMD3Ee2DV4TG7IzQLQ" sourceNode="_E9bCEMD3Ee2DV4TG7IzQLQ" targetNode="_E9abAcD3Ee2DV4TG7IzQLQ">
+      <target xmi:type="workload:Task" href="model.workload#//@tasks.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_E9iW0MD3Ee2DV4TG7IzQLQ" size="2" strokeColor="77,137,20">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Dependencies%20Edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_E9iW0cD3Ee2DV4TG7IzQLQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Dependencies%20Edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_E9iW1MD3Ee2DV4TG7IzQLQ" sourceNode="_E9ZM4MD3Ee2DV4TG7IzQLQ" targetNode="_E9G5AMD3Ee2DV4TG7IzQLQ">
+      <target xmi:type="workload:Task" href="model.workload#//@tasks.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_E9iW1cD3Ee2DV4TG7IzQLQ" size="2" strokeColor="114,73,110">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Leader%20Edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_E9iW1sD3Ee2DV4TG7IzQLQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Leader%20Edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_E9i94sD3Ee2DV4TG7IzQLQ" sourceNode="_E9abAcD3Ee2DV4TG7IzQLQ" targetNode="_E9WJkMD3Ee2DV4TG7IzQLQ">
+      <target xmi:type="workload:Task" href="model.workload#//@tasks.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_E9i948D3Ee2DV4TG7IzQLQ" size="2" strokeColor="114,73,110">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Leader%20Edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_E9i95MD3Ee2DV4TG7IzQLQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Leader%20Edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_E9i958D3Ee2DV4TG7IzQLQ" sourceNode="_E9bCEMD3Ee2DV4TG7IzQLQ" targetNode="_E9X-wMD3Ee2DV4TG7IzQLQ">
+      <target xmi:type="workload:Task" href="model.workload#//@tasks.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_E9i96MD3Ee2DV4TG7IzQLQ" size="2" strokeColor="114,73,110">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Leader%20Edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_E9i96cD3Ee2DV4TG7IzQLQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer/@edgeMappings[name='Task%20Leader%20Edge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_E8hqMMD3Ee2DV4TG7IzQLQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/workload.sirius_design/description/workload.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Project%20diagram']/@defaultLayer"/>
+    <target xmi:type="workload:Project" href="model.workload#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
