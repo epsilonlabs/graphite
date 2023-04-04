@@ -11,7 +11,8 @@ public class SiriusEditorOpener extends LanguageSpecificURIEditorOpener {
 
 	@Override
 	public IEditorPart open(final URI uri, final EReference crossReference, final int indexInList, final boolean select) {
-		return ViewUtility.selectAndReveal(uri, crossReference, indexInList, select);
+		ViewUtility.selectAndReveal(uri, crossReference, indexInList, select);
+		return null;
 	}
 
 	@Override
