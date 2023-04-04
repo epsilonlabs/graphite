@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -21,10 +19,11 @@ import org.eclipse.xtext.resource.ResourceSetReferencingResourceSetImpl;
 import org.eclipse.xtext.ui.editor.embedded.EmbeddedEditor;
 import org.eclipse.xtext.ui.editor.embedded.EmbeddedEditorFactory;
 import org.eclipse.xtext.ui.editor.embedded.EmbeddedEditorModelAccess;
+import org.eclipse.xtext.ui.editor.model.IXtextDocumentContentObserver;
 import com.google.inject.Injector;
-
 import graphite.shared.DerivedObjectProperties;
 import graphite.textual.DerivedObjectUtility;
+import graphite.textual.XtextDocumentContentObserver;
 import graphite.textual.XtextEObject;
 import graphite.textual.XtextParser;
 
@@ -33,7 +32,7 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 
 	private EEFCustomWidgetDescription description;
 	private XtextPartialViewerController controller;
-	private ModifyListener modifyListener;
+	private IXtextDocumentContentObserver xtextDocumentContentObserver;
 	private EmbeddedEditorModelAccess access;
 	private EmbeddedEditor editor;
 	private XtextEObject object;
@@ -76,13 +75,8 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 	@Override
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
-		this.modifyListener = new ModifyListener() {
-			@Override
-			public void modifyText(ModifyEvent event) {
-				controller.updateValue(access.getEditablePart());
-			}
-		};
-		editor.getViewer().getTextWidget().addModifyListener(this.modifyListener);
+		this.xtextDocumentContentObserver = new XtextDocumentContentObserver(controller, access);
+		editor.getViewer().getXtextDocument().addXtextDocumentContentObserver(this.xtextDocumentContentObserver);
 	}
 
 	@Override
@@ -94,8 +88,8 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 	@Override
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
-		if (this.modifyListener != null && editor != null && editor.getViewer() != null && editor.getViewer().getTextWidget() != null) {
-			editor.getViewer().getTextWidget().removeModifyListener(this.modifyListener);
+		if (this.xtextDocumentContentObserver != null && editor != null && editor.getViewer() != null && editor.getViewer().getXtextDocument() != null) {
+			editor.getViewer().getXtextDocument().removeXtextDocumentContentObserver(this.xtextDocumentContentObserver);
 		}
 	}
 

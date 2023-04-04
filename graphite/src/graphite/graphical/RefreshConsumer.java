@@ -20,7 +20,7 @@ public class RefreshConsumer implements Consumer<Object> {
 	@Override
 	public void accept(Object object) {
 		String valueToUpdate = DerivedObjectUtility.getParsedString(derivedObjectProperties);
-		access.updateModel("# \n", (valueToUpdate == null) ? "" : valueToUpdate, "");
+		access.updateModel("", (valueToUpdate == null) ? "" : valueToUpdate, "");
 	}
 	
 }
