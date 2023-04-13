@@ -1,5 +1,8 @@
 package graphite.xtextwidget;
 
+import java.lang.reflect.Field;
+import java.util.List;
+
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
@@ -8,12 +11,19 @@ import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.gef.EditPartViewer;
+import org.eclipse.gef.ui.parts.AbstractEditPartViewer;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+import org.eclipse.sirius.diagram.ui.tools.internal.editor.DiagramSelectDRepresentationElementsListener;
+import org.eclipse.sirius.ui.business.api.dialect.DialectEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.gmf.runtime.common.ui.util.WorkbenchPartDescriptor;
+import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.xtext.resource.ResourceSetReferencingResourceSet;
 import org.eclipse.xtext.resource.ResourceSetReferencingResourceSetImpl;
 import org.eclipse.xtext.ui.editor.embedded.EmbeddedEditor;
@@ -21,13 +31,15 @@ import org.eclipse.xtext.ui.editor.embedded.EmbeddedEditorFactory;
 import org.eclipse.xtext.ui.editor.embedded.EmbeddedEditorModelAccess;
 import org.eclipse.xtext.ui.editor.model.IXtextDocumentContentObserver;
 import com.google.inject.Injector;
+
 import graphite.shared.DerivedObjectProperties;
 import graphite.textual.DerivedObjectUtility;
 import graphite.textual.XtextDocumentContentObserver;
 import graphite.textual.XtextEObject;
 import graphite.textual.XtextParser;
 
-@SuppressWarnings("restriction")
+
+@SuppressWarnings({"restriction", "unchecked", "rawtypes"})
 public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 
 	private EEFCustomWidgetDescription description;
@@ -37,6 +49,9 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 	private EmbeddedEditor editor;
 	private XtextEObject object;
 	private DerivedObjectProperties derivedObjectProperties;
+	private DialectEditor dialectEditor;
+	private List selection;
+	private Object selectedItem;
 	
 	public XtextPartialViewerLifecycleManager(EEFCustomWidgetDescription controlDescription, IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter contextAdapter) {
 		super(variableManager, interpreter, contextAdapter);
@@ -53,7 +68,7 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 		grammarInjector.injectMembers(this);
 		EmbeddedResourceProvider resProvider = grammarInjector.getInstance(EmbeddedResourceProvider.class);
 		resProvider.setSiriusResourceSet(getSiriusResourceSet());
-		EmbeddedEditorFactory factory = grammarInjector.getInstance(EmbeddedEditorFactory.class);
+		EmbeddedEditorFactory factory = grammarInjector.getInstance(EmbeddedEditorFactory.class);		
 		this.editor = factory.newEditor(resProvider).showErrorAndWarningAnnotations().withParent(parent);
 		this.access = editor.createPartialEditor();	
 		Control control = editor.getViewer().getControl();
@@ -64,6 +79,27 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		control.setLayoutData(gridData);
 		this.controller = new XtextPartialViewerController(description, variableManager, interpreter, editingContextAdapter, access);
+		try {
+			Field diagramSelectionListenerField = this.controller.getClass().getDeclaredField("diagramSelectionListener");
+			diagramSelectionListenerField.setAccessible(true);
+			DiagramSelectDRepresentationElementsListener diagramSelectionListener = (DiagramSelectDRepresentationElementsListener)diagramSelectionListenerField.get(this.controller);
+			Field dialectEditorField = diagramSelectionListener.getClass().getSuperclass().getDeclaredField("dialectEditor");
+			dialectEditorField.setAccessible(true);
+			this.dialectEditor = (DialectEditor) dialectEditorField.get(diagramSelectionListener);
+			WorkbenchPartDescriptor workbenchPartDescriptor = new WorkbenchPartDescriptor(this.dialectEditor.getSite().getId(), this.dialectEditor.getClass(), this.dialectEditor.getSite().getPage());
+			IWorkbenchPart workbenchPart = workbenchPartDescriptor.getPartPage().getActivePart();
+	        if (workbenchPart instanceof IDiagramWorkbenchPart) {
+	        	IDiagramWorkbenchPart part = (IDiagramWorkbenchPart) workbenchPart;
+	            EditPartViewer editPartViewer = part.getDiagramEditPart().getViewer();
+            	Field selectionField = AbstractEditPartViewer.class.getDeclaredField("selection");
+            	selectionField.setAccessible(true);
+            	this.selection = (List)selectionField.get(editPartViewer);
+            	this.selectedItem = this.selection.get(0);
+	        }
+		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	protected ResourceSet getSiriusResourceSet() {
@@ -83,6 +119,7 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 	public void refresh() {
 		super.refresh();
 		this.controller.refresh();
+		validateDiagram();
 	}
 
 	@Override
@@ -118,4 +155,12 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 		this.editor.getViewer().setEditable(enabled);
 	}
 	
+	private void validateDiagram() { //before validating the diagram, no elements must be selected, otherwise the error markers do not provide navigation
+		if (this.dialectEditor != null && this.selection != null && this.selectedItem != null) {
+			this.selection.remove(this.selectedItem);
+			this.dialectEditor.validateRepresentation();
+			this.selection.add(this.selectedItem);
+		}
+	}
+
 }

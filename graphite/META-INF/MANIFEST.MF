@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.emf.transaction,
  org.eclipse.eef,
  org.eclipse.eef.ide.ui,
  org.eclipse.eef.common.ui,
- org.eclipse.sirius.diagram.ui;bundle-version="7.0.7"
+ org.eclipse.sirius.diagram.ui;bundle-version="7.0.7",
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.9.1"
 Import-Package: org.apache.log4j;version="1.2.19"
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: graphite.xtextxmi.Activator
