@@ -1,14 +1,17 @@
 package graphite.graphical;
 
+import java.util.List;
 import java.util.Set;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
+import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.sirius.business.api.query.DRepresentationElementQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.diagram.ui.tools.internal.editor.DiagramSelectDRepresentationElementsListener;
 import org.eclipse.sirius.ui.business.api.dialect.DialectEditor;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.viewpoint.DRepresentation;
@@ -17,6 +20,7 @@ import org.eclipse.ui.IEditorPart;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
+@SuppressWarnings("restriction")
 public class ViewUtility {
 	
 	public static void selectAndReveal(URI uri, EReference crossReference, int indexInList, boolean select) {
@@ -41,4 +45,14 @@ public class ViewUtility {
 			}
 		}
 	}
+	
+	public static ResourceSetListener getDiagramSelectionListener(List<ResourceSetListener> resourceSetListeners) {
+		for (ResourceSetListener resourceSetListener : resourceSetListeners) {
+			if (resourceSetListener instanceof DiagramSelectDRepresentationElementsListener) {
+				return resourceSetListener;
+			}
+		}
+		return null;
+	}
+
 }
