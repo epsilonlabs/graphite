@@ -55,12 +55,13 @@ public class XtextParser {
 		return serializer.serialize(object);
 	}
 
-	public static void register(Injector injector) {
+	public static FileExtensionProvider register(Injector injector) {
 		IResourceFactory resourceFactory = injector.getInstance(IResourceFactory.class);
 		IResourceServiceProvider serviceProvider = injector.getInstance(IResourceServiceProvider.class);
 		FileExtensionProvider fileExtensionProvider = injector.getInstance(FileExtensionProvider.class);
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(fileExtensionProvider.getPrimaryFileExtension(), resourceFactory);
 		IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put(fileExtensionProvider.getPrimaryFileExtension(), serviceProvider);	
+		return fileExtensionProvider;
 	}
 	
 }

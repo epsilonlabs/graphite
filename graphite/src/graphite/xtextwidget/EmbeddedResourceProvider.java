@@ -10,10 +10,12 @@ import org.eclipse.xtext.ui.editor.embedded.IEditedResourceProvider;
 @SuppressWarnings("restriction")
 public class EmbeddedResourceProvider implements IEditedResourceProvider {
 
-	@Inject
 	private FileExtensionProvider fileExtensionProvider;
-	
 	private ResourceSet siriusResourceSet;
+	
+	public void setFileExtensionProvider(FileExtensionProvider fileExtensionProvider) {
+		this.fileExtensionProvider = fileExtensionProvider;
+	}
 	
 	public ResourceSet getSiriusResourceSet() {
 		return siriusResourceSet;
@@ -22,7 +24,7 @@ public class EmbeddedResourceProvider implements IEditedResourceProvider {
 	public void setSiriusResourceSet(ResourceSet resourceSet) {
 		this.siriusResourceSet = resourceSet;
 	}
-
+	
 	@Override
 	public XtextResource createResource() {
 		URI uri = URI.createURI("_synthetic." + fileExtensionProvider.getPrimaryFileExtension());
