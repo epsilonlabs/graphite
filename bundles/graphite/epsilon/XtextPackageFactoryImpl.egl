@@ -1,0 +1,33 @@
+package [%=packageData.classQualifiedName%].impl;
+
+import org.eclipse.emf.ecore.EFactory;
+
+import graphite.textual.XtextBaseFactory;
+
+import [%=packageData.classQualifiedName%].[%=packageData.factoryClass%];
+[% for (type in attributeData.className.asOrderedSet()) {-%]
+	import [%=packageData.classQualifiedName%].[%=type%];
+[%}%]
+
+public class [%=packageData.xtextFactoryClassImpl%] extends [%=packageData.factoryClassImpl%] implements XtextBaseFactory {
+
+	private static EFactory baseFactory;
+	
+	public EFactory getBaseFactory() {
+		return baseFactory;
+	}
+	
+	public static [%=packageData.factoryClass%] init() {
+		baseFactory = [%=packageData.factoryClassImpl%].init();
+		return new [%=packageData.xtextFactoryClassImpl%]();
+	}
+	
+	[% for (a in attributeData) {-%]
+		@Override
+		public [%=a.className%] [%=a.createInstance%]() {
+			[%=a.classNameImpl%] [%=a.classNameVariable%] = new [%=a.xtextClassNameImpl%]();
+			return [%=a.classNameVariable%];
+		}
+		
+	[%}%]
+} //[%=packageData.xtextFactoryClassImpl%]

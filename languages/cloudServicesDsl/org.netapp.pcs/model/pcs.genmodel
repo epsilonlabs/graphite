@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.netapp.pcs/src" modelPluginID="org.netapp.pcs"
+    modelName="Pcs" rootExtendsClass="graphite.shared.CustomEObjectImpl" testsDirectory=""
+    testSuiteClass="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" testsPluginID="org.netapp.pcs.tests" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>pcs.ecore</foreignModel>
+  <genPackages prefix="Pcs" disposableProviderFactory="true" ecorePackage="pcs.ecore#/">
+    <genClasses ecoreClass="pcs.ecore#//Deployment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pcs.ecore#//Deployment/environment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pcs.ecore#//Deployment/snapshotPolicy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pcs.ecore#//Deployment/pcs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pcs.ecore#//Deployment/awsconfiguration"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pcs.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//NamedElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//NamedElement/identifier"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pcs.ecore#//PCS"/>
+    <genClasses image="false" ecoreClass="pcs.ecore#//CloudStorage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//CloudStorage/backup_volumes_to_cbs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//CloudStorage/capacity_tier"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pcs.ecore#//DataService"/>
+    <genClasses ecoreClass="pcs.ecore#//Environment"/>
+    <genClasses ecoreClass="pcs.ecore#//SnapshotPolicy"/>
+    <genClasses ecoreClass="pcs.ecore#//SnapMirror">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//SnapMirror/source_cvo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//SnapMirror/destination_cvo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//SnapMirror/source_volume"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//SnapMirror/destination_volume"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//SnapMirror/policy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//SnapMirror/max_transfer_rate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//SnapMirror/bidirectional"/>
+    </genClasses>
+    <genClasses ecoreClass="pcs.ecore#//ReplicationPolicy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pcs.ecore#//ReplicationPolicy/replication_mappings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//ReplicationPolicy/replication_mapping"/>
+    </genClasses>
+    <genClasses ecoreClass="pcs.ecore#//CloudTiering">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//CloudTiering/cloudstorage"/>
+    </genClasses>
+    <genClasses ecoreClass="pcs.ecore#//CloudBackup">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//CloudBackup/cloudstorage"/>
+    </genClasses>
+    <genClasses ecoreClass="pcs.ecore#//CVO">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//CVO/awsnetworking"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pcs.ecore#//CVO/volumes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//CVO/volume"/>
+    </genClasses>
+    <genClasses ecoreClass="pcs.ecore#//CVO_HA">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//CVO_HA/awsnetworkingha"/>
+    </genClasses>
+    <genClasses ecoreClass="pcs.ecore#//AWSNetworking">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSNetworking/subnet_id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//AWSNetworking/cvo"/>
+    </genClasses>
+    <genClasses ecoreClass="pcs.ecore#//AWSNetworkingHA">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//AWSNetworkingHA/cvo_ha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSNetworkingHA/node1_subnet_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSNetworkingHA/node2_subnet_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSNetworkingHA/failover_mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSNetworkingHA/mediator_subnet_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSNetworkingHA/mediator_key_pair_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSNetworkingHA/cluster_floating_ip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSNetworkingHA/data_floating_ip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSNetworkingHA/data_floating_ip2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSNetworkingHA/svm_floating_ip"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pcs.ecore#//AWSConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSConfiguration/region"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//AWSConfiguration/vpc_id"/>
+    </genClasses>
+    <genClasses ecoreClass="pcs.ecore#//Volume">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//Volume/environment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcs.ecore#//Volume/snapshot_policy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//Volume/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//Volume/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//Volume/size_unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//Volume/svm_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//Volume/export_policy_type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//Volume/export_policy_ip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//Volume/export_policy_nfs_version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pcs.ecore#//Volume/multiplicity"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pcs.ecore#//CVOConfiguration"/>
+  </genPackages>
+</genmodel:GenModel>

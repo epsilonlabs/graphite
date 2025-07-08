@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.netapp.pcs.grammarSnapMirror
+Bundle-ManifestVersion: 2
+Bundle-Name: org.netapp.pcs.grammarSnapMirror
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.netapp.pcs.grammarSnapMirror; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.netapp.pcs,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ graphite;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.netapp.pcs.grammarSnapMirror.parser.antlr.internal,
+ org.netapp.pcs.grammarSnapMirror.formatting2,
+ org.netapp.pcs.grammarSnapMirror.services,
+ org.netapp.pcs.grammarSnapMirror.parser.antlr,
+ org.netapp.pcs.grammarSnapMirror.validation,
+ org.netapp.pcs.grammarSnapMirror.scoping,
+ org.netapp.pcs.grammarSnapMirror.serializer,
+ org.netapp.pcs.grammarSnapMirror.generator,
+ org.netapp.pcs.grammarSnapMirror
+Import-Package: org.apache.log4j

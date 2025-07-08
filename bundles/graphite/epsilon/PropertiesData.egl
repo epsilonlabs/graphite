@@ -1,0 +1,120 @@
+package [%=mainPackage.name%].impl;
+
+import java.util.Map;
+
+import org.eclipse.core.runtime.Plugin;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.ISetup;
+import org.eclipse.xtext.util.SimpleAttributeResolver;
+
+import graphite.shared.DerivedPropertyData;
+
+[% for (type in derivedAttributeTypes.asOrderedSet()) {-%]
+	import [%=type%];
+[%}%]
+[% for (propertiesDataItem in propertiesData) {-%]
+	[% if (propertiesDataItem.classImplQualifiedName != (mainPackage.name + ".impl")) {-%]
+		import [%=propertiesDataItem.classContainerQualifiedName%];
+	[%}%]
+[%}%]
+
+@SuppressWarnings("rawtypes")
+public class [%=propertiesDataClassName%] {
+
+	public static class DerivedObjectClassContainer {
+		[% for (propertiesDataItem in propertiesData) {-%]
+			public final static Class [%=propertiesDataItem.classNameStaticVariable%] = [%=propertiesDataItem.classContainer%];
+		[%}%]
+	}
+	
+	public static class DerivedObjectName {
+		[% for (propertiesDataItem in propertiesData) {-%]
+			[% for (dataItem in propertiesDataItem.data) {-%]
+				public final static String [%=dataItem.derivedAttributeNameStaticVariable%] = "[%=dataItem.derivedAttributeName%]";
+			[%}%]
+		[%}%]
+	}
+	
+	public static class DerivedObjectType {
+		[% for (propertiesDataItem in propertiesData) {-%]
+			[% for (dataItem in propertiesDataItem.data) {-%]
+				public final static Class [%=dataItem.derivedAttributeNameStaticVariable%] = [%=dataItem.derivedAttributeTypeClass%];
+			[%}%]
+		[%}%]
+	}
+	
+	public static class DerivedObjectIsMany {
+		[% for (propertiesDataItem in propertiesData) {-%]
+			[% for (dataItem in propertiesDataItem.data) {-%]
+				public final static boolean [%=dataItem.derivedAttributeNameStaticVariable%] = [%=dataItem.derivedAttributeIsMany%];
+			[%}%]
+		[%}%]
+	}
+	
+	public static class ParsedStringName {
+		[% for (propertiesDataItem in propertiesData) {-%]
+			[% for (dataItem in propertiesDataItem.data) {-%]
+				public final static String [%=dataItem.parsedAttributeStaticVariable%] = "[%=dataItem.parsedAttributeName%]";
+			[%}%]
+		[%}%]
+	}
+	
+	public static class GrammarName {
+		[% for (propertiesDataItem in propertiesData) {-%]
+			[% for (dataItem in propertiesDataItem.data) {-%]
+				public final static String [%=dataItem.parsedAttributeStaticVariable%] = "[%=dataItem.grammarName%]";
+			[%}%]
+		[%}%]
+	}
+	
+	public static class GrammarEntryRule {
+		[% for (propertiesDataItem in propertiesData) {-%]
+			[% for (dataItem in propertiesDataItem.data) {-%]
+				public final static String [%=dataItem.parsedAttributeStaticVariable%] = "[%=dataItem.grammarEntryRule%]";
+			[%}%]
+		[%}%]
+	}
+	
+	public static class GrammarSetup {
+		[% for (propertiesDataItem in propertiesData) {-%]
+			[% for (dataItem in propertiesDataItem.data) {-%]
+				public final static ISetup [%=dataItem.parsedAttributeStaticVariable%] = new [%=dataItem.standaloneSetupFullyQualified%]();
+			[%}%]
+		[%}%]
+	}
+	
+	public static class GrammarPlugin {
+		[% for (propertiesDataItem in propertiesData) {-%]
+			[% for (dataItem in propertiesDataItem.data) {-%]
+				public final static Plugin [%=dataItem.parsedAttributeStaticVariable%] = [%=dataItem.activatorFullyQualified%].getInstance();
+			[%}%]
+		[%}%]
+	}
+
+	public final static Map<Class, Map<String, DerivedPropertyData>> derivedPropertiesData = Map.ofEntries(
+		[% for (i in Sequence{0..propertiesData.size()-1}) {-%]
+		 	Map.entry(DerivedObjectClassContainer.[%=propertiesData.at(i).classNameStaticVariable%], Map.ofEntries(
+			[% for (j in Sequence{0..propertiesData.at(i).data.size()-1}) {-%]
+					Map.entry(DerivedObjectName.[%=propertiesData.at(i).data.at(j).derivedAttributeNameStaticVariable%], new DerivedPropertyData(DerivedObjectName.[%=propertiesData.at(i).data.at(j).derivedAttributeNameStaticVariable%], ParsedStringName.[%=propertiesData.at(i).data.at(j).parsedAttributeStaticVariable%], GrammarName.[%=propertiesData.at(i).data.at(j).parsedAttributeStaticVariable%], GrammarEntryRule.[%=propertiesData.at(i).data.at(j).parsedAttributeStaticVariable%], GrammarSetup.[%=propertiesData.at(i).data.at(j).parsedAttributeStaticVariable%], GrammarPlugin.[%=propertiesData.at(i).data.at(j).parsedAttributeStaticVariable%], DerivedObjectClassContainer.[%=propertiesData.at(i).classNameStaticVariable%], DerivedObjectType.[%=propertiesData.at(i).data.at(j).derivedAttributeNameStaticVariable%], DerivedObjectIsMany.[%=propertiesData.at(i).data.at(j).derivedAttributeNameStaticVariable%]))[% if (j < propertiesData.at(i).data.size()-1) {%],[%} else {%]  [% if (i < propertiesData.size()-1) {%])),[%} else {%])));[%}%] [%}%]
+					
+			[%}%]
+		[%}%]
+		
+	public final static Map<Class, Map<String, String>> derivedPairsMappings = Map.ofEntries(
+		[% for (i in Sequence{0..propertiesData.size()-1}) {-%]
+		 	Map.entry(DerivedObjectClassContainer.[%=propertiesData.at(i).classNameStaticVariable%], Map.ofEntries(
+			[% for (j in Sequence{0..propertiesData.at(i).data.size()-1}) {-%]
+					Map.entry(ParsedStringName.[%=propertiesData.at(i).data.at(j).parsedAttributeStaticVariable%], DerivedObjectName.[%=propertiesData.at(i).data.at(j).derivedAttributeNameStaticVariable%])[% if (j < propertiesData.at(i).data.size()-1) {%],[%} else {%]  [% if (i < propertiesData.size()-1) {%])),[%} else {%])));[%}%] [%}%]
+					
+			[%}%]
+		[%}%]
+	
+	public final static Map<Class, String> identifierAttributeByType = Map.ofEntries(
+		[%=out.preserve("/*", "*/", "identifierAttributeByType", true, "")%]
+	);
+	
+	public final static Map<Class, SimpleAttributeResolver<EObject, String>> resolvers = Map.of(
+		[%=out.preserve("/*", "*/", "resolvers", true, "")%]
+	);
+	
+}

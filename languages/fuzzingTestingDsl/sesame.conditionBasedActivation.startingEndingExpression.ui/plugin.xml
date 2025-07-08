@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension
+		point="org.eclipse.ui.editors">
+		<editor
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+			default="true"
+			extensions="ces"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+			name="ConditionsDsl Editor">
+		</editor>
+	</extension>
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+			<activeWhen>
+				<reference
+					definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+		<handler
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.validate">
+			<activeWhen>
+				<reference
+					definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+		<!-- copy qualified name -->
+		<handler
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
+			<activeWhen>
+				<reference definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened" />
+			</activeWhen>
+		</handler>
+		<handler
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
+			<activeWhen>
+				<and>
+					<reference definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.XtextEditor.opened" />
+					<iterate>
+						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+					</iterate>
+				</and>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension point="org.eclipse.core.expressions.definitions">
+		<definition id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened">
+			<and>
+				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+				<with variable="activeEditor">
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+						forcePluginActivation="true"/>
+				</with>
+			</and>
+		</definition>
+		<definition id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.XtextEditor.opened">
+			<and>
+				<reference definitionId="isXtextEditorActive"/>
+				<with variable="activeEditor">
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+						forcePluginActivation="true"/>
+				</with>
+			</and>
+		</definition>
+	</extension>
+	<extension
+			point="org.eclipse.ui.preferencePages">
+		<page
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+			name="ConditionsDsl">
+			<keywordReference id="sesame.conditionBasedActivation.startingEndingExpression.ui.keyword_ConditionsDsl"/>
+		</page>
+		<page
+			category="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.coloring"
+			name="Syntax Coloring">
+			<keywordReference id="sesame.conditionBasedActivation.startingEndingExpression.ui.keyword_ConditionsDsl"/>
+		</page>
+		<page
+			category="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.templates"
+			name="Templates">
+			<keywordReference id="sesame.conditionBasedActivation.startingEndingExpression.ui.keyword_ConditionsDsl"/>
+		</page>
+	</extension>
+	<extension
+			point="org.eclipse.ui.propertyPages">
+		<page
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+			name="ConditionsDsl">
+			<keywordReference id="sesame.conditionBasedActivation.startingEndingExpression.ui.keyword_ConditionsDsl"/>
+			<enabledWhen>
+				<adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+			<filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+		</page>
+	</extension>
+	<extension
+		point="org.eclipse.ui.keywords">
+		<keyword
+			id="sesame.conditionBasedActivation.startingEndingExpression.ui.keyword_ConditionsDsl"
+			label="ConditionsDsl"/>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Trigger expensive validation"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.validate"
+			name="Validate">
+		</command>
+		<!-- copy qualified name -->
+		<command
+			id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+			categoryId="org.eclipse.ui.category.edit"
+			description="Copy the qualified name for the selected element"
+			name="Copy Qualified Name">
+		</command>
+		<command
+			id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
+			categoryId="org.eclipse.ui.category.edit"
+			description="Copy the qualified name for the selected element"
+			name="Copy Qualified Name">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.edit">
+			<command
+				commandId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.validate"
+				style="push"
+				tooltip="Trigger expensive validation">
+				<visibleWhen checkEnabled="false">
+					<reference
+						definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+		<!-- copy qualified name -->
+		<menuContribution locationURI="popup:#TextEditorContext?after=copy">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+				style="push" tooltip="Copy Qualified Name">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened" />
+				</visibleWhen>
+			</command>
+		</menuContribution>
+		<menuContribution locationURI="menu:edit?after=copy">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+				style="push" tooltip="Copy Qualified Name">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened" />
+				</visibleWhen>
+			</command>
+		</menuContribution>
+		<menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
+				style="push" tooltip="Copy Qualified Name">
+				<visibleWhen checkEnabled="false">
+					<and>
+						<reference definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.XtextEditor.opened" />
+						<iterate>
+							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+						</iterate>
+					</and>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			commandId="org.eclipse.xtext.ui.editor.FindReferences">
+			<activeWhen>
+				<reference
+					definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type
+			base-type="org.eclipse.core.runtime.text"
+			file-extensions="ces"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.contenttype"
+			name="ConditionsDsl File"
+			priority="normal">
+		</content-type>
+	</extension>
+	<!-- adding resource factories -->
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="ces">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+		<resourceServiceProvider
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			uriExtension="ces">
+		</resourceServiceProvider>
+	</extension>
+	<!-- marker definitions for sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl -->
+	<extension
+			id="conditionsdsl.check.fast"
+			name="ConditionsDsl Problem"
+			point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.xtext.ui.check.fast"/>
+		<persistent value="true"/>
+	</extension>
+	<extension
+			id="conditionsdsl.check.normal"
+			name="ConditionsDsl Problem"
+			point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.xtext.ui.check.normal"/>
+		<persistent value="true"/>
+	</extension>
+	<extension
+			id="conditionsdsl.check.expensive"
+			name="ConditionsDsl Problem"
+			point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.xtext.ui.check.expensive"/>
+		<persistent value="true"/>
+	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.validator.preferencePage"
+			name="Errors/Warnings">
+			<keywordReference id="sesame.conditionBasedActivation.startingEndingExpression.ui.keyword_ConditionsDsl"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.xtext.builder.participant">
+		<participant
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			fileExtensions="ces"/>
+	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.compiler.preferencePage"
+			name="Compiler">
+			<keywordReference id="sesame.conditionBasedActivation.startingEndingExpression.ui.keyword_ConditionsDsl"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.ui.propertyPages">
+		<page
+			category="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.compiler.propertyPage"
+			name="Compiler">
+			<keywordReference id="sesame.conditionBasedActivation.startingEndingExpression.ui.keyword_ConditionsDsl"/>
+			<enabledWhen>
+				<adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+			<filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
+			<command
+				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
+				id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.OpenGeneratedCode"
+				style="push">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened" />
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
+			<activeWhen>
+				<reference definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened" />
+			</activeWhen>
+		</handler>
+	</extension>
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<!-- quickfix marker resolution generator for sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl -->
+	<extension
+			point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="sesame.conditionBasedActivation.startingEndingExpression.ui.conditionsdsl.check.fast">
+			<attribute
+				name="FIXABLE_KEY"
+				value="true">
+			</attribute>
+		</markerResolutionGenerator>
+		<markerResolutionGenerator
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="sesame.conditionBasedActivation.startingEndingExpression.ui.conditionsdsl.check.normal">
+			<attribute
+				name="FIXABLE_KEY"
+				value="true">
+			</attribute>
+		</markerResolutionGenerator>
+		<markerResolutionGenerator
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="sesame.conditionBasedActivation.startingEndingExpression.ui.conditionsdsl.check.expensive">
+			<attribute
+				name="FIXABLE_KEY"
+				value="true">
+			</attribute>
+		</markerResolutionGenerator>
+	</extension>
+	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.edit">
+			<command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+				style="push">
+				<visibleWhen checkEnabled="false">
+					<reference
+						definitionId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl"
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.refactoring"
+			name="Refactoring">
+			<keywordReference id="sesame.conditionBasedActivation.startingEndingExpression.ui.keyword_ConditionsDsl"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.compare.contentViewers">
+		<viewer id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.compare.contentViewers"
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="ces">
+		</viewer>
+		<contentTypeBinding
+			contentTypeId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.contenttype"
+			contentViewerId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.compare.contentViewers" />
+	</extension>
+	<extension point="org.eclipse.compare.contentMergeViewers">
+		<viewer id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.compare.contentMergeViewers"
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="ces" label="ConditionsDsl Compare">
+		</viewer>
+		<contentTypeBinding
+			contentTypeId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.contenttype"
+			contentMergeViewerId="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.compare.contentMergeViewers" />
+	</extension>
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider id="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl.editors.documentProviders"
+			class="sesame.conditionBasedActivation.startingEndingExpression.ui.ConditionsDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+			extensions="ces">
+		</provider>
+	</extension>
+	<extension point="org.eclipse.team.core.fileTypes">
+		<fileTypes
+			extension="ces"
+			type="text">
+		</fileTypes>
+	</extension>
+</plugin>

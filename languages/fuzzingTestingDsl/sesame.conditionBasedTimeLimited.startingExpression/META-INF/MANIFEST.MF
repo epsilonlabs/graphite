@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: sesame.conditionBasedTimeLimited.startingExpression
+Bundle-ManifestVersion: 2
+Bundle-Name: sesame.conditionBasedTimeLimited.startingExpression
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: sesame.conditionBasedTimeLimited.startingExpression; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: TestingMM,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ graphite;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: sesame.conditionBasedTimeLimited.startingExpression,
+ sesame.conditionBasedTimeLimited.startingExpression.generator,
+ sesame.conditionBasedTimeLimited.startingExpression.parser.antlr.internal,
+ sesame.conditionBasedTimeLimited.startingExpression.serializer,
+ sesame.conditionBasedTimeLimited.startingExpression.parser.antlr,
+ sesame.conditionBasedTimeLimited.startingExpression.scoping,
+ sesame.conditionBasedTimeLimited.startingExpression.validation,
+ sesame.conditionBasedTimeLimited.startingExpression.formatting2,
+ sesame.conditionBasedTimeLimited.startingExpression.services
+Import-Package: org.apache.log4j

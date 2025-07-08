@@ -1,0 +1,33 @@
+package [%=grammarPackage%];
++
++import org.eclipse.xtext.naming.IQualifiedNameProvider;
++import org.eclipse.xtext.parser.IAstFactory;
++import org.eclipse.xtext.resource.impl.ResourceSetBasedResourceDescriptions;
++import org.eclipse.xtext.scoping.IGlobalScopeProvider;
++
++import graphite.textual.AstFactory;
++import graphite.textual.CustomQualifiedNameProvider;
++import graphite.textual.CustomResourceSetBasedResourceDescriptions;
++import graphite.textual.GlobalScopeProvider;
+...
+-public class [%=grammarRuntimeModule%] extends [%=grammarAbstractRuntimeModule%] {
++public class [%=grammarRuntimeModule%] extends [%=grammarAbstractRuntimeModule%] { // (Patched)
++
++	@Override
++	public Class<? extends IAstFactory> bindIAstFactory() {
++		return AstFactory.class;
++	}
++	
++	@Override
++	public Class<? extends IGlobalScopeProvider> bindIGlobalScopeProvider() {
++		return GlobalScopeProvider.class;
++	}
++
++	@Override
++	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
++		return CustomQualifiedNameProvider.class;
++	}
++
++	public Class<? extends ResourceSetBasedResourceDescriptions> bindResourceSetBasedResourceDescriptions() {
++		return CustomResourceSetBasedResourceDescriptions.class;
++	}

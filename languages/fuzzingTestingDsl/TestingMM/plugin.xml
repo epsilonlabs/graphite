@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="graphite.textual.XtextXMIResourceFactoryImpl"
+            type="testingmm">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestingMM -->
+      <package
+            uri="TestingMM"
+            class="TestingPackage.TestingMMPackage"
+            genModel="model/TestingMM.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestingMM -->
+      <package
+            uri="FuzzingOperations"
+            class="TestingPackage.FuzzingOperations.FuzzingOperationsPackage"
+            genModel="model/TestingMM.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestingMM -->
+      <package
+            uri="Metrics"
+            class="TestingPackage.Metrics.MetricsPackage"
+            genModel="model/TestingMM.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestingMM -->
+      <package
+            uri="Results"
+            class="TestingPackage.Results.ResultsPackage"
+            genModel="model/TestingMM.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestingMM -->
+      <package
+            uri="StandardGrammar"
+            class="TestingPackage.StandardGrammar.StandardGrammarPackage"
+            genModel="model/TestingMM.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestingMM -->
+      <package
+            uri="MRSPackage"
+            class="TestingPackage.MRSPackage.MRSPackagePackage"
+            genModel="model/TestingMM.genmodel"/>
+   </extension>
+   
+    <extension
+		 point="org.eclipse.xtext.extension_resourceServiceProvider">
+      <resourceServiceProvider
+		    class="graphite.xtextxmi.ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider"
+			uriExtension="testingmm">
+	  </resourceServiceProvider>
+   </extension>
+   
+</plugin>

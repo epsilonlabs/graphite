@@ -1,0 +1,17 @@
+for (viewpoint in Odesign!Viewpoint.all) {
+	if (viewpoint.ownedJavaExtensions.exists(e | e.qualifiedClassName == "graphite.graphical.SiriusServices") == false) {
+		var graphiteJavaExtension = new Odesign!JavaExtension;
+		graphiteJavaExtension.qualifiedClassName = "graphite.graphical.SiriusServices";
+		viewpoint.ownedJavaExtensions.add(graphiteJavaExtension);
+	}
+}
+
+var propertiesExtension = ImportedOdesign!ViewExtensionDescription.all.first();
+var odesignGroup = Odesign!Group.all.first();
+if (odesignGroup.extensions.exists(e | e.name == "Graphite Properties" and e.type.name == "ViewExtensionDescription") == false) {
+	odesignGroup.extensions.add(propertiesExtension);
+}
+else {
+	var graphiteProperties = odesignGroup.extensions.select(e | e.name == "Graphite Properties" and e.type.name == "ViewExtensionDescription").at(0);
+	graphiteProperties.categories = propertiesExtension.categories;
+}

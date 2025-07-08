@@ -1,0 +1,110 @@
+pre {
+
+	var grammarName = Grammar!Grammar.all.select(g | g.definesHiddenTokens == false).at(0).name;
+	var isGrammarValid = true;
+	var rulesAndAssignments: Sequence;
+	
+	for (parserRule in Grammar!ParserRule.all) {
+		var ruleAndAssignments = new Tuple;
+		ruleAndAssignments.rule = parserRule;
+		ruleAndAssignments.assignments = new Sequence;
+		for (alternative in parserRule.alternatives) {
+			if (alternative.isTypeOf(Grammar!Assignment)) {
+				ruleAndAssignments.assignments.add(alternative);
+			}
+			else if (alternative.isTypeOf(Grammar!Group)) {
+				alternative.populateAssignments(ruleAndAssignments.assignments);
+			}
+		}
+		rulesAndAssignments.add(ruleAndAssignments);
+	}
+
+}
+
+
+context Metamodel!EAnnotation { 
+	
+	guard: (self.source == "syntax" and self.details.get("grammar") == grammarName and self.details.containsKey("feature") and self.details.containsKey("derive") and self.details.containsKey("entryRule"))
+	
+	constraint HasGrammarRule {
+		check: self.hasGrammarRule()
+		message: "Grammar '" + self.details.get("grammar") + "': must contain an entry rule named '" + self.details.get("entryRule") + "' , returning the '" + self.eContainer().name + "' type"
+	}
+
+	constraint HasDerivedProperty {
+		guard: self.hasGrammarRule()
+		check: self.hasDerivedProperty()
+		message: "Grammar '" + self.details.get("grammar") + "': the entry rule named '" + self.details.get("entryRule") + "' must set the derived property '" + self.details.get("derive") + "'"
+	}
+	
+	critique HasRedundantAssignments {
+		guard: self.hasGrammarRule()
+		check: self.hasRedundantAssignments() == false
+		message: "Grammar '" + self.details.get("grammar") + "': the entry rule named '" + self.details.get("entryRule") + "' has redundant assignments. Only the derived property '" + self.details.get("derive") + "' should be set"
+	}
+
+}
+
+
+operation Metamodel!EAnnotation hasGrammarRule() {
+	var hasRule = false;
+	for (ruleAndAssignments in rulesAndAssignments) {
+		if (self.details.get("entryRule") == ruleAndAssignments.rule.name and self.eContainer().name == ruleAndAssignments.rule.type.classifier.name) {
+			hasRule = true;
+		}
+	}
+	isGrammarValid = isGrammarValid and hasRule;
+	return hasRule;
+}
+
+operation Metamodel!EAnnotation hasDerivedProperty() {
+	var hasDerivedProperty = false;
+	for (ruleAndAssignments in rulesAndAssignments) {
+		if (self.details.get("entryRule") == ruleAndAssignments.rule.name and self.eContainer().name == ruleAndAssignments.rule.type.classifier.name) {
+			for (assignment in ruleAndAssignments.assignments) {
+				if (assignment.feature == self.details.get("derive")) {
+					hasDerivedProperty = true;
+				}
+			}
+		}
+	}
+	isGrammarValid = isGrammarValid and hasDerivedProperty;
+	return hasDerivedProperty;
+}
+
+operation Metamodel!EAnnotation hasRedundantAssignments() {
+	var hasRedundantAssignments = false;
+	for (ruleAndAssignments in rulesAndAssignments) {
+		if (self.details.get("entryRule") == ruleAndAssignments.rule.name and self.eContainer().name == ruleAndAssignments.rule.type.classifier.name) {
+			for (assignment in ruleAndAssignments.assignments) {
+				if (assignment.feature != self.details.get("derive")) {
+					hasRedundantAssignments = true;
+				}
+			}
+		}
+	}
+	return hasRedundantAssignments;
+}
+
+operation Grammar!Group populateAssignments(assignments : Sequence) {
+	for (element in self.elements) {
+		if (element.isTypeOf(Grammar!Assignment)) {
+			assignments.add(element);
+		}
+		else if (element.isTypeOf(Grammar!Group)) {
+			element.populateAssignments(assignments);
+		}
+	}
+}
+
+
+post {
+	
+	if (isGrammarValid) {
+		("The grammar '" + grammarName + "' is valid").println();
+	}
+	else {
+		("The grammar '" + grammarName + "' is invalid. Look at the Validation View to see more details.").println();
+	}
+
+}

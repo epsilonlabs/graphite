@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TestingMM:TestingSpace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="Metrics" xmlns:TestingMM="TestingMM" xmlns:_1="FuzzingOperations" xmlns:_2="StandardGrammar" xmi:id="_dUuskN0YEeyv8LH3vdSfnw" name="fullSpace">
+  <metrics xsi:type="FuzzingOperationTimesMetric" xmi:id="_hrtGEPZBEeypkdw9q4st1A" name="fuzzingOperationTimes" dir="LOWEST" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_UrYTwGVlEe2P2ZFJWtv89A" defaultVal="100000.0"/>
+    <streams xsi:type="InputStream" xmi:id="_taSNEPZBEeypkdw9q4st1A"/>
+    <res xsi:type="FileStreamResult" xmi:id="_-uTgoGBPEe27gLEnzzOoKw" filename="/tmp/fuzzopTimes"/>
+  </metrics>
+  <metrics xsi:type="StreamMetric" xmi:id="_2fP74GBMEe27gLEnzzOoKw" name="collisionOccurance" relatedVariables="_rT9X4GA7Ee27gLEnzzOoKw _u1ryMGA7Ee27gLEnzzOoKw _vyJacGA7Ee27gLEnzzOoKw" useInOptimisation="true">
+    <valueIfNotReceived xmi:id="_XG8XQGVlEe2P2ZFJWtv89A"/>
+    <streams xsi:type="InputStream" xmi:id="_NlsBEGBPEe27gLEnzzOoKw"/>
+    <res xsi:type="FileStreamResult" xmi:id="__NR7oGBPEe27gLEnzzOoKw" filename="/tmp/collisionOccurance"/>
+  </metrics>
+  <metrics xsi:type="StreamMetric" xmi:id="__GkGIHCWEe2Y6ZOMdkM14Q" name="entryToTriggerZone1" relatedVariables="_plZJIHTHEe2L1ZgpVKVibg _qyvGAHTHEe2L1ZgpVKVibg _sIYqUHTHEe2L1ZgpVKVibg">
+    <valueIfNotReceived xmi:id="__GkGIXCWEe2Y6ZOMdkM14Q"/>
+    <streams xsi:type="InputStream" xmi:id="__GkGInCWEe2Y6ZOMdkM14Q"/>
+    <res xsi:type="FileStreamResult" xmi:id="__GkGI3CWEe2Y6ZOMdkM14Q" filename="/tmp/collisionOccurance"/>
+  </metrics>
+  <metrics xsi:type="StreamMetric" xmi:id="_3FMQUHBMEe2Y6ZOMdkM14Q" name="jointExtremeR3200Link0Pos">
+    <valueIfNotReceived xmi:id="_3FMQUXBMEe2Y6ZOMdkM14Q"/>
+    <streams xsi:type="InputStream" xmi:id="_3FMQUnBMEe2Y6ZOMdkM14Q"/>
+    <res xsi:type="FileStreamResult" xmi:id="_3FMQU3BMEe2Y6ZOMdkM14Q" filename="/tmp/collisionOccurance"/>
+  </metrics>
+  <possibleFuzzingOperations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_lc6UoN0YEeyv8LH3vdSfnw" name="attackJointPosR3200ProductMove_Link1" isRelative="true">
+    <activation xsi:type="_1:FixedTimeActivation" xmi:id="_bJdhUN04EeyAL51MCA53dw" endTime="150.0"/>
+    <valueSet xsi:type="_1:DoubleRange" xmi:id="_SlE2IPLIEeyyicYP_3f6ng" propertyName="" lowerBound="-0.3" upperBound="0.3"/>
+  </possibleFuzzingOperations>
+  <possibleFuzzingOperations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_fCKeED_ZEe2sLoIc1V16Ug" name="attackJointPosR3200ProductMove_Link0" isRelative="true">
+    <activation xsi:type="_1:FixedTimeActivation" xmi:id="_fCKeET_ZEe2sLoIc1V16Ug" endTime="150.0"/>
+    <valueSet xsi:type="_1:DoubleRange" xmi:id="_fCKeEj_ZEe2sLoIc1V16Ug" propertyName="" lowerBound="-0.3" upperBound="0.4"/>
+  </possibleFuzzingOperations>
+  <campaigns xmi:id="_fwXokN0YEeyv8LH3vdSfnw" name="conditionExperiment" metrics="_hrtGEPZBEeypkdw9q4st1A _2fP74GBMEe27gLEnzzOoKw" conditionMetrics="__GkGIHCWEe2Y6ZOMdkM14Q" includedOperations="_lc6UoN0YEeyv8LH3vdSfnw _fCKeED_ZEe2sLoIc1V16Ug">
+    <activationGeneration xsi:type="TestingMM:ConditionBasedActivationGenerationMethod" xmi:id="_TyuUADeIEe63p6l1hR5JqA" conditionDepth="6"/>
+    <approach xsi:type="TestingMM:NSGAEvolutionaryAlgorithm" xmi:id="_r6TDoN1sEeyxr5U7GK-iSA" populationSize="20" iterations="1000"/>
+    <performedTests xmi:id="_kde2kDeHEe63p6l1hR5JqA" name="Test_001_05_12_2022_19_30_55">
+      <operations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_kde2kTeHEe63p6l1hR5JqA" name="attackJointPosR3200ProductMove_Link0" fromTemplate="_fCKeED_ZEe2sLoIc1V16Ug" isRelative="true">
+        <activation xsi:type="_1:ConditionBasedActivation" xmi:id="_kde2kjeHEe63p6l1hR5JqA" startingExpression="[ { ( @ collisionOccurance=2 ) AND { ( @ fuzzingOperationTimes>4 ) AND { ( @ entryToTriggerZone1&lt; @ jointExtremeR3200Link0Pos ) OR ( @ entryToTriggerZone1=43 ) } } } ]" endingExpression="[ ]">
+          <starting>
+            <c xsi:type="_2:CompositeCondition">
+              <left xsi:type="_2:BasicCondition" bincomp="EQUALS">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionInteger" value="2"/>
+              </left>
+              <right xsi:type="_2:CompositeCondition">
+                <left xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                  <left metric="_hrtGEPZBEeypkdw9q4st1A"/>
+                  <right xsi:type="_2:ConditionInteger" value="4"/>
+                </left>
+                <right xsi:type="_2:CompositeCondition" binop="OR">
+                  <left xsi:type="_2:BasicCondition">
+                    <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                    <right xsi:type="_2:ConditionVariable" metric="_3FMQUHBMEe2Y6ZOMdkM14Q"/>
+                  </left>
+                  <right xsi:type="_2:BasicCondition" bincomp="EQUALS">
+                    <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                    <right xsi:type="_2:ConditionInteger" value="43"/>
+                  </right>
+                </right>
+              </right>
+            </c>
+          </starting>
+          <ending/>
+        </activation>
+        <valueSet xsi:type="_1:DoubleRange" xmi:id="_kdfdpzeHEe63p6l1hR5JqA" propertyName="" lowerBound="0.21744174978195357" upperBound="0.23000028774770756"/>
+      </operations>
+      <metrics xmi:id="_kdfdqDeHEe63p6l1hR5JqA" metric="_hrtGEPZBEeypkdw9q4st1A">
+        <result xmi:id="_kdfdqTeHEe63p6l1hR5JqA" name="fuzzingOperationTimes" value="0.010000000000005116"/>
+      </metrics>
+      <metrics xmi:id="_kdfdqjeHEe63p6l1hR5JqA" metric="_2fP74GBMEe27gLEnzzOoKw">
+        <result xmi:id="_kdfdqzeHEe63p6l1hR5JqA" name="collisionOccurance"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_kdfdrDeHEe63p6l1hR5JqA" name="Test_002_05_12_2022_19_30_55">
+      <operations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_kdfdrTeHEe63p6l1hR5JqA" name="attackJointPosR3200ProductMove_Link1" fromTemplate="_lc6UoN0YEeyv8LH3vdSfnw" isRelative="true">
+        <activation xsi:type="_1:ConditionBasedActivation" xmi:id="_kdfdrjeHEe63p6l1hR5JqA" startingExpression="[ { ( @ collisionOccurance > @ jointExtremeR3200Link0Pos ) OR ( @ fuzzingOperationTimes &lt; 11 ) } ]" endingExpression="[ { ( @fuzzingOperationTimes > @entryToTriggerZone1 ) AND ( @collisionOccurance >   5 ) } ]">
+          <starting>
+            <c xsi:type="_2:CompositeCondition" binop="OR">
+              <left xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionVariable" metric="_3FMQUHBMEe2Y6ZOMdkM14Q"/>
+              </left>
+              <right xsi:type="_2:BasicCondition">
+                <left metric="_hrtGEPZBEeypkdw9q4st1A"/>
+                <right xsi:type="_2:ConditionInteger" value="11"/>
+              </right>
+            </c>
+          </starting>
+          <ending>
+            <c xsi:type="_2:CompositeCondition">
+              <left xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_hrtGEPZBEeypkdw9q4st1A"/>
+                <right xsi:type="_2:ConditionVariable" metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionInteger" value="5"/>
+              </right>
+            </c>
+          </ending>
+        </activation>
+        <valueSet xsi:type="_1:DoubleRange" xmi:id="_kdfdvzeHEe63p6l1hR5JqA" propertyName="" lowerBound="-0.2721802564114243" upperBound="-0.25644515487253433"/>
+      </operations>
+      <metrics xmi:id="_kdfdwDeHEe63p6l1hR5JqA" metric="_hrtGEPZBEeypkdw9q4st1A">
+        <result xmi:id="_kdfdwTeHEe63p6l1hR5JqA" name="fuzzingOperationTimes" value="102.75"/>
+      </metrics>
+      <metrics xmi:id="_kdfdwjeHEe63p6l1hR5JqA" metric="_2fP74GBMEe27gLEnzzOoKw">
+        <result xmi:id="_kdfdwzeHEe63p6l1hR5JqA" name="collisionOccurance"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_kdfdxDeHEe63p6l1hR5JqA" name="Test_003_05_12_2022_19_30_55">
+      <operations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_kdfdxTeHEe63p6l1hR5JqA" name="attackJointPosR3200ProductMove_Link0" fromTemplate="_fCKeED_ZEe2sLoIc1V16Ug" isRelative="true">
+        <activation xsi:type="_1:ConditionBasedActivation" xmi:id="_kdfdxjeHEe63p6l1hR5JqA" startingExpression="[ { ( @entryToTriggerZone1 &lt;   18 ) AND ( @entryToTriggerZone1 > @collisionOccurance ) } ]" endingExpression="[ { ( @entryToTriggerZone1   > @fuzzingOperationTimes ) OR ( @collisionOccurance &lt; @fuzzingOperationTimes ) } ]">
+          <starting>
+            <c xsi:type="_2:CompositeCondition">
+              <left xsi:type="_2:BasicCondition">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionInteger" value="18"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionVariable" metric="_2fP74GBMEe27gLEnzzOoKw"/>
+              </right>
+            </c>
+          </starting>
+          <ending>
+            <c xsi:type="_2:CompositeCondition" binop="OR">
+              <left xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionVariable" metric="_hrtGEPZBEeypkdw9q4st1A"/>
+              </left>
+              <right xsi:type="_2:BasicCondition">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionVariable" metric="_hrtGEPZBEeypkdw9q4st1A"/>
+              </right>
+            </c>
+          </ending>
+        </activation>
+        <valueSet xsi:type="_1:DoubleRange" xmi:id="_kdfd1zeHEe63p6l1hR5JqA" propertyName="" lowerBound="-0.2941864381360957" upperBound="-0.01209847599791608"/>
+      </operations>
+      <metrics xmi:id="_kdfd2DeHEe63p6l1hR5JqA" metric="_hrtGEPZBEeypkdw9q4st1A">
+        <result xmi:id="_kdfd2TeHEe63p6l1hR5JqA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_kdfd2jeHEe63p6l1hR5JqA" metric="_2fP74GBMEe27gLEnzzOoKw">
+        <result xmi:id="_kdfd2zeHEe63p6l1hR5JqA" name="collisionOccurance"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_kdfd3DeHEe63p6l1hR5JqA" name="Test_004_05_12_2022_19_30_55">
+      <operations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_kdfd3TeHEe63p6l1hR5JqA" name="attackJointPosR3200ProductMove_Link1" fromTemplate="_lc6UoN0YEeyv8LH3vdSfnw" isRelative="true">
+        <activation xsi:type="_1:ConditionBasedActivation" xmi:id="_kdfd3jeHEe63p6l1hR5JqA" startingExpression="[ { ( @entryToTriggerZone1 > @fuzzingOperationTimes ) OR ( @   entryToTriggerZone1   >   18 ) } ]" endingExpression="[ { ( @collisionOccurance > @fuzzingOperationTimes ) AND ( @entryToTriggerZone1 >  5 ) } ]">
+          <starting>
+            <c xsi:type="_2:CompositeCondition" binop="OR">
+              <left xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionVariable" metric="_hrtGEPZBEeypkdw9q4st1A"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionInteger" value="18"/>
+              </right>
+            </c>
+          </starting>
+          <ending>
+            <c xsi:type="_2:CompositeCondition">
+              <left xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionVariable" metric="_hrtGEPZBEeypkdw9q4st1A"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionInteger" value="5"/>
+              </right>
+            </c>
+          </ending>
+        </activation>
+        <valueSet xsi:type="_1:DoubleRange" xmi:id="_kdfd7zeHEe63p6l1hR5JqA" propertyName="" lowerBound="-0.25683937534298834" upperBound="0.28461616313456944"/>
+      </operations>
+      <metrics xmi:id="_kdfd8DeHEe63p6l1hR5JqA" metric="_hrtGEPZBEeypkdw9q4st1A">
+        <result xmi:id="_kdfd8TeHEe63p6l1hR5JqA" name="fuzzingOperationTimes" value="0.19000000000001194"/>
+      </metrics>
+      <metrics xmi:id="_kdfd8jeHEe63p6l1hR5JqA" metric="_2fP74GBMEe27gLEnzzOoKw">
+        <result xmi:id="_kdfd8zeHEe63p6l1hR5JqA" name="collisionOccurance"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_kdfd9DeHEe63p6l1hR5JqA" name="Test_005_05_12_2022_19_30_55">
+      <operations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_kdfd9TeHEe63p6l1hR5JqA" name="attackJointPosR3200ProductMove_Link0" fromTemplate="_fCKeED_ZEe2sLoIc1V16Ug" isRelative="true">
+        <activation xsi:type="_1:ConditionBasedActivation" xmi:id="_kdfd9jeHEe63p6l1hR5JqA" startingExpression="[ { ( @collisionOccurance &lt; @fuzzingOperationTimes ) AND ( @   entryToTriggerZone1   > @fuzzingOperationTimes ) } ]" endingExpression="[ { ( @fuzzingOperationTimes >   7 ) OR ( @collisionOccurance &lt;   14 ) } ]">
+          <starting>
+            <c xsi:type="_2:CompositeCondition">
+              <left xsi:type="_2:BasicCondition">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionVariable" metric="_hrtGEPZBEeypkdw9q4st1A"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionVariable" metric="_hrtGEPZBEeypkdw9q4st1A"/>
+              </right>
+            </c>
+          </starting>
+          <ending>
+            <c xsi:type="_2:CompositeCondition" binop="OR">
+              <left xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_hrtGEPZBEeypkdw9q4st1A"/>
+                <right xsi:type="_2:ConditionInteger" value="7"/>
+              </left>
+              <right xsi:type="_2:BasicCondition">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionInteger" value="14"/>
+              </right>
+            </c>
+          </ending>
+        </activation>
+        <valueSet xsi:type="_1:DoubleRange" xmi:id="_kdfeBzeHEe63p6l1hR5JqA" propertyName="" lowerBound="0.04491913734980585" upperBound="0.1730592863774956"/>
+      </operations>
+      <metrics xmi:id="_kdfeCDeHEe63p6l1hR5JqA" metric="_hrtGEPZBEeypkdw9q4st1A">
+        <result xmi:id="_kdfeCTeHEe63p6l1hR5JqA" name="fuzzingOperationTimes"/>
+      </metrics>
+      <metrics xmi:id="_kdfeCjeHEe63p6l1hR5JqA" metric="_2fP74GBMEe27gLEnzzOoKw">
+        <result xmi:id="_kdfeCzeHEe63p6l1hR5JqA" name="collisionOccurance"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_kdfeDDeHEe63p6l1hR5JqA" name="Test_006_05_12_2022_19_30_55">
+      <operations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_kdfeDTeHEe63p6l1hR5JqA" name="attackJointPosR3200ProductMove_Link0" fromTemplate="_fCKeED_ZEe2sLoIc1V16Ug" isRelative="true">
+        <activation xsi:type="_1:ConditionBasedActivation" xmi:id="_kdfeDjeHEe63p6l1hR5JqA" startingExpression="[ { ( @collisionOccurance &lt;   6 ) OR ( @   entryToTriggerZone1   >   4 ) } ]" endingExpression="[ { ( @fuzzingOperationTimes &lt; @entryToTriggerZone1 ) AND ( @collisionOccurance &lt;   18 ) } ]">
+          <starting>
+            <c xsi:type="_2:CompositeCondition" binop="OR">
+              <left xsi:type="_2:BasicCondition">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionInteger" value="6"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionInteger" value="4"/>
+              </right>
+            </c>
+          </starting>
+          <ending>
+            <c xsi:type="_2:CompositeCondition">
+              <left xsi:type="_2:BasicCondition">
+                <left metric="_hrtGEPZBEeypkdw9q4st1A"/>
+                <right xsi:type="_2:ConditionVariable" metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+              </left>
+              <right xsi:type="_2:BasicCondition">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionInteger" value="18"/>
+              </right>
+            </c>
+          </ending>
+        </activation>
+        <valueSet xsi:type="_1:DoubleRange" xmi:id="_kdfeHzeHEe63p6l1hR5JqA" propertyName="" lowerBound="-0.04832320228844361" upperBound="0.2119369191198459"/>
+      </operations>
+      <metrics xmi:id="_kdfeIDeHEe63p6l1hR5JqA" metric="_hrtGEPZBEeypkdw9q4st1A">
+        <result xmi:id="_kdfeITeHEe63p6l1hR5JqA" name="fuzzingOperationTimes" value="22.0"/>
+      </metrics>
+      <metrics xmi:id="_kdfeIjeHEe63p6l1hR5JqA" metric="_2fP74GBMEe27gLEnzzOoKw">
+        <result xmi:id="_kdfeIzeHEe63p6l1hR5JqA" name="collisionOccurance" value="1.0"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_kdfeJDeHEe63p6l1hR5JqA" name="Test_007_05_12_2022_19_30_55">
+      <operations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_kdfeJTeHEe63p6l1hR5JqA" name="attackJointPosR3200ProductMove_Link1" fromTemplate="_lc6UoN0YEeyv8LH3vdSfnw" isRelative="true">
+        <activation xsi:type="_1:ConditionBasedActivation" xmi:id="_kdfeJjeHEe63p6l1hR5JqA" startingExpression="[ { ( @collisionOccurance > @fuzzingOperationTimes ) OR ( @   entryToTriggerZone1   >   16 ) } ]" endingExpression="[ { ( @fuzzingOperationTimes > @collisionOccurance ) OR ( @entryToTriggerZone1 &lt; @collisionOccurance ) } ]">
+          <starting>
+            <c xsi:type="_2:CompositeCondition" binop="OR">
+              <left xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionVariable" metric="_hrtGEPZBEeypkdw9q4st1A"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionInteger" value="16"/>
+              </right>
+            </c>
+          </starting>
+          <ending>
+            <c xsi:type="_2:CompositeCondition" binop="OR">
+              <left xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_hrtGEPZBEeypkdw9q4st1A"/>
+                <right xsi:type="_2:ConditionVariable" metric="_2fP74GBMEe27gLEnzzOoKw"/>
+              </left>
+              <right xsi:type="_2:BasicCondition">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionVariable" metric="_2fP74GBMEe27gLEnzzOoKw"/>
+              </right>
+            </c>
+          </ending>
+        </activation>
+        <valueSet xsi:type="_1:DoubleRange" xmi:id="_kdfeNzeHEe63p6l1hR5JqA" propertyName="" lowerBound="0.1806835791024638" upperBound="0.2821684333062144"/>
+      </operations>
+      <metrics xmi:id="_kdfeODeHEe63p6l1hR5JqA" metric="_hrtGEPZBEeypkdw9q4st1A">
+        <result xmi:id="_kdfeOTeHEe63p6l1hR5JqA" name="fuzzingOperationTimes" value="2.5900000000000034"/>
+      </metrics>
+      <metrics xmi:id="_kdfeOjeHEe63p6l1hR5JqA" metric="_2fP74GBMEe27gLEnzzOoKw">
+        <result xmi:id="_kdfeOzeHEe63p6l1hR5JqA" name="collisionOccurance"/>
+      </metrics>
+    </performedTests>
+    <performedTests xmi:id="_kdfePDeHEe63p6l1hR5JqA" name="Test_008_05_12_2022_19_30_55">
+      <operations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_kdfePTeHEe63p6l1hR5JqA" name="attackJointPosR3200ProductMove_Link1" fromTemplate="_lc6UoN0YEeyv8LH3vdSfnw" isRelative="true">
+        <activation xsi:type="_1:ConditionBasedActivation" xmi:id="_kdfePjeHEe63p6l1hR5JqA" startingExpression="[ { ( @   entryToTriggerZone1   >   16 ) AND ( @fuzzingOperationTimes >   20 ) } ]" endingExpression="[ { ( @   entryToTriggerZone1   &lt;   11 ) AND ( @fuzzingOperationTimes >   13 ) } ]">
+          <starting>
+            <c xsi:type="_2:CompositeCondition">
+              <left xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionInteger" value="16"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_hrtGEPZBEeypkdw9q4st1A"/>
+                <right xsi:type="_2:ConditionInteger" value="20"/>
+              </right>
+            </c>
+          </starting>
+          <ending>
+            <c xsi:type="_2:CompositeCondition">
+              <left xsi:type="_2:BasicCondition">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionInteger" value="11"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_hrtGEPZBEeypkdw9q4st1A"/>
+                <right xsi:type="_2:ConditionInteger" value="13"/>
+              </right>
+            </c>
+          </ending>
+        </activation>
+        <valueSet xsi:type="_1:DoubleRange" xmi:id="_kdfeTzeHEe63p6l1hR5JqA" propertyName="" lowerBound="-0.29015262369036776" upperBound="-0.051004457534248676"/>
+      </operations>
+      <operations xsi:type="_1:RandomValueFromSetOperation" xmi:id="_kdfeUDeHEe63p6l1hR5JqA" name="attackJointPosR3200ProductMove_Link0" fromTemplate="_fCKeED_ZEe2sLoIc1V16Ug" isRelative="true">
+        <activation xsi:type="_1:ConditionBasedActivation" xmi:id="_kdfeUTeHEe63p6l1hR5JqA" startingExpression="[ { ( @   entryToTriggerZone1   &lt;   16 ) OR ( @fuzzingOperationTimes >   13 ) } ]" endingExpression="[ { ( @   entryToTriggerZone1   &lt;   19 ) OR ( @collisionOccurance >   4 ) } ]">
+          <starting>
+            <c xsi:type="_2:CompositeCondition" binop="OR">
+              <left xsi:type="_2:BasicCondition">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionInteger" value="16"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_hrtGEPZBEeypkdw9q4st1A"/>
+                <right xsi:type="_2:ConditionInteger" value="13"/>
+              </right>
+            </c>
+          </starting>
+          <ending>
+            <c xsi:type="_2:CompositeCondition" binop="OR">
+              <left xsi:type="_2:BasicCondition">
+                <left metric="__GkGIHCWEe2Y6ZOMdkM14Q"/>
+                <right xsi:type="_2:ConditionInteger" value="19"/>
+              </left>
+              <right xsi:type="_2:BasicCondition" bincomp="GREATER_THAN">
+                <left metric="_2fP74GBMEe27gLEnzzOoKw"/>
+                <right xsi:type="_2:ConditionInteger" value="4"/>
+              </right>
+            </c>
+          </ending>
+        </activation>
+        <valueSet xsi:type="_1:DoubleRange" xmi:id="_kdfeYjeHEe63p6l1hR5JqA" propertyName="" lowerBound="-0.0727534915293365" upperBound="0.2211335068004789"/>
+      </operations>
+      <metrics xmi:id="_kdfeYzeHEe63p6l1hR5JqA" metric="_hrtGEPZBEeypkdw9q4st1A">
+        <result xmi:id="_kdfeZDeHEe63p6l1hR5JqA" name="fuzzingOperationTimes" value="46.5"/>
+      </metrics>
+      <metrics xmi:id="_kdfeZTeHEe63p6l1hR5JqA" metric="_2fP74GBMEe27gLEnzzOoKw">
+        <result xmi:id="_kdfeZjeHEe63p6l1hR5JqA" name="collisionOccurance" value="1.0"/>
+      </metrics>
+    </performedTests>
+    <resultSets xmi:id="_keCRWTeHEe63p6l1hR5JqA" name="FULL-05_12_2022_20_55_06-intermediate-30" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA _kdfd9DeHEe63p6l1hR5JqA _kdfePDeHEe63p6l1hR5JqA _kdfeDDeHEe63p6l1hR5JqA _kdfdrDeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keCRWjeHEe63p6l1hR5JqA" name="NONDOM-05_12_2022_20_55_06-intermediate-30" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA _kdfd9DeHEe63p6l1hR5JqA _kdfePDeHEe63p6l1hR5JqA _kdfeDDeHEe63p6l1hR5JqA _kdfdrDeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keCRWzeHEe63p6l1hR5JqA" name="FULL-05_12_2022_21_23_17-intermediate-40" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA _kdfd9DeHEe63p6l1hR5JqA _kdfePDeHEe63p6l1hR5JqA _kdfeDDeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3QDeHEe63p6l1hR5JqA" name="NONDOM-05_12_2022_21_23_17-intermediate-40" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA _kdfd9DeHEe63p6l1hR5JqA _kdfePDeHEe63p6l1hR5JqA _kdfeDDeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3QTeHEe63p6l1hR5JqA" name="FULL-05_12_2022_21_51_33-intermediate-50" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA _kdfd9DeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3QjeHEe63p6l1hR5JqA" name="NONDOM-05_12_2022_21_51_33-intermediate-50" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3QzeHEe63p6l1hR5JqA" name="FULL-05_12_2022_22_19_50-intermediate-60" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA _kdfd9DeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3RDeHEe63p6l1hR5JqA" name="NONDOM-05_12_2022_22_19_50-intermediate-60" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3RTeHEe63p6l1hR5JqA" name="FULL-05_12_2022_22_48_11-intermediate-70" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA _kdfd9DeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3RjeHEe63p6l1hR5JqA" name="NONDOM-05_12_2022_22_48_11-intermediate-70" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3RzeHEe63p6l1hR5JqA" name="FULL-05_12_2022_23_16_35-intermediate-80" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA _kdfd9DeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3SDeHEe63p6l1hR5JqA" name="NONDOM-05_12_2022_23_16_35-intermediate-80" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3STeHEe63p6l1hR5JqA" name="FULL-05_12_2022_23_45_03-intermediate-90" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA _kdfd9DeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3SjeHEe63p6l1hR5JqA" name="NONDOM-05_12_2022_23_45_03-intermediate-90" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA"/>
+    <resultSets xmi:id="_keC3SzeHEe63p6l1hR5JqA" name="FULL-06_12_2022_00_13_38-intermediate-100" status="INTERMEDIATE" results="_kdfdxDeHEe63p6l1hR5JqA _kdfd9DeHEe63p6l1hR5JqA"/>
+    <endTrigger xsi:type="TestingMM:TimeBasedEnd" xmi:id="_fuhVwAdaEe2PWqC4wkW0SQ" timeLimitSeconds="150"/>
+  </campaigns>
+  <mrs xmi:id="_0gnr8OIcEeynuZg3j0KLEQ" launchFileLocation="/home/source/Cell/" launchDelaySeconds="20" customTerminateFileLocation="/home/jamesharbin/academic/sesame/WP6/simulationBasedTesting/uk.ac.york.sesame.testing.evolutionary/scripts/terminate_sim.sh">
+    <variables xmi:id="_ZjJHUD8uEe2Lapf8udQiDQ" name="joints/R3200ProductMove/Link0/R/position" type="_EYa9sAz0Ee2dUZBawpc2Eg"/>
+    <variables xmi:id="_rT9X4GA7Ee27gLEnzzOoKw" name="safetyzones/Z1" type="_nV6N8GA7Ee27gLEnzzOoKw"/>
+    <variables xmi:id="_u1ryMGA7Ee27gLEnzzOoKw" name="safetyzones/Z2" type="_nV6N8GA7Ee27gLEnzzOoKw"/>
+    <variables xmi:id="_vyJacGA7Ee27gLEnzzOoKw" name="safetyzones/Z3" type="_nV6N8GA7Ee27gLEnzzOoKw"/>
+    <variables xmi:id="_plZJIHTHEe2L1ZgpVKVibg" name="safetyzones/Z4" type="_nV6N8GA7Ee27gLEnzzOoKw"/>
+    <variables xmi:id="_qyvGAHTHEe2L1ZgpVKVibg" name="safetyzones/Z5" type="_nV6N8GA7Ee27gLEnzzOoKw"/>
+    <variables xmi:id="_sIYqUHTHEe2L1ZgpVKVibg" name="safetyzones/Z6" type="_nV6N8GA7Ee27gLEnzzOoKw"/>
+    <nodes xmi:id="_Ez_MwOIdEeynuZg3j0KLEQ" name="R3200" publisher="_ZjJHUD8uEe2Lapf8udQiDQ"/>
+    <nodes xmi:id="_J3TToEPbEe2tNsTzJ49AOg" name="R270073"/>
+    <nodes xmi:id="_KTdEIEPbEe2tNsTzJ49AOg" name="R320072"/>
+    <propertyType xmi:id="_EYa9sAz0Ee2dUZBawpc2Eg" name="doubleEncodedAsString" parsingMethod="STRING"/>
+    <propertyType xmi:id="_nV6N8GA7Ee27gLEnzzOoKw" name="SafetyZone"/>
+  </mrs>
+</TestingMM:TestingSpace>

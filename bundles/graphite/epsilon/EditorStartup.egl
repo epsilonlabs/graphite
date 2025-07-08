@@ -1,0 +1,20 @@
+package [%=mainPackage.name%].impl;
+
+[% for (innerPackageQualifiedName in innerPackageQualifiedNames) {-%]
+	import [%=innerPackageQualifiedName%];
+[%}%]
+
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.ui.IStartup;
+
+import graphite.shared.CustomValidator;
+
+public class [%=editorStartupClass%] implements IStartup {
+	
+	public void earlyStartup() {
+		[% for (innerPackagePrefix in innerPackagePrefixes) {-%]
+			EValidator.Registry.INSTANCE.put([%=innerPackagePrefix.firstToUpperCase()%]Package.eINSTANCE, new CustomValidator());
+		[%}%]
+	}
+	
+}

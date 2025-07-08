@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.netapp.pcs.grammarVolumes.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: org.netapp.pcs.grammarVolumes.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.netapp.pcs.grammarVolumes.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.netapp.pcs.grammarVolumes,
+ org.netapp.pcs.grammarVolumes.ide,
+ org.netapp.pcs,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.netapp.pcs.grammarVolumes.ui.quickfix,
+ org.netapp.pcs.grammarVolumes.ui.internal,
+ org.netapp.pcs.grammarVolumes.ui.contentassist
+Bundle-Activator: org.netapp.pcs.grammarVolumes.ui.internal.GrammarVolumesActivator

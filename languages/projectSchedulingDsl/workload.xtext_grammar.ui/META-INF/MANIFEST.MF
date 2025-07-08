@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: workload.xtext_grammar.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: workload.xtext_grammar.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: workload.xtext_grammar.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: workload.xtext_grammar,
+ workload.xtext_grammar.ide,
+ workload.emf,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: workload.xtext_grammar.ui.internal,
+ workload.xtext_grammar.ui.quickfix,
+ workload.xtext_grammar.ui.contentassist
+Bundle-Activator: workload.xtext_grammar.ui.internal.Xtext_grammarActivator

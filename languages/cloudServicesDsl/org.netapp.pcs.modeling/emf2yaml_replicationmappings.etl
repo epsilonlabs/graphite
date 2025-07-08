@@ -1,0 +1,57 @@
+rule Deployment_Rule
+    transform x : Emf!Deployment
+    to y : Yaml!ListNode {
+		Yaml.root.value = y;
+}
+
+rule ReplicationPolicy_Rule
+    transform x : Emf!ReplicationPolicy
+    to y : Yaml!MappingNode {
+    	for (snapMirror in x.replication_mappings) {
+    		var snapMirrorNode = new Yaml!MappingNode("snapMirrorNode");
+    		var source_cvo_Node = new Yaml!ScalarNode("source_cvo_name", snapMirror.source_cvo.name);
+    		var destination_cvo_Node = new Yaml!ScalarNode("destination_cvo_name", snapMirror.destination_cvo.name);
+    		var source_volume_Node = new Yaml!ScalarNode("source_volume_name", snapMirror.source_volume.name);
+    		var destination_volume_Node = new Yaml!ScalarNode("destination_volume_name", snapMirror.destination_volume.name);
+    		var source_cvo_Node = new Yaml!ScalarNode("source_cvo_name", snapMirror.source_cvo.name);  		
+    		var max_transfer_rate_Node = new Yaml!ScalarNode("max_transfer_rate", snapMirror.max_transfer_rate);
+    		snapMirrorNode.value.appendNode(source_cvo_Node);
+    		snapMirrorNode.value.appendNode(destination_cvo_Node);
+    		snapMirrorNode.value.appendNode(source_volume_Node);
+    		snapMirrorNode.value.appendNode(destination_volume_Node);
+    		snapMirrorNode.value.appendNode(source_cvo_Node);
+    		snapMirrorNode.value.appendNode(max_transfer_rate_Node);
+    		if (snapMirror.policy.isDefined()) {
+    			var policy_Node = new Yaml!ScalarNode("policy", snapMirror.policy.name);
+    			snapMirrorNode.value.appendNode(policy_Node);
+    		}
+    		Yaml.getRoot().value.addRow();
+			Yaml.getRoot().value.last().appendEntries(snapMirrorNode.value);
+
+	    	if (snapMirror.bidirectional) {
+	    		var source_cvo_Node = new Yaml!ScalarNode("source_cvo_name", snapMirror.destination_cvo.name);
+    			var destination_cvo_Node = new Yaml!ScalarNode("destination_cvo_name", snapMirror.source_cvo.name);
+    			var source_volume_Node = new Yaml!ScalarNode("source_volume_name", snapMirror.destination_volume.name);
+    			var destination_volume_Node = new Yaml!ScalarNode("destination_volume_name", snapMirror.source_volume.name);
+    			
+    			snapMirrorNode.value.appendNode(source_cvo_Node);
+	    		snapMirrorNode.value.appendNode(destination_cvo_Node);
+	    		snapMirrorNode.value.appendNode(source_volume_Node);
+	    		snapMirrorNode.value.appendNode(destination_volume_Node);
+	    		snapMirrorNode.value.appendNode(source_cvo_Node);
+	    		snapMirrorNode.value.appendNode(max_transfer_rate_Node);
+	    		if (snapMirror.policy.isDefined()) {
+	    			var policy_Node = new Yaml!ScalarNode("policy", snapMirror.policy.name);
+	    			snapMirrorNode.value.appendNode(policy_Node);
+	    		}
+	    		Yaml.getRoot().value.addRow();
+				Yaml.getRoot().value.last().appendEntries(snapMirrorNode.value);
+	    	}
+    	}
+}
+
+operation Native("java.util.LinkedHashMap") appendEntries(source : Native("java.util.LinkedHashMap")) {
+	for (entry in source.entrySet()) {
+		self.appendNode(entry);
+	}
+}

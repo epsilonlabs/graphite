@@ -1,0 +1,28 @@
+- name: Create NetApp Cloud Manager CVO for AWS single
+  netapp.cloudmanager.na_cloudmanager_cvo_aws:
+    is_ha: false
+    name: CVO_1
+    region: UK West
+    vpc_id: 2fd70595-653d
+    subnet_id: 04674988-a733
+    backup_volumes_to_cbs: 'yes'
+- name: Create NetApp Cloud Manager CVO for AWS HA
+  netapp.cloudmanager.na_cloudmanager_cvo_aws:
+    is_ha: true
+    name: CVO_HA_2
+    region: US North
+    vpc_id: 4d0ad751-ae69
+    node1_subnet_id: 604aae99-e8e8
+    node2_subnet_id: c0136b8f-ee50
+    failover_mode: PrivateIP
+    mediator_subnet_id: 0301dedc-d542
+    mediator_key_pair_name: mediator_key
+    cluster_floating_ip: 237.95.233.7
+    data_floating_ip: 6.118.90.145
+    data_floating_ip2: 6.118.90.146
+    svm_floating_ip: 234.119.77.179
+    capacity_tier: S3
+- name: Create NetApp Cloud Manager CVO for AWS single
+  netapp.cloudmanager.na_cloudmanager_cvo_aws:
+    is_ha: false
+    name: CVO_2

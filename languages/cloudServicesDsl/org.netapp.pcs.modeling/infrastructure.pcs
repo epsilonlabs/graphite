@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pcs:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pcs="pcs.netapp.org">
+  <environment name="NetAppBlueXP"/>
+  <snapshotPolicy name="snapshotPolicyDefault"/>
+  <pcs xsi:type="pcs:CVO" name="CVO_1" identifier="068ecc66-928e-44e4-b7a3-4485991577f0" backup_volumes_to_cbs="//@pcs.2" awsnetworking="//@awsconfiguration.0" volume="{ { name : volumeA , size : 11 , size_unit : GB , svm_name : svn1 , environment : NetAppBlueXP } , { name : volumeB , size : 22 , size_unit : MB , svm_name : svn2 , snapshot_policy : snapshotPolicyDefault , } , { name : volumeC , size : 33 , size_unit : TB , svm_name : svn3 , } }"/>
+  <pcs xsi:type="pcs:CVO_HA" name="CVO_HA_2" identifier="871f37bc-ca51-47dc-a3f2-c5ac83cdb6b4" capacity_tier="//@pcs.3" awsnetworkingha="//@awsconfiguration.1"/>
+  <pcs xsi:type="pcs:CloudBackup" name="CloudBackupMain" identifier="3bd68e89-74d0-4047-b97c-0a8e40a86baa" cloudstorage="//@pcs.0"/>
+  <pcs xsi:type="pcs:CloudTiering" name="CloudTieringDev" identifier="aefac977-2532-4876-b0b7-93f4c5443d8b" cloudstorage="//@pcs.1"/>
+  <pcs xsi:type="pcs:CVO" name="CVO_2" volume="{ { name : volume1 , size : 11 , size_unit : GB , svm_name : svn1 , environment : NetAppBlueXP } , { name : volume2 , size : 22 , size_unit : MB , svm_name : svn2 , snapshot_policy : snapshotPolicyDefault , } , { name : volume3 , size : 33 , size_unit : TB , svm_name : svn3 , } }"/>
+  <pcs xsi:type="pcs:ReplicationPolicy" name="replicationPolicy" replication_mapping="CVO_1 . volumeA &lt;-> CVO_2 . volume1 { policy : snapshotPolicyDefault , max_transfer_rate : 20 }&#xA;CVO_1 . volumeB -> CVO_2 . volume3 { max_transfer_rate : 50 }"/>
+  <awsconfiguration xsi:type="pcs:AWSNetworking" region="UK West" vpc_id="2fd70595-653d" subnet_id="04674988-a733" cvo="//@pcs.0"/>
+  <awsconfiguration xsi:type="pcs:AWSNetworkingHA" region="US North" vpc_id="4d0ad751-ae69" cvo_ha="//@pcs.1" node1_subnet_id="604aae99-e8e8" node2_subnet_id="c0136b8f-ee50" failover_mode="PrivateIP" mediator_subnet_id="0301dedc-d542" mediator_key_pair_name="mediator_key" cluster_floating_ip="237.95.233.7" data_floating_ip="6.118.90.145" data_floating_ip2="6.118.90.146" svm_floating_ip="234.119.77.179"/>
+</pcs:Deployment>

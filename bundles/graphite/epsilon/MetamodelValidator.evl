@@ -1,0 +1,73 @@
+pre {
+	var grammarsList = grammars.isDefined() ? grammars.split(";") : null;
+}
+
+context Metamodel!EAnnotation { 
+	
+	guard: self.source == "syntax"
+	
+	constraint HasRequiredAttributes {
+		check: self.hasRequiredAttributes()
+		message: "The " + self.toSummaryString() + " is invalid. Each annotation must contain all following attributes: 'feature', 'derive', 'grammar', 'entryRule'" 
+	}
+	
+	constraint HasFeatureAttribute {
+		guard: self.hasRequiredAttributes()
+		check: self.eContainer().hasFeatureAttribute(self.details.get("feature"))
+		message: "The '" + self.eContainer().name + "' class (or its superclasses) must contain a string property called '" + self.details.get("feature") + "' meant for storing the textual expression"
+	}
+	
+	constraint HasDerivedAttribute {
+		guard: self.hasRequiredAttributes()
+		check: self.eContainer().hasDerivedAttribute(self.details.get("derive"))
+		message: "The '" + self.eContainer().name + "' class (or its superclasses) must contain a derived property called '" + self.details.get("derive") + "' having a containment (non-literal) type"
+	}
+	
+	constraint HasGrammar {
+		guard: grammars.isDefined() and self.hasRequiredAttributes()
+		check: self.details.get("grammar").hasGrammar()
+		message: "The " + self.toSummaryString() + " has a grammar that does not exist or has not been selected. Modify the '" + self.details.get("grammar") + "' grammar of the annotation or select a different grammar"
+	}
+
+}
+
+operation String hasGrammar() : Boolean {
+	return grammarsList.includes(self);
+}
+
+operation Metamodel!EAnnotation hasRequiredAttributes() : Boolean {
+	return (self.details.containsKey("feature") and self.details.containsKey("derive") and self.details.containsKey("grammar") and self.details.containsKey("entryRule"));
+}
+
+operation Metamodel!EAnnotation toSummaryString() : String {
+	var result = "EAnnotation [source=" + self.source;
+	for (key in self.details.keySet().asSequence().sortBy(k|k)) {
+		var value = self.details.get(key);
+		result = result + ", " + key + "=" + value;
+	}
+	return result + "]";
+}
+
+operation Metamodel!EClass hasFeatureAttribute(name : String) : Boolean {
+	if (self.eAttributes.exists(a | a.name == name and a.eAttributeType.name == "EString")) {
+		return true;
+	}
+	for (superclass in self.eSuperTypes) {
+		if (superclass.hasFeatureAttribute(name)) {
+			return true;
+		}
+	}
+	return false;
+}
+
+operation Metamodel!EClass hasDerivedAttribute(name : String) : Boolean {
+	if (self.eAllContainments.exists(a | a.name == name)) {
+		return true;
+	}
+	for (superclass in self.eSuperTypes) {
+		if (superclass.hasDerivedAttribute(name)) {
+			return true;
+		}
+	}
+	return false;
+}

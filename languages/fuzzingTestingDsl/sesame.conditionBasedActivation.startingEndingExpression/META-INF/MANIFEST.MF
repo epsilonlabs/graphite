@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: sesame.conditionBasedActivation.startingEndingExpression
+Bundle-ManifestVersion: 2
+Bundle-Name: sesame.conditionBasedActivation.startingEndingExpression
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: sesame.conditionBasedActivation.startingEndingExpression; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: TestingMM,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.29.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ graphite;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: sesame.conditionBasedActivation.startingEndingExpression.scoping,
+ sesame.conditionBasedActivation.startingEndingExpression.serializer,
+ sesame.conditionBasedActivation.startingEndingExpression.services,
+ sesame.conditionBasedActivation.startingEndingExpression,
+ sesame.conditionBasedActivation.startingEndingExpression.generator,
+ sesame.conditionBasedActivation.startingEndingExpression.formatting2,
+ sesame.conditionBasedActivation.startingEndingExpression.validation,
+ sesame.conditionBasedActivation.startingEndingExpression.parser.antlr,
+ sesame.conditionBasedActivation.startingEndingExpression.parser.antlr.internal
+Import-Package: org.apache.log4j

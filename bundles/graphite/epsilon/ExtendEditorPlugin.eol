@@ -1,0 +1,21 @@
+var plugin = t_plugin.all.first();
+
+var startupTag = new t_startup;
+startupTag.a_class = startupClass;
+
+var hasStartupExtension = false;
+
+for (child in plugin.children) {
+	if (child.name == "extension" and child.a_point == "org.eclipse.ui.startup") {
+		hasStartupExtension = true;
+		delete child.children;
+		child.appendChild(startupTag);
+	}
+}
+
+if (hasStartupExtension == false) {
+	var extensionTag = new t_extension;
+	extensionTag.a_point = "org.eclipse.ui.startup";
+	extensionTag.appendChild(startupTag);
+	plugin.appendChild(extensionTag);
+}

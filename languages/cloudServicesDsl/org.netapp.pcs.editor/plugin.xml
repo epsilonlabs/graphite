@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pcs -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="pcs.presentation.PcsModelWizardID"
+            name="%_UI_PcsModelWizard_label"
+            class="pcs.presentation.PcsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PcsModelFile.gif">
+         <description>%_UI_PcsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pcs -->
+      <editor
+            id="pcs.presentation.PcsEditorID"
+            name="%_UI_PcsEditor_label"
+            icon="icons/full/obj16/PcsModelFile.gif"
+            extensions="pcs"
+            class="pcs.presentation.PcsEditor"
+            contributorClass="pcs.presentation.PcsActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="pcs.impl.PcsEditorStartup">
+      </startup>
+   </extension>
+
+</plugin>

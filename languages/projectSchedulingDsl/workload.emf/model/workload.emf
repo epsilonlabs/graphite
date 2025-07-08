@@ -1,0 +1,30 @@
+@namespace(uri="ProjectWorkloadsDSL", prefix="workload")
+package workload;
+
+class Project {
+	val Task[*] tasks;
+	val Person[*] people;
+}
+
+@syntax(feature="effortsExpression", derive="efforts", grammar="workload.xtext_grammar.Efforts", entryRule="Main")
+class Task {
+	attr String name;
+	ref Person leader;
+	ref Task[*] dependencies;
+	val Effort[*] efforts;
+	attr String effortsExpression;
+}
+
+class Person {
+	attr String name;
+}
+
+class Effort {
+	ref Person person;
+	attr int months;
+}
+
+class CostCentre {
+	attr String name;
+	ref Effort[*] efforts;
+}

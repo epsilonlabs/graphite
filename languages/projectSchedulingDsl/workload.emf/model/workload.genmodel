@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/workload.emf/src" modelPluginID="workload.emf"
+    modelName="Workload" rootExtendsClass="graphite.shared.CustomEObjectImpl" testsDirectory=""
+    testSuiteClass="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" testsPluginID="workload.emf.tests" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>workload.ecore</foreignModel>
+  <genPackages prefix="Workload" disposableProviderFactory="true" ecorePackage="workload.ecore#/">
+    <genClasses ecoreClass="workload.ecore#//Project">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workload.ecore#//Project/tasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workload.ecore#//Project/people"/>
+    </genClasses>
+    <genClasses ecoreClass="workload.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workload.ecore#//Task/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workload.ecore#//Task/leader"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workload.ecore#//Task/dependencies"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workload.ecore#//Task/efforts"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute workload.ecore#//Task/effortsExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="workload.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workload.ecore#//Person/name"/>
+    </genClasses>
+    <genClasses ecoreClass="workload.ecore#//Effort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workload.ecore#//Effort/person"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workload.ecore#//Effort/months"/>
+    </genClasses>
+    <genClasses ecoreClass="workload.ecore#//CostCentre">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workload.ecore#//CostCentre/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workload.ecore#//CostCentre/efforts"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,53 @@
+var grammarGenerator = new Native("graphite.textual.XtextGrammarGenerator");
+var eClassList = Metamodel.getAllOfType("EClass");
+var package = Metamodel.getAllOfType("EPackage").first();
+var annotationsMap = new Map;
+
+for (c in eClassList) {
+	var className = c.name;
+	for (eAnnotation in c.eAnnotations.select(a|a.source = "syntax")) {
+		if (eAnnotation.details.containsKey("grammar") and eAnnotation.details.containsKey("feature") and eAnnotation.details.containsKey("derive") and eAnnotation.details.containsKey("entryRule")) {
+			var grammarAnnotation = new Tuple;
+			grammarAnnotation.grammar = eAnnotation.details.get("grammar");
+			grammarAnnotation.feature = eAnnotation.details.get("feature");
+			grammarAnnotation.derive = eAnnotation.details.get("derive");
+			grammarAnnotation.entryRule = eAnnotation.details.get("entryRule");
+			grammarAnnotation.type = c;
+			grammarAnnotation.derivedAttribute = getDerivedFeature(grammarAnnotation.derive, c);
+			grammarAnnotation.derivedAttributeName = grammarAnnotation.derivedAttribute.name;
+			if (grammarAnnotation.derivedAttribute.isDefined()) {
+				grammarAnnotation.derivedAttributeType = grammarAnnotation.derivedAttribute.getEType();
+				grammarAnnotation.getterDerivedAttributeType = "get" + grammarAnnotation.derivedAttributeType.name.firstToUpperCase();
+			}
+			if (annotationsMap.containsKey(grammarAnnotation.grammar) == false) {
+				annotationsMap.put(grammarAnnotation.grammar, new Map);
+			}
+			var annotationsByGrammar = annotationsMap.get(grammarAnnotation.grammar);
+			if (annotationsByGrammar.containsKey(grammarAnnotation.type) == false) {
+				annotationsByGrammar.put(grammarAnnotation.type, new Sequence);
+			}
+			annotationsByGrammar.get(grammarAnnotation.type).add(grammarAnnotation);
+			
+		}
+	}
+}
+
+for (grammarName in annotationsMap.keySet()) {
+	var generated = grammarGenerator.generateGrammar(grammarName, package, annotationsMap.get(grammarName), generatedGrammarsDirectory, metamodelUri);
+	if (generated) {
+		("Grammar generation success: " + "generated_" + grammarName + ".xtext").println();
+	}
+	else {
+		("Grammar generation failed: " + "generated_" + grammarName + ".xtext").println();
+	}
+}
+
+
+operation getDerivedFeature(derivedAttribute: String, eClass: EClass) : EStructuralFeature {
+	for (eStructuralFeature in eClass.eStructuralFeatures) {
+		if (eStructuralFeature.name == derivedAttribute) {
+			return eStructuralFeature;
+		}
+	}
+	return getDerivedFeature(derivedAttribute, eClass.eSuperTypes.first);
+}

@@ -1,0 +1,348 @@
+@namespace(uri="structurizr", prefix="structurizr")
+package structurizr;
+
+class Workspace {
+	attr String name;
+	attr String description;
+	val Model model;
+	val Views views;
+	val Property[*] properties;
+	val Configuration configuration;
+}
+
+class Configuration {
+	attr Scope scope;
+	attr Visibility visibility;
+	val User[*] users;
+	val Property[*] properties;
+}
+
+class Property {
+	attr String name;
+	attr String value;
+}
+
+class User {
+	attr String username;
+	attr UserPermission permission;
+}
+
+abstract class IdentifiableElement {
+	id attr String identifier;
+	attr String name;
+	val Relationship[*] relationships;
+}
+
+abstract class C4Element extends IdentifiableElement {
+	attr String description;
+	attr String url;
+	val Tag[*] tags;
+	val Property[*] properties;
+	val Perspective[*] perspectives;
+}
+
+class Relationship {
+	ref IdentifiableElement source;
+	ref IdentifiableElement target;
+	attr String description;
+	attr String url;
+	val Technology technology;
+	val Tag[*] tags;
+	val Property[*] properties;
+	val Perspective[*] perspectives;
+}
+
+class Tag {
+	attr String name;
+}
+
+class Technology {
+	attr String name;
+}
+
+class Perspective {
+	attr String name;
+	attr String description;
+	attr String value;
+}
+
+class Model {
+	val SoftwareSystem softwareSystem;
+	val Person[*] persons;
+	val Element[*] elements;
+	val DeploymentEnvironment[*] deploymentEnvironments;
+	val Relationship[*] relationships;
+}
+
+class Element extends C4Element {
+	attr String metadata;
+}
+
+class Person extends C4Element {
+}
+
+class SoftwareSystem extends C4Element {
+	val Container[*] containers;
+}
+
+class Container extends C4Element {
+	val Technology technology;
+	val Component[*] components;
+}
+
+class Component extends C4Element {
+	val Technology technology;
+}
+
+class DeploymentEnvironment extends IdentifiableElement {
+	val DeploymentGroup[*] deploymentGroups;
+	val DeploymentNode[*] deploymentNodes;
+}
+
+class DeploymentGroup {
+	attr String name;
+}
+
+class DeploymentNode extends C4Element {
+	val Technology technology;
+	val DeploymentNode[*] deploymentNodes;
+	val InfrastructureNode[*] infrastructureNodes;
+	val SoftwareSystemInstance[*] softwareSystemInstances;
+	val ContainerInstance[*] containerInstances;
+}
+
+class InfrastructureNode extends C4Element {
+	val Technology technology;
+}
+
+class SoftwareSystemInstance extends C4Element {
+	ref SoftwareSystem softwareSystem;
+	ref DeploymentGroup[*] deploymentGroups;
+	val HealthCheck healthCheck;
+}
+
+class ContainerInstance extends C4Element {
+	ref Container container;
+	ref DeploymentGroup[*] deploymentGroups;
+	val HealthCheck healthCheck;
+}
+
+class HealthCheck {
+	attr String name;
+	attr String url;
+	attr int interval;
+	attr String timeouts;
+}
+
+
+class Views {
+	attr String name;
+	val ViewElement[*] viewElements;
+	val Style[*] styles;
+}
+
+abstract class ViewElement {
+	attr String key;
+	attr String title;
+	attr String description;
+	val AutoLayout autoLayout;
+	val Property[*] properties;
+	val ConditionElement include;
+	val ConditionElement exclude;
+	attr String includeExpression;
+	attr String excludeExpression;
+}
+
+@syntax(feature="includeExpression", derive="include", grammar="structurizr.expressions.StructurizrExpressions", entryRule="SystemLandscapeView_Include")
+@syntax(feature="excludeExpression", derive="exclude", grammar="structurizr.expressions.StructurizrExpressions", entryRule="SystemLandscapeView_Exclude")
+class SystemLandscapeView extends ViewElement { }
+
+@syntax(feature="includeExpression", derive="include", grammar="structurizr.expressions.StructurizrExpressions", entryRule="SystemContextView_Include")
+@syntax(feature="excludeExpression", derive="exclude", grammar="structurizr.expressions.StructurizrExpressions", entryRule="SystemContextView_Exclude")
+class SystemContextView extends ViewElement {
+	ref SoftwareSystem softwareSystem;
+}
+
+@syntax(feature="includeExpression", derive="include", grammar="structurizr.expressions.StructurizrExpressions", entryRule="ContainerView_Include")
+@syntax(feature="excludeExpression", derive="exclude", grammar="structurizr.expressions.StructurizrExpressions", entryRule="ContainerView_Exclude")
+class ContainerView extends ViewElement {
+	ref SoftwareSystem softwareSystem;
+}
+
+@syntax(feature="includeExpression", derive="include", grammar="structurizr.expressions.StructurizrExpressions", entryRule="ComponentView_Include")
+@syntax(feature="excludeExpression", derive="exclude", grammar="structurizr.expressions.StructurizrExpressions", entryRule="ComponentView_Exclude")
+class ComponentView extends ViewElement {
+	ref Container container;
+}
+
+class AutoLayout {
+	attr AutoLayoutOption autoLayoutOption;
+	attr int rankSeparation;
+	attr int nodeSeparation;
+}
+
+abstract class Style { }
+
+class ElementStyle extends Style {
+	ref Tag tag;
+	attr String icon;
+	attr int width;
+	attr int height;
+	attr int strokeWidth;
+	attr int fontSize;
+	attr int opacity;
+	attr boolean metadata;
+	attr boolean description;
+	attr String background;
+	attr String color;
+	attr String stroke;
+	attr Border border;
+	attr Shape shape;
+	val Property[*] properties;
+}
+
+class RelationshipStyle extends Style {
+	ref Tag tag;
+	attr int thickness;
+	attr int fontSize;
+	attr int width;
+	attr int opacity;
+	attr int position;
+	attr String color;
+	attr Border style;
+	attr Routing routing;
+	val Property[*] properties;
+}
+
+enum AutoLayoutOption {
+	LeftToRight = 1;
+	RightToLeft = 2;
+	BottomToTop = 3;
+	TopToBottom = 4;
+}
+
+enum Routing {
+	Direct = 1;
+	Orthogonal = 2;
+	Curved = 3;
+}
+
+enum Border {
+	Solid = 1;
+	Dashed = 2;
+	Dotted = 3;
+}
+
+enum Scope {
+	Landscape = 1;
+	SoftwareSystem = 2;
+	None = 3;
+}
+
+enum Visibility {
+	Private = 1;
+	Public = 2;
+}
+
+enum UserPermission {
+	Read = 1;
+	Write = 2;
+}
+
+enum Shape {
+	Box = 1;
+	RoundedBox = 2;
+	Circle = 3;
+	Ellipse = 4;
+	Hexagon = 5;
+	Cylinder = 6;
+	Pipe = 7;
+	Person = 8;
+	Robot = 9;
+	Folder = 10;
+	WebBrowser = 11;
+	MobileDevicePortrait = 12;
+	MobileDeviceLandscape = 13;
+	Component = 14;
+}
+
+abstract class ConditionElement { }
+
+class NoFilterCondition extends ConditionElement { }
+
+abstract class FilterCondition extends ConditionElement { }
+
+abstract class ElementFilterCondition extends FilterCondition { }
+
+abstract class RelationshipFilterCondition extends FilterCondition { }
+
+class CompositeCondition extends FilterCondition {
+	val FilterCondition left;
+	attr ConditionLogicalOperation logicalOperation;
+	val FilterCondition right;
+}
+
+class ElementTagCondition extends ElementFilterCondition {
+	attr ConditionComparisonOperation comparisonOperation;
+	ref Tag[*] tags;
+}
+
+class ElementTechnologyCondition extends ElementFilterCondition {
+	attr ConditionComparisonOperation comparisonOperation;
+	ref Technology technology;
+}
+
+class ElementTypeCondition extends ElementFilterCondition {
+	attr ConditionComparisonOperation comparisonOperation;
+	attr FilterType type;
+}
+
+class ElementPropertyCondition extends ElementFilterCondition {
+	attr ConditionComparisonOperation comparisonOperation;
+	ref Property property;
+	attr String value;
+}
+
+class ElementParentCondition extends ElementFilterCondition {
+	attr ConditionComparisonOperation comparisonOperation;
+	ref IdentifiableElement parent;
+}
+
+class RelationshipTagCondition extends RelationshipFilterCondition {
+	attr ConditionComparisonOperation comparisonOperation;
+	ref Tag[*] tags;
+}
+
+class RelationshipPropertyCondition extends RelationshipFilterCondition {
+	attr ConditionComparisonOperation comparisonOperation;
+	ref Property property;
+	attr String value;
+}
+
+class RelationshipSourceCondition extends RelationshipFilterCondition {
+	attr ConditionComparisonOperation comparisonOperation;
+	ref IdentifiableElement source;
+}
+
+class RelationshipDestinationCondition extends RelationshipFilterCondition {
+	attr ConditionComparisonOperation comparisonOperation;
+	ref IdentifiableElement destination;
+}
+
+enum ConditionComparisonOperation {
+	EQUALS = 1;
+	NOT_EQUALS = 2;	
+}
+
+enum FilterType {
+	Person = 1;
+	SoftwareSystem = 2;
+	Container = 3;
+	Component = 4;
+	DeploymentNode = 5;
+}
+
+enum ConditionLogicalOperation {
+	AND = 1;
+	OR = 2;	
+}

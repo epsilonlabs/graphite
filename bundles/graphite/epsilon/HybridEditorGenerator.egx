@@ -1,0 +1,297 @@
+pre {	
+	var propertiesDataClassName = "PropertiesData";	
+	var modelDirectory = Genmodel!GenModel.all.first.modelDirectory.split("/");
+	var projectName = modelDirectory.at(1);
+	var directoryEmfCodeGeneration = modelDirectory.at(modelDirectory.size()-1); //either "src" or "src-gen"
+	var directoryGraphiteCodeGeneration = (directoryEmfCodeGeneration == "src") ? "src-gen" : "src";
+		
+	var propertiesData : Sequence;
+	var innerPackageQualifiedNames : Sequence;
+	var innerPackagePrefixes : Sequence;
+	var grammarData : Map;
+	var derivedAttributeTypes : OrderedSet;
+	var factoryMappings : Map;
+	var packageData : Map;
+	var validMetamodel = true;
+	var mainPackage = Metamodel!EPackage.all.first();
+	var mainPackagePrefix = mainPackage.nsPrefix.isDefined() ? mainPackage.nsPrefix : mainPackage.name;
+	var innerPackages = Metamodel!EPackage.all;
+		
+	for (innerPackage in innerPackages) {
+		var innerPackagePrefix = innerPackage.nsPrefix.isDefined() ? innerPackage.nsPrefix : innerPackage.name;
+		var qualifiedName = innerPackage.getQualifiedName() + "." + innerPackagePrefix.firstToUpperCase() + "Package"; 
+		innerPackagePrefixes.add(innerPackagePrefix);
+		innerPackageQualifiedNames.add(qualifiedName);
+	}
+	
+}
+
+
+rule XtextEntityImpl 
+	transform c : Metamodel!EClass {
+		
+	guard: c.eAnnotations.exists(a|a.source = "syntax")
+	
+	pre {
+		
+		var className = c.name;		
+		var classImplQualifiedName = c.eContainer().getQualifiedName() + ".impl";					
+		var package = c.eContainer().nsURI;
+		var attributePairs : Sequence;
+		var validMetamodel = true;
+		
+		var packageDataItem = new Tuple;
+		packageDataItem.package = c.eContainer();	
+		packageDataItem.classQualifiedName = c.eContainer().getQualifiedName();		
+		packageDataItem.factoryClass = packageDataItem.package.name.firstToUpperCase() + "Factory";		
+		packageDataItem.factoryClassImpl = packageDataItem.factoryClass + "Impl";
+		packageDataItem.xtextFactoryClassImpl = "Xtext" + packageDataItem.factoryClassImpl;
+		packageDataItem.xtextPackageFactoryImpl = "Xtext" + packageDataItem.factoryClassImpl;
+		if (packageData.containsKey(package) == false) {
+			packageData.put(package, packageDataItem);
+		}
+		
+		for (eAnnotation in c.eAnnotations) {
+			if (eAnnotation.source == "syntax" and eAnnotation.details.containsKey("feature") and eAnnotation.details.containsKey("derive") and eAnnotation.details.containsKey("grammar") and eAnnotation.details.containsKey("entryRule")) {
+								
+				var feature = c.eAllStructuralFeatures.selectOne(a|a.name = eAnnotation.details.get("feature"));
+				var derivedAttribute = c.eAllStructuralFeatures.selectOne(a|a.name = eAnnotation.details.get("derive"));
+				
+				if (feature == null or derivedAttribute == null) {
+					validMetamodel = false;
+				}
+				else {
+					var attributePair = new Tuple;
+					attributePair.parsedAttributeName = feature.name;
+					attributePair.parsedAttributeStaticVariable = className.toUpperCase() + "__" + attributePair.parsedAttributeName.getStringWithUnderscores().toUpperCase();
+					attributePair.derivedAttributeName = derivedAttribute.name;
+					attributePair.derivedAttributeNameWithUnderscores = derivedAttribute.name.getStringWithUnderscores();
+					attributePair.derivedAttributeNameStaticVariable = className.toUpperCase() + "__" + attributePair.derivedAttributeNameWithUnderscores.toUpperCase();
+					attributePair.derivedAttributeIsMany = derivedAttribute.many;
+					attributePair.derivedAttributeType = derivedAttribute.getEType();
+					attributePair.derivedAttributeTypeClass = attributePair.derivedAttributeType.name + ".class";
+					attributePair.derivedAttributeQualifiedType = attributePair.derivedAttributeType.getQualifiedName();
+					attributePair.getDerivedAttribute = "get" + attributePair.derivedAttributeName.firstToUpperCase();
+					attributePair.setParsedString = "set" + attributePair.parsedAttributeName.firstToUpperCase();
+					attributePair.grammarName = eAnnotation.details.get("grammar");
+					attributePair.grammarShortName = attributePair.grammarName.split('[.]').last();
+					attributePair.grammarEntryRule = eAnnotation.details.get("entryRule");
+					attributePair.grammarPackage = attributePair.grammarName.substring(0, attributePair.grammarName.length()-attributePair.grammarShortName.length()-1);
+					attributePair.grammarLastName = attributePair.grammarPackage.split('[.]').last().firstToUpperCase();
+					attributePair.standaloneSetup = attributePair.grammarShortName + "StandaloneSetup";
+					attributePair.standaloneSetupFullyQualified = attributePair.grammarPackage + "." + attributePair.standaloneSetup;
+					attributePair.activator = attributePair.grammarLastName + "Activator";
+					attributePair.activatorFullyQualified = attributePair.grammarPackage + ".ui.internal." + attributePair.activator;				
+					derivedAttributeTypes.add(attributePair.derivedAttributeQualifiedType);
+					attributePairs.add(attributePair);					
+					
+					var grammarDataItem = new Tuple;
+					grammarDataItem.package = attributePair.grammarName.substring(0, attributePair.grammarName.length()-attributePair.grammarShortName.length()-1);
+					grammarDataItem.packageSequence = grammarDataItem.package.replace('\\.','/');
+					grammarDataItem.runtimeModule = attributePair.grammarShortName + "RuntimeModule";
+					grammarDataItem.abstractRuntimeModule = "Abstract" + attributePair.grammarShortName + "RuntimeModule";
+					grammarDataItem.standaloneSetupFullyQualified = attributePair.standaloneSetupFullyQualified;
+					grammarDataItem.activatorFullyQualified = attributePair.activatorFullyQualified;
+					grammarData.put(attributePair.grammarName, grammarDataItem);
+				}
+			}
+			else {
+				validMetamodel = false;
+			}
+		}
+				
+		var propertiesDataItem = new Tuple;
+		propertiesDataItem.className = className;
+		propertiesDataItem.classNameStaticVariable = propertiesDataItem.className.toUpperCase();
+		propertiesDataItem.classContainerName = "Xtext" + propertiesDataItem.className + "Impl";
+		propertiesDataItem.classImplQualifiedName = classImplQualifiedName;
+		propertiesDataItem.classContainerQualifiedName = classImplQualifiedName + "." + propertiesDataItem.classContainerName;
+		propertiesDataItem.classContainer = propertiesDataItem.classContainerName + ".class";
+		propertiesDataItem.data = attributePairs;
+		propertiesData.add(propertiesDataItem);
+		
+		if (factoryMappings.containsKey(package) == false) {
+			factoryMappings.put(package, new Sequence());
+		}
+		factoryMappings.get(package).add(propertiesDataItem);
+		
+	}
+	
+	parameters : Map {
+		"mainPackage" = mainPackage,
+		"classImplQualifiedName" = classImplQualifiedName,
+		"classNameImpl" = className + "Impl",
+		"classContainerName" = propertiesDataItem.classContainerName,
+		"attributePairs" = attributePairs
+	}
+
+    template : "XtextEntityImpl.egl"
+    target : emfProjectPath + directoryGraphiteCodeGeneration + "/" + classImplQualifiedName.replace('\\.',"/") + "/Xtext" + className + "Impl.java"
+    append: false
+	
+}
+
+
+rule PropertiesData {
+
+	guard: validMetamodel and propertiesData.size() > 0
+	
+	parameters : Map {
+		"mainPackage" = mainPackage,
+		"propertiesData" = propertiesData,
+		"propertiesDataClassName" = propertiesDataClassName,
+		"derivedAttributeTypes" = derivedAttributeTypes
+	}
+	
+	template : "PropertiesData.egl"
+	target : emfProjectPath + directoryGraphiteCodeGeneration + "/" + mainPackage.name + "/impl/" + propertiesDataClassName + ".java"
+	append: false
+	
+}
+
+
+rule XtextPackageFactoryImpl 
+	transform factoryMapping in: factoryMappings.keySet() {
+
+	guard: propertiesData.size() > 0
+	
+	pre {
+		var factoryAttributeData : Sequence;
+		for (propertiesDataItem in factoryMappings.get(factoryMapping)) {
+			var attributeTuple = new Tuple;
+			attributeTuple.className = propertiesDataItem.className;
+			attributeTuple.classNameImpl = attributeTuple.className + "Impl";
+			attributeTuple.xtextClassNameImpl = "Xtext" + attributeTuple.classNameImpl;
+			attributeTuple.classNameVariable = attributeTuple.className.toLowerCase();
+			attributeTuple.createInstance = "create" + attributeTuple.className;
+			factoryAttributeData.add(attributeTuple);
+		}
+	}
+		
+	parameters : Map {
+		"packageData" = packageData.get(factoryMapping),
+		"attributeData" = factoryAttributeData
+	}
+
+	template : "XtextPackageFactoryImpl.egl"
+	target : emfProjectPath + directoryGraphiteCodeGeneration + "/" + packageData.get(factoryMapping).classQualifiedName.replace('\\.',"/") + "/impl/" + packageData.get(factoryMapping).xtextFactoryClassImpl + ".java"	
+	append: false
+	
+}
+
+
+rule EditorStartup {
+
+	guard: propertiesData.size() > 0
+	
+	pre {
+		var editorStartupClass = mainPackagePrefix.firstToUpperCase() + "EditorStartup";
+	}
+	
+	parameters : Map {
+		"mainPackage" = mainPackage,
+		"innerPackages" = innerPackages,
+		"innerPackagePrefixes" = innerPackagePrefixes,
+		"innerPackageQualifiedNames" = innerPackageQualifiedNames,
+		"editorStartupClass" = editorStartupClass
+	}
+	
+	template : "EditorStartup.egl"
+	target : emfProjectPath + directoryGraphiteCodeGeneration + "/" + mainPackage.name + "/impl/" + editorStartupClass + ".java"
+	append: false
+	
+}
+
+
+@patch
+rule PackageFactory 
+	transform factoryMapping in: factoryMappings.keySet() {
+
+	guard: propertiesData.size() > 0
+	
+	parameters : Map {
+		"packageData" = packageData.get(factoryMapping),
+		"packageFactoryImpl" = packageData.get(factoryMapping).factoryClass + "Impl",
+		"xtextPackageFactoryImpl" = "Xtext" + packageData.get(factoryMapping).factoryClass + "Impl"
+	}	
+	
+	template : "PackageFactory.egl"
+	target : emfProjectPath + directoryEmfCodeGeneration + "/" + packageData.get(factoryMapping).classQualifiedName.replace('\\.',"/") + "/" + packageData.get(factoryMapping).factoryClass + ".java"
+	append: false
+	
+}
+
+
+@patch
+rule PackageImpl {
+	guard: propertiesData.size() > 0
+	
+	pre {
+		var packageClass = mainPackagePrefix.firstToUpperCase() + "Package";
+		var packageImplClass = packageClass + "Impl";
+	}
+	
+	parameters : Map {
+		"packageClass" = packageClass,
+		"packageImplClass" = packageImplClass
+	}
+	
+	template : "PackageImpl.egl"
+	target : emfProjectPath + directoryEmfCodeGeneration + "/" + mainPackage.name + "/impl/" + packageImplClass + ".java"
+	append: false
+	
+}
+
+
+@patch
+rule GrammarRuntimeModule 
+	transform grammarDataItem: Tuple in: grammarData.values() {
+
+	pre {
+		var grammarProjectPath = emfProjectPath.replace("/" + projectName + "/", "/" + grammarDataItem.package + "/");	
+	}
+
+	parameters : Map {
+		"grammarPackage" = grammarDataItem.package,
+		"grammarRuntimeModule" = grammarDataItem.runtimeModule,
+		"grammarAbstractRuntimeModule" = grammarDataItem.abstractRuntimeModule
+	}
+	
+	template : "GrammarRuntimeModule.egl"
+	target : grammarProjectPath + "src/" + grammarDataItem.packageSequence + "/" + grammarDataItem.runtimeModule + ".java" 
+	append: false
+	
+}
+
+
+operation getDerivedFeature(derivedAttribute: String, structuralFeatures: OrderedSet<EStructuralFeature>) : EStructuralFeature {
+	for (eStructuralFeature in structuralFeatures) {
+		if (eStructuralFeature.name == derivedAttribute) {
+			return eStructuralFeature;
+		}
+	}
+}
+
+
+operation String getStringWithUnderscores() : String {
+	var Character = Native("java.lang.Character");
+	var stringValue = new Native("java.lang.String")(self);
+	var stringWithUnderscores = "";
+	for (i in Sequence {0..stringValue.length()-1}) {
+		if (i>0 and Character.isUpperCase(stringValue.charAt(i)) and Character.isLowerCase(stringValue.charAt(i-1))) {
+			stringWithUnderscores += "_";
+		}
+		stringWithUnderscores += stringValue.characterAt(i);
+	}
+	return stringWithUnderscores;
+}
+
+
+operation Metamodel!ENamedElement getQualifiedName() : String {
+	var qualifiedName = self.name;
+	if (self.eContainer().isDefined()) {
+		var containerQualifiedName = self.eContainer().getQualifiedName();
+		qualifiedName = containerQualifiedName + "." + qualifiedName;
+	}
+	return qualifiedName;
+}

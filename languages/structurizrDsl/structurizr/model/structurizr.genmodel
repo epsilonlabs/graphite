@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/structurizr/src" modelPluginID="structurizr" modelName="Structurizr"
+    rootExtendsClass="graphite.shared.CustomEObjectImpl" testsDirectory="" testSuiteClass=""
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>structurizr.ecore</foreignModel>
+  <genPackages prefix="Structurizr" disposableProviderFactory="true" ecorePackage="structurizr.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structurizr.ecore#//AutoLayoutOption">
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//AutoLayoutOption/LeftToRight"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//AutoLayoutOption/RightToLeft"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//AutoLayoutOption/BottomToTop"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//AutoLayoutOption/TopToBottom"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structurizr.ecore#//Routing">
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Routing/Direct"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Routing/Orthogonal"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Routing/Curved"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structurizr.ecore#//Border">
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Border/Solid"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Border/Dashed"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Border/Dotted"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structurizr.ecore#//Scope">
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Scope/Landscape"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Scope/SoftwareSystem"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Scope/None"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structurizr.ecore#//Visibility">
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Visibility/Private"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Visibility/Public"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structurizr.ecore#//UserPermission">
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//UserPermission/Read"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//UserPermission/Write"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structurizr.ecore#//Shape">
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/Box"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/RoundedBox"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/Circle"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/Ellipse"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/Hexagon"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/Cylinder"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/Pipe"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/Person"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/Robot"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/Folder"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/WebBrowser"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/MobileDevicePortrait"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/MobileDeviceLandscape"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//Shape/Component"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structurizr.ecore#//ConditionComparisonOperation">
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//ConditionComparisonOperation/EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//ConditionComparisonOperation/NOT_EQUALS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structurizr.ecore#//FilterType">
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//FilterType/Person"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//FilterType/SoftwareSystem"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//FilterType/Container"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//FilterType/Component"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//FilterType/DeploymentNode"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structurizr.ecore#//ConditionLogicalOperation">
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//ConditionLogicalOperation/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="structurizr.ecore#//ConditionLogicalOperation/OR"/>
+    </genEnums>
+    <genClasses ecoreClass="structurizr.ecore#//Workspace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Workspace/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Workspace/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Workspace/model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Workspace/views"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Workspace/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Workspace/configuration"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Configuration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Configuration/scope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Configuration/visibility"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Configuration/users"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Configuration/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Property/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Property/value"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//User">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//User/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//User/permission"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="structurizr.ecore#//IdentifiableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//IdentifiableElement/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//IdentifiableElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//IdentifiableElement/relationships"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="structurizr.ecore#//C4Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//C4Element/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//C4Element/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//C4Element/tags"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//C4Element/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//C4Element/perspectives"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Relationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//Relationship/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//Relationship/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Relationship/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Relationship/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Relationship/technology"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Relationship/tags"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Relationship/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Relationship/perspectives"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Tag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Tag/name"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Technology">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Technology/name"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Perspective">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Perspective/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Perspective/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Perspective/value"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Model/softwareSystem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Model/persons"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Model/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Model/deploymentEnvironments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Model/relationships"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Element/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Person"/>
+    <genClasses ecoreClass="structurizr.ecore#//SoftwareSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//SoftwareSystem/containers"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Container">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Container/technology"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Container/components"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Component/technology"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//DeploymentEnvironment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//DeploymentEnvironment/deploymentGroups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//DeploymentEnvironment/deploymentNodes"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//DeploymentGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//DeploymentGroup/name"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//DeploymentNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//DeploymentNode/technology"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//DeploymentNode/deploymentNodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//DeploymentNode/infrastructureNodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//DeploymentNode/softwareSystemInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//DeploymentNode/containerInstances"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//InfrastructureNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//InfrastructureNode/technology"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//SoftwareSystemInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//SoftwareSystemInstance/softwareSystem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//SoftwareSystemInstance/deploymentGroups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//SoftwareSystemInstance/healthCheck"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//ContainerInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//ContainerInstance/container"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//ContainerInstance/deploymentGroups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//ContainerInstance/healthCheck"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//HealthCheck">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//HealthCheck/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//HealthCheck/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//HealthCheck/interval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//HealthCheck/timeouts"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//Views">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//Views/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Views/viewElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//Views/styles"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="structurizr.ecore#//ViewElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ViewElement/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ViewElement/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ViewElement/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//ViewElement/autoLayout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//ViewElement/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//ViewElement/include"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//ViewElement/exclude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ViewElement/includeExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ViewElement/excludeExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//SystemLandscapeView"/>
+    <genClasses ecoreClass="structurizr.ecore#//SystemContextView">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//SystemContextView/softwareSystem"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//ContainerView">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//ContainerView/softwareSystem"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//ComponentView">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//ComponentView/container"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//AutoLayout">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//AutoLayout/autoLayoutOption"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//AutoLayout/rankSeparation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//AutoLayout/nodeSeparation"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="structurizr.ecore#//Style"/>
+    <genClasses ecoreClass="structurizr.ecore#//ElementStyle">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//ElementStyle/tag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/strokeWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/fontSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/opacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/metadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/background"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/stroke"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/border"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementStyle/shape"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//ElementStyle/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//RelationshipStyle">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//RelationshipStyle/tag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipStyle/thickness"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipStyle/fontSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipStyle/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipStyle/opacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipStyle/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipStyle/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipStyle/style"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipStyle/routing"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//RelationshipStyle/properties"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="structurizr.ecore#//ConditionElement"/>
+    <genClasses ecoreClass="structurizr.ecore#//NoFilterCondition"/>
+    <genClasses image="false" ecoreClass="structurizr.ecore#//FilterCondition"/>
+    <genClasses image="false" ecoreClass="structurizr.ecore#//ElementFilterCondition"/>
+    <genClasses image="false" ecoreClass="structurizr.ecore#//RelationshipFilterCondition"/>
+    <genClasses ecoreClass="structurizr.ecore#//CompositeCondition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//CompositeCondition/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//CompositeCondition/logicalOperation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structurizr.ecore#//CompositeCondition/right"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//ElementTagCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementTagCondition/comparisonOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//ElementTagCondition/tags"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//ElementTechnologyCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementTechnologyCondition/comparisonOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//ElementTechnologyCondition/technology"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//ElementTypeCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementTypeCondition/comparisonOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementTypeCondition/type"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//ElementPropertyCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementPropertyCondition/comparisonOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//ElementPropertyCondition/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementPropertyCondition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//ElementParentCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//ElementParentCondition/comparisonOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//ElementParentCondition/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//RelationshipTagCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipTagCondition/comparisonOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//RelationshipTagCondition/tags"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//RelationshipPropertyCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipPropertyCondition/comparisonOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//RelationshipPropertyCondition/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipPropertyCondition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//RelationshipSourceCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipSourceCondition/comparisonOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//RelationshipSourceCondition/source"/>
+    </genClasses>
+    <genClasses ecoreClass="structurizr.ecore#//RelationshipDestinationCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structurizr.ecore#//RelationshipDestinationCondition/comparisonOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structurizr.ecore#//RelationshipDestinationCondition/destination"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

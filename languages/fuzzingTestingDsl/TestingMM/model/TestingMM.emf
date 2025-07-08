@@ -1,0 +1,505 @@
+@namespace(uri="TestingMM", prefix="TestingMM")
+package TestingPackage;
+
+// MRS model is currently integrated into the model under the testing space
+//import "http://ExSceMM";
+
+// TestingSpace - which specifies the boundaries of the testing space
+// (the possible attacks), a grammar used for conditions,
+// and the metrics to be used. 
+class TestingSpace {
+	attr String name;
+	val Metrics.Metric[*] metrics;
+	val FuzzingOperations.FuzzingOperation[*] possibleFuzzingOperations;
+	//val GrammarSpec.GrammarSpecification[0..1] grammarSpecification;
+	val TestCampaign[*] campaigns;
+	val MRSPackage.MRS[1] mrs;
+}
+
+// TestingCampaign - specifies an experiment 
+// (evolutionary process, selected metrics/attacks, and any constraints upon the grammar for this run)
+
+class TestCampaign {
+	attr String name;
+	ref Metrics.Metric[*] metrics;
+	ref Metrics.Metric[*] conditionMetrics;
+	
+	// TODO: for some reason, elements under TestCampaign tend to be lost when the model is saved?
+	val ActivationGenerationMethod activationGeneration;
+	ref FuzzingOperations.FuzzingOperation[*] includedOperations;
+	val TestGenerationApproach[1] approach;
+	val Test[*]#parentCampaign performedTests;
+	val CampaignResultSet[*] resultSets;
+	val ExecutionEndTrigger[1] endTrigger;
+}
+
+class Test {
+	attr String name;
+	val FuzzingOperations.FuzzingOperation[*]#containingTest operations;
+	val Metrics.MetricInstance[*] metrics;
+	// developedFrom can contain e.g. the evolutionary history of this Test,
+	// which other tests it was developed from
+	ref Test[*] developedFrom; 
+	readonly transient ref TestCampaign[1]#performedTests parentCampaign;
+	val TestDebuggingFlags[*] debugFlags;
+}
+
+abstract class TestDebuggingFlags {
+	
+}
+
+class PassiveMonitorOnly extends TestDebuggingFlags {
+	
+}
+
+// This selects either condition-based or time-based fuzzing for this test,
+// and its parameters
+abstract class ActivationGenerationMethod {
+		
+}
+
+class TimeBasedActivationGenerationMethod extends ActivationGenerationMethod {
+	
+}
+
+class ConditionBasedActivationGenerationMethod extends ActivationGenerationMethod {
+	attr int conditionDepth; 
+}
+
+enum ResultSetStatus {
+	FINAL = 1;
+	INTERMEDIATE = 2;
+}
+
+class CampaignResultSet { 
+	attr String name;
+	attr ResultSetStatus status;
+	ref Test[*] results; 
+}
+
+abstract class ExecutionEndTrigger {
+		
+}
+
+class TimeBasedEnd extends ExecutionEndTrigger {
+	attr long timeLimitSeconds; 
+}
+
+abstract class TestGenerationApproach {
+
+}
+
+class RandomTestGeneration extends TestGenerationApproach {
+	
+}
+
+abstract class EvolutionaryAlgorithm extends TestGenerationApproach {
+
+}
+
+class NSGAEvolutionaryAlgorithm extends EvolutionaryAlgorithm {
+	attr int populationSize;
+	attr int iterations;
+}
+
+// Coverage-tracking / boosting GA
+class NSGAWithCoverageCells extends NSGAEvolutionaryAlgorithm {
+	attr int coveragePerCell;
+	attr double targetCoverageProportion; 
+	val DimensionInterval[1..*]  dimensionRecords;
+	attr boolean useMutationEnhancingCoverage = false;
+}
+
+// Dimension min-max and cell count for the coverage-tracking GA
+class DimensionInterval {
+	attr DimensionID dimID;
+	attr double minValue;
+	attr double maxValue;
+	attr int count;
+}
+
+enum DimensionID {
+	T1_TIME_MIDPOINT_MEAN = 1;
+	T2_TIME_LENGTH_MEAN = 2;
+	T3_TIME_MIDPOINT_VAR = 3; 
+	P1_PARAMETER_MEAN = 4;
+	P2_PARAMETER_VARIANCE = 5;
+	O1_FUZZRANGE_COUNT = 6;
+	O2_DELAY_COUNT = 7;
+	O3_DELETION_COUNT = 8;
+}
+
+class RepeatedExecution extends TestGenerationApproach {
+	ref Test[1] testToRepeat;
+	attr int repeatCount;
+}
+
+package FuzzingOperations {
+
+abstract class FuzzingOperation {
+	attr String name;
+	attr int priority;
+
+	val Activation[1] activation; // FuzzingOperation only has a single activation
+	ref MRSPackage.Variable[0..1] variableToAffect;
+	attr boolean messagesFromAllComponenents = true;
+	ref MRSPackage.Node[*] fromNodes;
+	attr boolean messagesToAllComponenents = true;
+	ref MRSPackage.Node[*] toNodes;
+	ref MRSPackage.Node[0..1] nodeToFuzz;
+	attr boolean allPublishingVars = false;
+	ref MRSPackage.Variable[*] publishingVars;
+	attr boolean allSubscribingVars = false;
+	ref MRSPackage.Variable[*] subscribingVars;
+	ref FuzzingOperation[0..1] fromTemplate;
+	readonly transient ref Test[0..1]#operations containingTest;
+	val FixedTimeActivation[0..1] recordedTimings; 
+	attr int seed;
+	attr int sequenceNumInTest;
+}
+
+class OfflineFuzzingOperation extends FuzzingOperation {
+	attr OfflineOperationTime operationTime;
+}
+
+enum OfflineOperationTime {
+	PRE;
+	POST;
+}
+
+class CustomFuzzingOperation extends FuzzingOperation {
+	// These parameters will be used for the custom fuzzing operation
+	val ValueSet[*] params;
+}
+
+class CustomOfflineFuzzingOperation extends OfflineFuzzingOperation {
+	
+}
+
+abstract class Activation {
+	
+}
+
+class FixedTimeActivation extends Activation {
+	attr double startTime;
+	attr double endTime;
+}
+
+@syntax(feature="startingExpression", derive="starting", grammar="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl", entryRule="ConditionBasedActivationStarting")
+@syntax(feature="endingExpression", derive="ending", grammar="sesame.conditionBasedActivation.startingEndingExpression.ConditionsDsl", entryRule="ConditionBasedActivationEnding")
+class ConditionBasedActivation extends Activation {
+	attr int maximumActivations = 1;	
+	val StandardGrammar.Condition starting;
+	val StandardGrammar.Condition ending;
+	attr String startingExpression;
+	attr String endingExpression;
+}
+
+@syntax(feature="startingExpression", derive="starting", grammar="sesame.conditionBasedTimeLimited.startingExpression.ConditionsDsl", entryRule="ConditionBasedTimeLimited")
+class ConditionBasedTimeLimited extends Activation {
+	attr double length;
+	attr int maximumActivations = 1;
+	val StandardGrammar.Condition starting;
+	attr String startingExpression;	
+}
+
+class FuzzTestingOperation extends FuzzingOperation {
+	
+}
+
+class ComponentOperation extends FuzzTestingOperation {
+
+}
+
+class ComponentPropertyOperation extends FuzzTestingOperation {
+	ref MRSPackage.ComponentProperty[0..1] propertyToAffect;
+}
+
+class ComponentSubPropertyOperation extends FuzzTestingOperation {
+	ref MRSPackage.ComponentProperty[0..1] propertyToAffect;
+	ref MRSPackage.Type[0..1] subProperty;
+}
+
+class VariableOperation extends FuzzTestingOperation {
+	ref MRSPackage.Parameter[*] subParameters;
+}
+
+class RandomValueFuzzingOperation extends ComponentOperation {
+
+}
+
+class RandomValueFromSetOperation extends RandomValueFuzzingOperation {
+	val ValueSet[*] valueSet;
+	attr boolean isRelative = false;
+}
+
+// Value Sets
+class ValueSet {
+	// This might be a ref to the MRSPackage.ComponentProperty?
+	attr String propertyName;	
+}
+
+abstract class ValueRange extends ValueSet {
+	
+}
+
+class IntRange extends ValueRange {
+	attr int lowerBound;
+	attr int upperBound;
+}
+
+class DoubleRange extends ValueRange {
+	attr double lowerBound;
+	attr double upperBound;
+}
+
+class Point {
+	attr double x;
+	attr double y;
+	attr double z;
+}
+
+class PointRange extends ValueRange {
+	val Point[1] minPoint;
+	val Point[1] maxPoint;
+}
+
+class StringSet extends ValueSet {
+	attr String[*] choices;
+}
+
+class ExternalResourceSet extends ValueSet {
+	attr String location;
+}
+// End of Value Sets
+
+
+class NetworkFuzzingOperation extends FuzzingOperation {
+
+	
+}
+
+class BlackholeNetworkOperation extends NetworkFuzzingOperation {
+	
+}
+
+class LatencyNetworkOperation extends NetworkFuzzingOperation {
+	val DoubleRange[1] latency;
+}
+
+class PacketLossNetworkOperation extends NetworkFuzzingOperation {
+	val DoubleRange[1] frequency;
+}
+
+// TODO: implement this operation
+//class MultipleMessagesNetworkOperation extends NetworkFuzzingOperation {
+//	val IntRange[1] howManyClones;
+//}
+
+}
+
+package Metrics {
+abstract class SimStream {
+	
+}
+
+class InputStream extends SimStream {
+	
+}
+
+class OutputStream extends SimStream {
+	
+}
+
+enum MetricOptimisationDirection {
+	HIGHEST = 1;
+	LOWEST = 2;
+}
+
+abstract class Metric {
+	attr String name;
+	attr MetricOptimisationDirection dir;
+	ref MRSPackage.Variable[*] relatedVariables;
+	// valueIfNotReceived - this is stored as the output value if no metric message is ever received 
+	// this is then applied for the optimisation algorithm
+	val MetricDefault[0..1] valueIfNotReceived;	
+	// initValue is used as an intialisation value in computing the conditions
+	val MetricDefault[1] initValue;
+	attr boolean useInOptimisation;
+}
+
+class MetricDefault {
+	attr double defaultVal;
+}
+
+class VariableMetric extends Metric {
+	ref MRSPackage.Variable[1] chosenVariables;
+}
+
+class MetricInstance {
+	ref Metrics.Metric[1] metric;
+	val Results.Result[1] result;
+	attr String resultString;
+}
+
+abstract class PropertyMetric extends Metric {
+	ref MRSPackage.ComponentProperty[1] property;
+}
+
+class StreamMetric extends Metric {
+	val SimStream[*] streams;
+	val StreamResult res; 
+}
+
+abstract class SpecialMetric extends StreamMetric {
+	
+}
+
+abstract class DirectMessageGenerationMetric extends StreamMetric {
+	
+}
+
+class StartEndTimingMetric extends DirectMessageGenerationMetric {
+	
+} 
+
+class FuzzingOperationTimesMetric extends SpecialMetric {
+	
+}
+
+abstract class StreamResult {
+	
+}
+
+class FileStreamResult extends StreamResult {
+	attr String filename; 
+}
+}
+
+package Results {
+	class Result {
+		attr String name;
+		attr double value;
+	}
+}
+
+// This is the defined standard grammar - supports basic and composite
+// conditions as in the MODELS'22 paper
+package StandardGrammar {
+	
+abstract class ConditionElement {
+		
+}
+	
+class CompositeCondition extends ConditionElement {
+	val ConditionElement[1] left;
+	attr BinaryLogicalOperation[1] binop;
+	val ConditionElement[1] right;
+}
+	
+class BasicCondition extends ConditionElement {
+	val ConditionVariable[1] left;
+	attr BinaryComparisonOperation[1] bincomp;
+	val ConditionExpr[1] right;
+}
+	
+abstract class ConditionExpr {
+		
+}
+	
+class ConditionInteger extends ConditionExpr {
+	attr int value;
+}
+	
+// Variables reference the metrics that supply their values
+class ConditionVariable extends ConditionExpr {
+	ref Metrics.Metric[1] metric;
+}
+	
+enum BinaryComparisonOperation {
+	LESS_THAN = 1;
+	GREATER_THAN = 2;	
+	EQUALS = 3;
+}
+	
+enum BinaryLogicalOperation {
+	AND = 1;
+	OR = 2;	
+}
+	
+class Condition {
+	attr String name;
+	val StandardGrammar.ConditionElement[1] c; 
+}
+}
+
+//------------------------------------------------------------
+
+package MRSPackage {
+	class MRS {
+	    val Variable[*] variables;
+		attr String launchFileLocation;
+		attr int launchDelaySeconds = 40;
+		attr String customTerminateFileLocation;
+		attr String recordFileLocation;
+		val Node[*] nodes;
+		val Simulator[1] simulator;
+		val Type[*] propertyType;
+	}
+
+	class Node {
+		attr String name;
+		ref Variable[*] subscriber;
+		ref Variable[*] publisher;
+		ref ComponentProperty[*] properties;
+	}
+
+	class Variable {
+		attr String name;
+		ref Type[1] type;
+	}
+
+	class Type {
+		attr String name;
+		attr ParsingMethod[1] parsingMethod;
+		val Parameter[*] parameters;
+		//ref Type[*] subTypes;
+	}
+
+	enum ParsingMethod {
+		JSON;
+		CSV;
+		CUSTOM;
+		STRING;
+	}
+
+	class Parameter {
+		attr String name;
+		val Parameter[*] subparameters;
+		ref Type[1] type;
+	}
+
+	class ComponentProperty {
+		attr String name;
+		ref Type[1] type;
+	}
+
+	abstract class Simulator {
+	
+	}
+
+	class ROSSimulator extends Simulator {
+		attr String hostname;
+		attr String port;
+	}
+
+	class MOOSSimulator extends Simulator {
+		attr String hostname;
+		attr String port;
+	}
+
+	class TTSSimulator extends Simulator {
+		attr String hostname;
+		attr String port;
+	}
+}

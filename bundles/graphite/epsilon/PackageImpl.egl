@@ -1,0 +1,30 @@
+-
+-	/**
+-	 * <!-- begin-user-doc -->
+-	 * An implementation of the model <b>Package</b>.
++
++import graphite.shared.ModelData;
++import graphite.shared.WorkbenchData;
++
++/**
++* <!-- begin-user-doc -->
++* An implementation of the model <b>Package</b>.
+...
+-	 * @see #initializePackageContents()
+-	 * @generated
+-	 */
+-	public static [%=packageClass%] init() {
++	 * @see #initializePackageContents()
++	 * @generated NOT
++	 */
++	public static [%=packageClass%] init() {
+...
+-		return the[%=packageClass%];
++
++		ModelData modelData = new ModelData(PropertiesData.derivedPropertiesData, PropertiesData.derivedPairsMappings, PropertiesData.identifierAttributeByType, PropertiesData.resolvers);
++		WorkbenchData.setModelData(modelData);
++
++		return the[%=packageClass%];
+...
+-} //[%=packageImplClass%]
++} //[%=packageImplClass%] (Patched)

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated TestingMM -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="TestingPackage.presentation.TestingMMModelWizardID"
+            name="%_UI_TestingMMModelWizard_label"
+            class="TestingPackage.presentation.TestingMMModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TestingMMModelFile.gif">
+         <description>%_UI_TestingMMModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated TestingMM -->
+      <editor
+            id="TestingPackage.presentation.TestingMMEditorID"
+            name="%_UI_TestingMMEditor_label"
+            icon="icons/full/obj16/TestingMMModelFile.gif"
+            extensions="testingmm"
+            class="TestingPackage.presentation.TestingMMEditor"
+            contributorClass="TestingPackage.presentation.TestingMMActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated TestingMM -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="TestingPackage.FuzzingOperations.presentation.FuzzingOperationsModelWizardID"
+            name="%_UI_FuzzingOperationsModelWizard_label"
+            class="TestingPackage.FuzzingOperations.presentation.FuzzingOperationsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FuzzingOperationsModelFile.gif">
+         <description>%_UI_FuzzingOperationsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated TestingMM -->
+      <editor
+            id="TestingPackage.FuzzingOperations.presentation.FuzzingOperationsEditorID"
+            name="%_UI_FuzzingOperationsEditor_label"
+            icon="icons/full/obj16/FuzzingOperationsModelFile.gif"
+            extensions="fuzzingoperations"
+            class="TestingPackage.FuzzingOperations.presentation.FuzzingOperationsEditor"
+            contributorClass="TestingPackage.FuzzingOperations.presentation.FuzzingOperationsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated TestingMM -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="TestingPackage.Metrics.presentation.MetricsModelWizardID"
+            name="%_UI_MetricsModelWizard_label"
+            class="TestingPackage.Metrics.presentation.MetricsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MetricsModelFile.gif">
+         <description>%_UI_MetricsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated TestingMM -->
+      <editor
+            id="TestingPackage.Metrics.presentation.MetricsEditorID"
+            name="%_UI_MetricsEditor_label"
+            icon="icons/full/obj16/MetricsModelFile.gif"
+            extensions="metrics"
+            class="TestingPackage.Metrics.presentation.MetricsEditor"
+            contributorClass="TestingPackage.Metrics.presentation.MetricsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated TestingMM -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="TestingPackage.Results.presentation.ResultsModelWizardID"
+            name="%_UI_ResultsModelWizard_label"
+            class="TestingPackage.Results.presentation.ResultsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ResultsModelFile.gif">
+         <description>%_UI_ResultsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated TestingMM -->
+      <editor
+            id="TestingPackage.Results.presentation.ResultsEditorID"
+            name="%_UI_ResultsEditor_label"
+            icon="icons/full/obj16/ResultsModelFile.gif"
+            extensions="results"
+            class="TestingPackage.Results.presentation.ResultsEditor"
+            contributorClass="TestingPackage.Results.presentation.ResultsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated TestingMM -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="TestingPackage.StandardGrammar.presentation.StandardGrammarModelWizardID"
+            name="%_UI_StandardGrammarModelWizard_label"
+            class="TestingPackage.StandardGrammar.presentation.StandardGrammarModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StandardGrammarModelFile.gif">
+         <description>%_UI_StandardGrammarModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated TestingMM -->
+      <editor
+            id="TestingPackage.StandardGrammar.presentation.StandardGrammarEditorID"
+            name="%_UI_StandardGrammarEditor_label"
+            icon="icons/full/obj16/StandardGrammarModelFile.gif"
+            extensions="standardgrammar"
+            class="TestingPackage.StandardGrammar.presentation.StandardGrammarEditor"
+            contributorClass="TestingPackage.StandardGrammar.presentation.StandardGrammarActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated TestingMM -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="TestingPackage.MRSPackage.presentation.MRSPackageModelWizardID"
+            name="%_UI_MRSPackageModelWizard_label"
+            class="TestingPackage.MRSPackage.presentation.MRSPackageModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MRSPackageModelFile.gif">
+         <description>%_UI_MRSPackageModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated TestingMM -->
+      <editor
+            id="TestingPackage.MRSPackage.presentation.MRSPackageEditorID"
+            name="%_UI_MRSPackageEditor_label"
+            icon="icons/full/obj16/MRSPackageModelFile.gif"
+            extensions="mrspackage"
+            class="TestingPackage.MRSPackage.presentation.MRSPackageEditor"
+            contributorClass="TestingPackage.MRSPackage.presentation.MRSPackageActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="TestingPackage.impl.TestingMMEditorStartup">
+      </startup>
+   </extension>
+
+</plugin>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="graphite.feature">
+      <category name="graphite.category"/>
+   </feature>
+   <category-def name="graphite.category" label="Graphite"/>
+   <repository-reference location="https://download.eclipse.org/acceleo/updates/releases/3.7/" name="Acceleo 3.7" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/epsilon/updates/2.5/" name="Eclipse Epsilon 2.5" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/emfatic/update" name="Eclipse Emfatic" enabled="true" />
+</site>

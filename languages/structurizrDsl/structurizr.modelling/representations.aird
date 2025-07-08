@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:structurizr="structurizr" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tree="http://www.eclipse.org/sirius/tree/1.0.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/tree/description/1.0.0 http://www.eclipse.org/sirius/tree/1.0.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_2muocPhSEe-43dZtZ7KvtA" selectedViews="_c1VdQPhuEe-ev7AMRUg2fQ" version="15.0.0.202209061200">
+    <semanticResources>My.structurizr</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_c1VdQPhuEe-ev7AMRUg2fQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_dBJrsPhuEe-ev7AMRUg2fQ" name="new ContainerView Diagram" repPath="#_dA2wwPhuEe-ev7AMRUg2fQ" changeId="a0b3a455-f528-46f3-b28f-fdca841800bc">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']"/>
+        <target xmi:type="structurizr:ContainerView" href="My.structurizr#//@views/@viewElements.0"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eMD_oPhuEe-ev7AMRUg2fQ" name="new TreeVisualisation" repPath="#_eLW1APhuEe-ev7AMRUg2fQ" changeId="f0b34fe9-8ca2-4bb6-8162-5bc74a518a96">
+        <description xmi:type="description_2:TreeDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']"/>
+        <target xmi:type="structurizr:Workspace" href="My.structurizr#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_5J5OUPiKEe-3wprrH5tjfA" name="new SystemContextView Diagram" repPath="#_5J3ZIPiKEe-3wprrH5tjfA" changeId="ea9fe9ad-ff71-48be-a9d7-17a39ab7c84a">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']"/>
+        <target xmi:type="structurizr:SystemContextView" href="My.structurizr#//@views/@viewElements.1"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_dA2wwPhuEe-ev7AMRUg2fQ">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_dBlJgPhuEe-ev7AMRUg2fQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_dBlJgfhuEe-ev7AMRUg2fQ" type="Sirius" element="_dA2wwPhuEe-ev7AMRUg2fQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_iaKicCLZEfC0M7fPMDUZfQ" type="2001" element="_iaFC4CLZEfC0M7fPMDUZfQ">
+          <children xmi:type="notation:Node" xmi:id="_iaLJgCLZEfC0M7fPMDUZfQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_iaLJgSLZEfC0M7fPMDUZfQ" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iaMXpCLZEfC0M7fPMDUZfQ" type="3005" element="_iaFC4SLZEfC0M7fPMDUZfQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_iaMXpSLZEfC0M7fPMDUZfQ" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaMXpiLZEfC0M7fPMDUZfQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_iaKicSLZEfC0M7fPMDUZfQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaKiciLZEfC0M7fPMDUZfQ" x="189" y="270" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_iaLwkCLZEfC0M7fPMDUZfQ" type="2002" element="_iaFC5iLZEfC0M7fPMDUZfQ">
+          <children xmi:type="notation:Node" xmi:id="_iaMXoCLZEfC0M7fPMDUZfQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_iaMXoSLZEfC0M7fPMDUZfQ" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_iaM-sCLZEfC0M7fPMDUZfQ" type="3007" element="_iaFp8SLZEfC0M7fPMDUZfQ">
+              <children xmi:type="notation:Node" xmi:id="_iaM-syLZEfC0M7fPMDUZfQ" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_iaM-tCLZEfC0M7fPMDUZfQ" x="-4" y="-16"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_iaNlwiLZEfC0M7fPMDUZfQ" type="3003" element="_iaFp8iLZEfC0M7fPMDUZfQ">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_iaNlwyLZEfC0M7fPMDUZfQ" fontName=".AppleSystemUIFont"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaNlxCLZEfC0M7fPMDUZfQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_iaM-sSLZEfC0M7fPMDUZfQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaM-siLZEfC0M7fPMDUZfQ" x="31" y="136" width="80" height="80"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_iaM-tSLZEfC0M7fPMDUZfQ" type="3007" element="_iaFp9CLZEfC0M7fPMDUZfQ">
+              <children xmi:type="notation:Node" xmi:id="_iaNlwCLZEfC0M7fPMDUZfQ" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_iaNlwSLZEfC0M7fPMDUZfQ" x="4" y="-16"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_iaNlxSLZEfC0M7fPMDUZfQ" type="3003" element="_iaFp9SLZEfC0M7fPMDUZfQ">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_iaNlxiLZEfC0M7fPMDUZfQ" fontName=".AppleSystemUIFont"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaNlxyLZEfC0M7fPMDUZfQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_iaM-tiLZEfC0M7fPMDUZfQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaM-tyLZEfC0M7fPMDUZfQ" x="31" y="28" width="80" height="80"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_iaMXoiLZEfC0M7fPMDUZfQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_iaMXoyLZEfC0M7fPMDUZfQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_iaLwkSLZEfC0M7fPMDUZfQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaLwkiLZEfC0M7fPMDUZfQ" x="36" y="9"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_dBlJgvhuEe-ev7AMRUg2fQ"/>
+        <edges xmi:type="notation:Edge" xmi:id="_iaOM0CLZEfC0M7fPMDUZfQ" type="4001" element="_iaFp9yLZEfC0M7fPMDUZfQ" source="_iaKicCLZEfC0M7fPMDUZfQ" target="_iaM-sCLZEfC0M7fPMDUZfQ">
+          <children xmi:type="notation:Node" xmi:id="_iaOM1CLZEfC0M7fPMDUZfQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaOM1SLZEfC0M7fPMDUZfQ" x="6" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iaOM1iLZEfC0M7fPMDUZfQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaOM1yLZEfC0M7fPMDUZfQ" x="-3" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iaOM2CLZEfC0M7fPMDUZfQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaOM2SLZEfC0M7fPMDUZfQ" x="-1" y="6"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_iaOM0SLZEfC0M7fPMDUZfQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_iaOM0iLZEfC0M7fPMDUZfQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iaOM0yLZEfC0M7fPMDUZfQ" points="[-40, -40, 77, 79]$[-78, -79, 39, 40]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iaOM2iLZEfC0M7fPMDUZfQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iaOM2yLZEfC0M7fPMDUZfQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_iaOM6CLZEfC0M7fPMDUZfQ" type="4001" element="_iaGRACLZEfC0M7fPMDUZfQ" source="_iaM-sCLZEfC0M7fPMDUZfQ" target="_iaM-tSLZEfC0M7fPMDUZfQ">
+          <children xmi:type="notation:Node" xmi:id="_iaOM7CLZEfC0M7fPMDUZfQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaOM7SLZEfC0M7fPMDUZfQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iaOM7iLZEfC0M7fPMDUZfQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaOM7yLZEfC0M7fPMDUZfQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iaOM8CLZEfC0M7fPMDUZfQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iaOM8SLZEfC0M7fPMDUZfQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_iaOM6SLZEfC0M7fPMDUZfQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_iaOM6iLZEfC0M7fPMDUZfQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iaOM6yLZEfC0M7fPMDUZfQ" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iaOz4CLZEfC0M7fPMDUZfQ" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iaOz4SLZEfC0M7fPMDUZfQ" id="(0.5,1.0)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_dCcsMPhuEe-ev7AMRUg2fQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_dCcsMfhuEe-ev7AMRUg2fQ"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_iaFC4CLZEfC0M7fPMDUZfQ" name="Alice" outgoingEdges="_iaFp9yLZEfC0M7fPMDUZfQ" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="structurizr:Person" href="My.structurizr#p1"/>
+      <semanticElements xmi:type="structurizr:Person" href="My.structurizr#p1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_iaFC4SLZEfC0M7fPMDUZfQ" labelSize="12" showIcon="false" workspacePath="/structurizr.design/icons/person.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@nodeMappings[name='Person%20Node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@nodeMappings[name='Person%20Node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_iaFC5iLZEfC0M7fPMDUZfQ" name="Software System">
+      <target xmi:type="structurizr:SoftwareSystem" href="My.structurizr#ss"/>
+      <semanticElements xmi:type="structurizr:SoftwareSystem" href="My.structurizr#ss"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_iaFC5yLZEfC0M7fPMDUZfQ" labelSize="12" showIcon="false" iconPath="/structurizr.design/icons/softwaresystem.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@containerMappings[name='SoftwareSystem%20Container']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@containerMappings[name='SoftwareSystem%20Container']"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_iaFp8SLZEfC0M7fPMDUZfQ" name="PTC ThingWorx" outgoingEdges="_iaGRACLZEfC0M7fPMDUZfQ" incomingEdges="_iaFp9yLZEfC0M7fPMDUZfQ" width="8" height="8" resizeKind="NSEW">
+        <target xmi:type="structurizr:Container" href="My.structurizr#twx"/>
+        <semanticElements xmi:type="structurizr:Container" href="My.structurizr#twx"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_iaFp8iLZEfC0M7fPMDUZfQ" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="204,242,166">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@containerMappings[name='SoftwareSystem%20Container']/@subNodeMappings[name='Container%20Node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@containerMappings[name='SoftwareSystem%20Container']/@subNodeMappings[name='Container%20Node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_iaFp9CLZEfC0M7fPMDUZfQ" name="PostgreSQL" incomingEdges="_iaGRACLZEfC0M7fPMDUZfQ" width="8" height="8" resizeKind="NSEW">
+        <target xmi:type="structurizr:Container" href="My.structurizr#psql"/>
+        <semanticElements xmi:type="structurizr:Container" href="My.structurizr#psql"/>
+        <ownedStyle xmi:type="diagram:Square" uid="_iaFp9SLZEfC0M7fPMDUZfQ" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" color="204,242,166">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@containerMappings[name='SoftwareSystem%20Container']/@subNodeMappings[name='Container%20Node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@containerMappings[name='SoftwareSystem%20Container']/@subNodeMappings[name='Container%20Node']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_iaFp9yLZEfC0M7fPMDUZfQ" name="Uses" sourceNode="_iaFC4CLZEfC0M7fPMDUZfQ" targetNode="_iaFp8SLZEfC0M7fPMDUZfQ">
+      <target xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.0"/>
+      <semanticElements xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_iaFp-CLZEfC0M7fPMDUZfQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@edgeMappings[name='Relationship%20Person-Container%20Edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_iaFp-SLZEfC0M7fPMDUZfQ" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@edgeMappings[name='Relationship%20Person-Container%20Edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_iaGRACLZEfC0M7fPMDUZfQ" sourceNode="_iaFp8SLZEfC0M7fPMDUZfQ" targetNode="_iaFp9CLZEfC0M7fPMDUZfQ">
+      <target xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.2"/>
+      <semanticElements xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_iaGRASLZEfC0M7fPMDUZfQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@edgeMappings[name='Relationship%20Container-Container%20Edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_iaGRAiLZEfC0M7fPMDUZfQ" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer/@edgeMappings[name='Relationship%20Container-Container%20Edge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_dA-skPhuEe-ev7AMRUg2fQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='ContainerView%20Diagram']/@defaultLayer"/>
+    <target xmi:type="structurizr:ContainerView" href="My.structurizr#//@views/@viewElements.0"/>
+  </diagram:DSemanticDiagram>
+  <tree:DTree uid="_eLW1APhuEe-ev7AMRUg2fQ">
+    <target xmi:type="structurizr:Workspace" href="My.structurizr#/"/>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_eL8q4PhuEe-ev7AMRUg2fQ" name="Model " expanded="true">
+      <target xmi:type="structurizr:Model" href="My.structurizr#//@model"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_eMDYkPhuEe-ev7AMRUg2fQ" name="Person Alice" expanded="true">
+        <target xmi:type="structurizr:Person" href="My.structurizr#p1"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_hMN98PhuEe-ev7AMRUg2fQ" name="Tag personMain">
+          <target xmi:type="structurizr:Tag" href="My.structurizr#//@model/@persons.0/@tags.0"/>
+          <semanticElements xmi:type="structurizr:Tag" href="My.structurizr#//@model/@persons.0/@tags.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_hMN98fhuEe-ev7AMRUg2fQ" labelSize="12" iconPath="/structurizr.design/icons/tag.png"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='Person%20Item']/@subItemMappings[name='Tag%20Item']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="structurizr:Person" href="My.structurizr#p1"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_eMDYkfhuEe-ev7AMRUg2fQ" labelSize="12" iconPath="/structurizr.design/icons/person.png"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='Person%20Item']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_ichIMPhuEe-ev7AMRUg2fQ" name="Person Bob" expanded="true">
+        <target xmi:type="structurizr:Person" href="My.structurizr#p2"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_buOhYSW3EfC3XL4CP7VQmA" name="Tag personOptional">
+          <target xmi:type="structurizr:Tag" href="My.structurizr#//@model/@persons.1/@tags.0"/>
+          <semanticElements xmi:type="structurizr:Tag" href="My.structurizr#//@model/@persons.1/@tags.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_buOhYiW3EfC3XL4CP7VQmA" labelSize="12" iconPath="/structurizr.design/icons/tag.png"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='Person%20Item']/@subItemMappings[name='Tag%20Item']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="structurizr:Person" href="My.structurizr#p2"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_ichIMfhuEe-ev7AMRUg2fQ" labelSize="12" iconPath="/structurizr.design/icons/person.png"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='Person%20Item']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_lMhKoPhuEe-ev7AMRUg2fQ" name="SoftwareSystem Software System" expanded="true">
+        <target xmi:type="structurizr:SoftwareSystem" href="My.structurizr#ss"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_muR4UPhuEe-ev7AMRUg2fQ" name="Container PTC ThingWorx" expanded="true">
+          <target xmi:type="structurizr:Container" href="My.structurizr#twx"/>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_AEEAkviKEe-3wprrH5tjfA" name="Property serviceIdentifier">
+            <target xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.0/@properties.0"/>
+            <semanticElements xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.0/@properties.0"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_AEEAk_iKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/property.png"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']/@subItemMappings[name='Property%20Item']"/>
+          </ownedTreeItems>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_FS9HUPiKEe-3wprrH5tjfA" name="Property image">
+            <target xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.0/@properties.1"/>
+            <semanticElements xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.0/@properties.1"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_FS9HUfiKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/property.png"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']/@subItemMappings[name='Property%20Item']"/>
+          </ownedTreeItems>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_F22ekPiKEe-3wprrH5tjfA" name="Property hostPort">
+            <target xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.0/@properties.2"/>
+            <semanticElements xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.0/@properties.2"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_F22ekfiKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/property.png"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']/@subItemMappings[name='Property%20Item']"/>
+          </ownedTreeItems>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_GHvaQPiKEe-3wprrH5tjfA" name="Property containerPort">
+            <target xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.0/@properties.3"/>
+            <semanticElements xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.0/@properties.3"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_GHvaQfiKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/property.png"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']/@subItemMappings[name='Property%20Item']"/>
+          </ownedTreeItems>
+          <semanticElements xmi:type="structurizr:Container" href="My.structurizr#twx"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_muR4UfhuEe-ev7AMRUg2fQ" labelSize="12" iconPath="/structurizr.design/icons/container.png"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_6-Vc4viJEe-3wprrH5tjfA" name="Container PostgreSQL" expanded="true">
+          <target xmi:type="structurizr:Container" href="My.structurizr#psql"/>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_NGYnZPiKEe-3wprrH5tjfA" name="Property type">
+            <target xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.1/@properties.0"/>
+            <semanticElements xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.1/@properties.0"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_NGYnZfiKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/property.png"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']/@subItemMappings[name='Property%20Item']"/>
+          </ownedTreeItems>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_NVLRVfiKEe-3wprrH5tjfA" name="Property serviceIdentifier">
+            <target xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.1/@properties.1"/>
+            <semanticElements xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.1/@properties.1"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_NVLRVviKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/property.png"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']/@subItemMappings[name='Property%20Item']"/>
+          </ownedTreeItems>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_O4zANviKEe-3wprrH5tjfA" name="Property image">
+            <target xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.1/@properties.2"/>
+            <semanticElements xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.1/@properties.2"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_O4zAN_iKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/property.png"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']/@subItemMappings[name='Property%20Item']"/>
+          </ownedTreeItems>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_PVtltviKEe-3wprrH5tjfA" name="Property hostPort">
+            <target xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.1/@properties.3"/>
+            <semanticElements xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.1/@properties.3"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_PVtlt_iKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/property.png"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']/@subItemMappings[name='Property%20Item']"/>
+          </ownedTreeItems>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_QWMyVfiKEe-3wprrH5tjfA" name="Property containerPort">
+            <target xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.1/@properties.4"/>
+            <semanticElements xmi:type="structurizr:Property" href="My.structurizr#//@model/@softwareSystem/@containers.1/@properties.4"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_QWMyVviKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/property.png"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']/@subItemMappings[name='Property%20Item']"/>
+          </ownedTreeItems>
+          <semanticElements xmi:type="structurizr:Container" href="My.structurizr#psql"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_6-Vc4_iJEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/container.png"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']/@subItemMappings[name='Container%20Item']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="structurizr:SoftwareSystem" href="My.structurizr#ss"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_lMhKofhuEe-ev7AMRUg2fQ" labelSize="12" iconPath="/structurizr.design/icons/softwaresystem.png"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='SoftwareSystem%20Item']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_adX2oPiKEe-3wprrH5tjfA" name="Relationship p1 -> twx" expanded="true">
+        <target xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.0"/>
+        <semanticElements xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.0"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_adX2ofiKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/relationship.png"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='Relationship%20Item']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_a2EqgPiKEe-3wprrH5tjfA" name="Relationship p2 -> psql">
+        <target xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.1"/>
+        <semanticElements xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.1"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_a2EqgfiKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/relationship.png"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='Relationship%20Item']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_bLm1oPiKEe-3wprrH5tjfA" name="Relationship twx -> psql">
+        <target xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.2"/>
+        <semanticElements xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.2"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_bLm1ofiKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/relationship.png"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']/@subItemMappings[name='Relationship%20Item']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="structurizr:Model" href="My.structurizr#//@model"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_eL_uMPhuEe-ev7AMRUg2fQ" labelSize="12" iconPath="/structurizr.design/icons/model.png"/>
+      <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Model%20Item']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_eMBjYPhuEe-ev7AMRUg2fQ" name="Views " expanded="true">
+      <target xmi:type="structurizr:Views" href="My.structurizr#//@views"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_eMDYkvhuEe-ev7AMRUg2fQ" name="SystemContextView Diagram1" expanded="true">
+        <target xmi:type="structurizr:SystemContextView" href="My.structurizr#//@views/@viewElements.1"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_yINUUfiKEe-3wprrH5tjfA" name="Inclusion NoFilterCondition">
+          <target xmi:type="structurizr:NoFilterCondition" href="My.structurizr#//@views/@viewElements.1/@include"/>
+          <semanticElements xmi:type="structurizr:NoFilterCondition" href="My.structurizr#//@views/@viewElements.1/@include"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_yINUUviKEe-3wprrH5tjfA" labelSize="12" iconPath="/structurizr.design/icons/condition.png"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Views%20Item']/@subItemMappings[name='SystemContextView%20Item']/@subItemMappings[name='Inclusion%20NoFilterCondition%20Item']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_0Zln6yW3EfC3XL4CP7VQmA" name="Exclusion RelationshipDestinationCondition ">
+          <target xmi:type="structurizr:RelationshipDestinationCondition" href="My.structurizr#//@views/@viewElements.1/@exclude"/>
+          <semanticElements xmi:type="structurizr:RelationshipDestinationCondition" href="My.structurizr#//@views/@viewElements.1/@exclude"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_0Zln7CW3EfC3XL4CP7VQmA" labelSize="12" iconPath="/structurizr.design/icons/condition.png"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Views%20Item']/@subItemMappings[name='SystemContextView%20Item']/@subItemMappings[name='Exclusion%20RelationshipDestinationCondition%20Item']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="structurizr:SystemContextView" href="My.structurizr#//@views/@viewElements.1"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_eMDYk_huEe-ev7AMRUg2fQ" labelSize="12" iconPath="/structurizr.design/icons/systemcontextview.png"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Views%20Item']/@subItemMappings[name='SystemContextView%20Item']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_eZvPQPhuEe-ev7AMRUg2fQ" name="ContainerView Diagram2" expanded="true">
+        <target xmi:type="structurizr:ContainerView" href="My.structurizr#//@views/@viewElements.0"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_niyUkiW3EfC3XL4CP7VQmA" name="Inclusion ElementTagCondition ">
+          <target xmi:type="structurizr:ElementTagCondition" href="My.structurizr#//@views/@viewElements.0/@include"/>
+          <semanticElements xmi:type="structurizr:ElementTagCondition" href="My.structurizr#//@views/@viewElements.0/@include"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_niyUkyW3EfC3XL4CP7VQmA" labelSize="12" iconPath="/structurizr.design/icons/condition.png"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Views%20Item']/@subItemMappings[name='ContainerView%20Item']/@subItemMappings[name='Inclusion%20ElementTagCondition%20Item']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="structurizr:ContainerView" href="My.structurizr#//@views/@viewElements.0"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_eZvPQfhuEe-ev7AMRUg2fQ" labelSize="12" iconPath="/structurizr.design/icons/containerview.png"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Views%20Item']/@subItemMappings[name='ContainerView%20Item']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="structurizr:Views" href="My.structurizr#//@views"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_eMBjYfhuEe-ev7AMRUg2fQ" labelSize="12" iconPath="/structurizr.design/icons/views.png"/>
+      <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']/@subItemMappings[name='Views%20Item']"/>
+    </ownedTreeItems>
+    <description xmi:type="description_2:TreeDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='TreeVisualisation']"/>
+  </tree:DTree>
+  <diagram:DSemanticDiagram uid="_5J3ZIPiKEe-3wprrH5tjfA">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_5KAjEPiKEe-3wprrH5tjfA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_5KBKIPiKEe-3wprrH5tjfA" type="Sirius" element="_5J3ZIPiKEe-3wprrH5tjfA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_5KFbkPiKEe-3wprrH5tjfA" type="2001" element="_5KBxMPiKEe-3wprrH5tjfA">
+          <children xmi:type="notation:Node" xmi:id="_5KGCoPiKEe-3wprrH5tjfA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_5KGCofiKEe-3wprrH5tjfA" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_5KNXYPiKEe-3wprrH5tjfA" type="3005" element="_5KCYQPiKEe-3wprrH5tjfA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_5KNXYfiKEe-3wprrH5tjfA" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5KNXYviKEe-3wprrH5tjfA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_5KFbkfiKEe-3wprrH5tjfA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5KFbkviKEe-3wprrH5tjfA" x="56" y="162" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_5KGpsPiKEe-3wprrH5tjfA" type="2001" element="_5KCYQviKEe-3wprrH5tjfA">
+          <children xmi:type="notation:Node" xmi:id="_5KGps_iKEe-3wprrH5tjfA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_5KGptPiKEe-3wprrH5tjfA" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_5KNXY_iKEe-3wprrH5tjfA" type="3005" element="_5KC_UPiKEe-3wprrH5tjfA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_5KNXZPiKEe-3wprrH5tjfA" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5KNXZfiKEe-3wprrH5tjfA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_5KGpsfiKEe-3wprrH5tjfA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5KGpsviKEe-3wprrH5tjfA" x="243" y="162" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_5KGptfiKEe-3wprrH5tjfA" type="2001" element="_5KC_UviKEe-3wprrH5tjfA">
+          <children xmi:type="notation:Node" xmi:id="_5KGpuPiKEe-3wprrH5tjfA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_5KGpufiKEe-3wprrH5tjfA" x="-8" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_5KNXZviKEe-3wprrH5tjfA" type="3005" element="_5KC_U_iKEe-3wprrH5tjfA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_5KNXZ_iKEe-3wprrH5tjfA" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5KNXaPiKEe-3wprrH5tjfA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_5KGptviKEe-3wprrH5tjfA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5KGpt_iKEe-3wprrH5tjfA" x="135" y="36" width="80" height="80"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_5KBKIfiKEe-3wprrH5tjfA"/>
+        <edges xmi:type="notation:Edge" xmi:id="_MIuzcCA2EfCkE8FuhS6zOw" type="4001" element="_MIsXNCA2EfCkE8FuhS6zOw" source="_5KFbkPiKEe-3wprrH5tjfA" target="_5KGptfiKEe-3wprrH5tjfA">
+          <children xmi:type="notation:Node" xmi:id="_MIwBkCA2EfCkE8FuhS6zOw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MIwBkSA2EfCkE8FuhS6zOw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_MIwBkiA2EfCkE8FuhS6zOw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MIwBkyA2EfCkE8FuhS6zOw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_MIwooCA2EfCkE8FuhS6zOw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MIwooSA2EfCkE8FuhS6zOw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_MIuzcSA2EfCkE8FuhS6zOw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_MIuzciA2EfCkE8FuhS6zOw" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MIuzcyA2EfCkE8FuhS6zOw" points="[25, -40, -54, 86]$[53, -86, -26, 40]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MIx2wCA2EfCkE8FuhS6zOw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MIx2wSA2EfCkE8FuhS6zOw" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_5KE0hfiKEe-3wprrH5tjfA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_5KE0hviKEe-3wprrH5tjfA"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_5KBxMPiKEe-3wprrH5tjfA" name="Alice" outgoingEdges="_MIsXNCA2EfCkE8FuhS6zOw" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="structurizr:Person" href="My.structurizr#p1"/>
+      <semanticElements xmi:type="structurizr:Person" href="My.structurizr#p1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_5KCYQPiKEe-3wprrH5tjfA" labelSize="12" showIcon="false" workspacePath="/structurizr.design/icons/person.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']/@defaultLayer/@nodeMappings[name='Person%20Node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']/@defaultLayer/@nodeMappings[name='Person%20Node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_5KCYQviKEe-3wprrH5tjfA" name="Bob" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="structurizr:Person" href="My.structurizr#p2"/>
+      <semanticElements xmi:type="structurizr:Person" href="My.structurizr#p2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_5KC_UPiKEe-3wprrH5tjfA" labelSize="12" showIcon="false" workspacePath="/structurizr.design/icons/person.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']/@defaultLayer/@nodeMappings[name='Person%20Node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']/@defaultLayer/@nodeMappings[name='Person%20Node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_5KC_UviKEe-3wprrH5tjfA" name="Software System" incomingEdges="_MIsXNCA2EfCkE8FuhS6zOw" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="structurizr:SoftwareSystem" href="My.structurizr#ss"/>
+      <semanticElements xmi:type="structurizr:SoftwareSystem" href="My.structurizr#ss"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_5KC_U_iKEe-3wprrH5tjfA" labelSize="12" showIcon="false" workspacePath="/structurizr.design/icons/softwaresystem.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']/@defaultLayer/@nodeMappings[name='SoftwareSystem%20Node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']/@defaultLayer/@nodeMappings[name='SoftwareSystem%20Node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_MIsXNCA2EfCkE8FuhS6zOw" name="Uses" sourceNode="_5KBxMPiKEe-3wprrH5tjfA" targetNode="_5KC_UviKEe-3wprrH5tjfA">
+      <target xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.0"/>
+      <semanticElements xmi:type="structurizr:Relationship" href="My.structurizr#//@model/@relationships.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_MIsXNSA2EfCkE8FuhS6zOw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']/@defaultLayer/@edgeMappings[name='Relationship%20Person-SoftwareSystem%20Edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_MIsXNiA2EfCkE8FuhS6zOw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']/@defaultLayer/@edgeMappings[name='Relationship%20Person-SoftwareSystem%20Edge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_5J3ZIfiKEe-3wprrH5tjfA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/structurizr.design/description/structurizr.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SystemContextView%20Diagram']/@defaultLayer"/>
+    <target xmi:type="structurizr:SystemContextView" href="My.structurizr#//@views/@viewElements.1"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

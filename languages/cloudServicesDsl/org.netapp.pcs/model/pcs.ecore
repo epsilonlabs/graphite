@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pcs" nsURI="pcs.netapp.org" nsPrefix="pcs">
+  <eClassifiers xsi:type="ecore:EClass" name="Deployment" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environment" eType="#//Environment"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="snapshotPolicy" eType="#//SnapshotPolicy"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pcs" upperBound="-1" eType="#//PCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="awsconfiguration" upperBound="-1"
+        eType="#//AWSConfiguration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PCS" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CloudStorage" abstract="true" eSuperTypes="#//PCS">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="backup_volumes_to_cbs"
+        eType="#//CloudBackup" eOpposite="#//CloudBackup/cloudstorage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capacity_tier" eType="#//CloudTiering"
+        eOpposite="#//CloudTiering/cloudstorage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataService" abstract="true" eSuperTypes="#//PCS"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Environment" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SnapshotPolicy" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SnapMirror" eSuperTypes="#//DataService">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source_cvo" eType="#//CVO"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destination_cvo" eType="#//CVO"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source_volume" eType="#//Volume"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destination_volume" eType="#//Volume"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="policy" eType="#//SnapshotPolicy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_transfer_rate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplicationPolicy" eSuperTypes="#//PCS">
+    <eAnnotations source="syntax">
+      <details key="feature" value="replication_mapping"/>
+      <details key="derive" value="replication_mappings"/>
+      <details key="grammar" value="org.netapp.pcs.grammarSnapMirror.ReplicationMappings"/>
+      <details key="entryRule" value="ReplicationPolicy"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replication_mappings" upperBound="-1"
+        eType="#//SnapMirror" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="replication_mapping" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CloudTiering" eSuperTypes="#//DataService">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cloudstorage" lowerBound="1"
+        eType="#//CloudStorage" eOpposite="#//CloudStorage/capacity_tier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CloudBackup" eSuperTypes="#//DataService">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cloudstorage" lowerBound="1"
+        eType="#//CloudStorage" eOpposite="#//CloudStorage/backup_volumes_to_cbs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CVO" eSuperTypes="#//CVOConfiguration">
+    <eAnnotations source="syntax">
+      <details key="feature" value="volume"/>
+      <details key="derive" value="volumes"/>
+      <details key="grammar" value="org.netapp.pcs.grammarVolumes.Volumes"/>
+      <details key="entryRule" value="CVO"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="awsnetworking" eType="#//AWSNetworking"
+        eOpposite="#//AWSNetworking/cvo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="volumes" upperBound="-1"
+        eType="#//Volume" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="volume" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CVO_HA" eSuperTypes="#//CVOConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="awsnetworkingha" eType="#//AWSNetworkingHA"
+        eOpposite="#//AWSNetworkingHA/cvo_ha"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AWSNetworking" eSuperTypes="#//AWSConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subnet_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cvo" upperBound="-1" eType="#//CVO"
+        eOpposite="#//CVO/awsnetworking"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AWSNetworkingHA" eSuperTypes="#//AWSConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cvo_ha" upperBound="-1"
+        eType="#//CVO_HA" eOpposite="#//CVO_HA/awsnetworkingha"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="node1_subnet_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="node2_subnet_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="failover_mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediator_subnet_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediator_key_pair_name"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cluster_floating_ip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_floating_ip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data_floating_ip2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="svm_floating_ip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AWSConfiguration" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="region" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vpc_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Volume" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environment" eType="#//Environment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="snapshot_policy" eType="#//SnapshotPolicy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size_unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="svm_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="export_policy_type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="export_policy_ip" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="export_policy_nfs_version"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CVOConfiguration" abstract="true" eSuperTypes="#//CloudStorage"/>
+</ecore:EPackage>

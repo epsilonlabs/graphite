@@ -1,0 +1,46 @@
+var plugin = Plugin!t_plugin.all.first();
+
+var mainPackage = Metamodel!EPackage.all.first();
+var mainPackagePrefix = mainPackage.nsPrefix.isDefined() ? mainPackage.nsPrefix.toLowerCase() : mainPackage.name.toLowerCase();
+
+var parserTag = new Plugin!t_parser;
+parserTag.a_class = "graphite.textual.XtextXMIResourceFactoryImpl";
+parserTag.a_type = mainPackagePrefix;
+
+var resourceServiceProviderTag = new Plugin!t_resourceServiceProvider;
+resourceServiceProviderTag.a_class = "graphite.xtextxmi.ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider";
+resourceServiceProviderTag.a_uriExtension = mainPackagePrefix;
+
+var hasParserExtension = false;
+
+for (child in plugin.children) {
+	if (child.name == "extension" and child.a_point == "org.eclipse.emf.ecore.extension_parser") {
+		hasParserExtension = true;
+		delete child.children;
+		child.appendChild(parserTag);
+	}
+}
+
+if (hasParserExtension == false) {
+	var parserExtensionTag = new Plugin!t_extension;
+	parserExtensionTag.a_point = "org.eclipse.emf.ecore.extension_parser";
+	parserExtensionTag.appendChild(parserTag);
+	plugin.appendChild(parserExtensionTag);
+}
+
+var hasResourceServiceProviderExtension = false;
+
+for (child in plugin.children) {
+	if (child.name == "extension" and child.a_point == "org.eclipse.xtext.extension_resourceServiceProvider") {
+		hasResourceServiceProviderExtension = true;
+		delete child.children;
+		child.appendChild(resourceServiceProviderTag);
+	}
+}
+
+if (hasResourceServiceProviderExtension == false) {
+	var resourceServiceProviderExtensionTag = new Plugin!t_extension;
+	resourceServiceProviderExtensionTag.a_point = "org.eclipse.xtext.extension_resourceServiceProvider";
+	resourceServiceProviderExtensionTag.appendChild(resourceServiceProviderTag);
+	plugin.appendChild(resourceServiceProviderExtensionTag);
+}

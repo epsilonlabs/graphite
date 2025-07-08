@@ -1,0 +1,17 @@
+- source_cvo_name: CVO_1
+  destination_cvo_name: CVO_2
+  source_volume_name: volumeA
+  destination_volume_name: volume1
+  max_transfer_rate: 20
+  policy: snapshotPolicyDefault
+- source_cvo_name: CVO_2
+  destination_cvo_name: CVO_1
+  source_volume_name: volume1
+  destination_volume_name: volumeA
+  max_transfer_rate: 20
+  policy: snapshotPolicyDefault
+- source_cvo_name: CVO_1
+  destination_cvo_name: CVO_2
+  source_volume_name: volumeB
+  destination_volume_name: volume3
+  max_transfer_rate: 50

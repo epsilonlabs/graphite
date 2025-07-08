@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated structurizr -->
+      <package
+            uri="structurizr"
+            class="structurizr.StructurizrPackage"
+            genModel="model/structurizr.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="graphite.textual.XtextXMIResourceFactoryImpl"
+            type="structurizr">
+      </parser>
+   </extension> 
+   <extension
+		 point="org.eclipse.xtext.extension_resourceServiceProvider">
+      <resourceServiceProvider
+		    class="graphite.xtextxmi.ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider"
+			uriExtension="structurizr">
+	  </resourceServiceProvider>
+   </extension>
+
+</plugin>

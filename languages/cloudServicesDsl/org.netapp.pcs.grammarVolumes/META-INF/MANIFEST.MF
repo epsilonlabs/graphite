@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.netapp.pcs.grammarVolumes
+Bundle-ManifestVersion: 2
+Bundle-Name: org.netapp.pcs.grammarVolumes
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.netapp.pcs.grammarVolumes; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.netapp.pcs,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ graphite;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.netapp.pcs.grammarVolumes.parser.antlr,
+ org.netapp.pcs.grammarVolumes.services,
+ org.netapp.pcs.grammarVolumes.serializer,
+ org.netapp.pcs.grammarVolumes.parser.antlr.internal,
+ org.netapp.pcs.grammarVolumes.validation,
+ org.netapp.pcs.grammarVolumes.scoping,
+ org.netapp.pcs.grammarVolumes.formatting2,
+ org.netapp.pcs.grammarVolumes,
+ org.netapp.pcs.grammarVolumes.generator
+Import-Package: org.apache.log4j

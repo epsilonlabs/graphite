@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:pcs="pcs.netapp.org" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_w5tJIC3lEfCdbv_CeYwU5Q" selectedViews="_yjlRAC3lEfCdbv_CeYwU5Q" version="15.0.0.202209061200">
+    <semanticResources>infrastructure.pcs</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_yjlRAC3lEfCdbv_CeYwU5Q">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_CJNiEi3mEfCdbv_CeYwU5Q" name="new Deployment diagram" repPath="#_CJNiEC3mEfCdbv_CeYwU5Q" changeId="186421ca-f4db-4458-a9d8-70ca2c96478f">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']"/>
+        <target xmi:type="pcs:Deployment" href="infrastructure.pcs#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_CJNiEC3mEfCdbv_CeYwU5Q">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_CJOJIC3mEfCdbv_CeYwU5Q" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_CJOJIS3mEfCdbv_CeYwU5Q" type="Sirius" element="_CJNiEC3mEfCdbv_CeYwU5Q" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_CJRMcC3mEfCdbv_CeYwU5Q" type="2001" element="_CJOJIy3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJRMcy3mEfCdbv_CeYwU5Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CJRMdC3mEfCdbv_CeYwU5Q" x="-9" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJlVji3mEfCdbv_CeYwU5Q" type="3005" element="_CJOJJC3mEfCdbv_CeYwU5Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_CJlVjy3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJlVkC3mEfCdbv_CeYwU5Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CJRMcS3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJRMci3mEfCdbv_CeYwU5Q" x="62" y="31" width="66" height="64"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_CJVd4C3mEfCdbv_CeYwU5Q" type="2001" element="_CJOwMS3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJVd4y3mEfCdbv_CeYwU5Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CJVd5C3mEfCdbv_CeYwU5Q" x="-13" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJlVkS3mEfCdbv_CeYwU5Q" type="3005" element="_CJOwMi3mEfCdbv_CeYwU5Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_CJlVki3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJlVky3mEfCdbv_CeYwU5Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CJVd4S3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJVd4i3mEfCdbv_CeYwU5Q" x="60" y="139" width="70" height="64"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_CJX6IC3mEfCdbv_CeYwU5Q" type="2001" element="_CJOwNC3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJX6Iy3mEfCdbv_CeYwU5Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CJX6JC3mEfCdbv_CeYwU5Q" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJlVlC3mEfCdbv_CeYwU5Q" type="3005" element="_CJOwNS3mEfCdbv_CeYwU5Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_CJlVlS3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJlVli3mEfCdbv_CeYwU5Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CJX6IS3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJX6Ii3mEfCdbv_CeYwU5Q" x="270" y="27" width="48" height="48"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_CJZIQC3mEfCdbv_CeYwU5Q" type="2001" element="_CJOwNy3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJZIQy3mEfCdbv_CeYwU5Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CJZIRC3mEfCdbv_CeYwU5Q" x="-2" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJlVly3mEfCdbv_CeYwU5Q" type="3005" element="_CJOwOC3mEfCdbv_CeYwU5Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_CJlVmC3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJlVmS3mEfCdbv_CeYwU5Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CJZIQS3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJZIQi3mEfCdbv_CeYwU5Q" x="631" y="39" width="48" height="48"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_CJcyoC3mEfCdbv_CeYwU5Q" type="2001" element="_CJOwOi3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJdZsC3mEfCdbv_CeYwU5Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CJdZsS3mEfCdbv_CeYwU5Q" x="-24" y="56"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJlVmi3mEfCdbv_CeYwU5Q" type="3005" element="_CJOwOy3mEfCdbv_CeYwU5Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_CJlVmy3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJlVnC3mEfCdbv_CeYwU5Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CJcyoS3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJcyoi3mEfCdbv_CeYwU5Q" x="67" y="255" width="55" height="55"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_CJfO4C3mEfCdbv_CeYwU5Q" type="2001" element="_CJOwPS3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJfO4y3mEfCdbv_CeYwU5Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CJfO5C3mEfCdbv_CeYwU5Q" x="-20" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJlVnS3mEfCdbv_CeYwU5Q" type="3005" element="_CJOwPi3mEfCdbv_CeYwU5Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_CJlVni3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJlVny3mEfCdbv_CeYwU5Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CJfO4S3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJfO4i3mEfCdbv_CeYwU5Q" x="627" y="251" width="55" height="55"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_CJgdAC3mEfCdbv_CeYwU5Q" type="2001" element="_CJOwQC3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJhEEC3mEfCdbv_CeYwU5Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CJhEES3mEfCdbv_CeYwU5Q" x="56"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJlVoC3mEfCdbv_CeYwU5Q" type="3005" element="_CJOwQS3mEfCdbv_CeYwU5Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_CJlVoS3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJlVoi3mEfCdbv_CeYwU5Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CJgdAS3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJgdAi3mEfCdbv_CeYwU5Q" x="627" y="143" width="55" height="55"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_CJkHYC3mEfCdbv_CeYwU5Q" type="2001" element="_CJPXQC3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJkHYy3mEfCdbv_CeYwU5Q" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CJkHZC3mEfCdbv_CeYwU5Q" x="-24" y="-16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJlVoy3mEfCdbv_CeYwU5Q" type="3005" element="_CJPXQS3mEfCdbv_CeYwU5Q">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_CJlVpC3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJlVpS3mEfCdbv_CeYwU5Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CJkHYS3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJkHYi3mEfCdbv_CeYwU5Q" x="432" y="35" width="55" height="55"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_CJlVgC3mEfCdbv_CeYwU5Q" type="2002" element="_CJPXQy3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJlVgy3mEfCdbv_CeYwU5Q" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_CJlVhC3mEfCdbv_CeYwU5Q" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_FgVCUC37EfCNAZ8pzYDEmA" type="3007" element="_FgKDMi37EfCNAZ8pzYDEmA">
+              <children xmi:type="notation:Node" xmi:id="_FgZTwC37EfCNAZ8pzYDEmA" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_FgZTwS37EfCNAZ8pzYDEmA" x="27" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_FggBcC37EfCNAZ8pzYDEmA" type="3005" element="_FgKqQC37EfCNAZ8pzYDEmA">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_FggBcS37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FggBci37EfCNAZ8pzYDEmA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FgVCUS37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FgVCUi37EfCNAZ8pzYDEmA" x="17" y="68" width="26" height="26"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FgfaYC37EfCNAZ8pzYDEmA" type="3007" element="_FgKqQi37EfCNAZ8pzYDEmA">
+              <children xmi:type="notation:Node" xmi:id="_FgfaYy37EfCNAZ8pzYDEmA" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_FgfaZC37EfCNAZ8pzYDEmA" x="27" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_FggogC37EfCNAZ8pzYDEmA" type="3005" element="_FgKqQy37EfCNAZ8pzYDEmA">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_FggogS37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fggogi37EfCNAZ8pzYDEmA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FgfaYS37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FgfaYi37EfCNAZ8pzYDEmA" x="17" y="113" width="26" height="26"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FgfaZS37EfCNAZ8pzYDEmA" type="3007" element="_FgLRUC37EfCNAZ8pzYDEmA">
+              <children xmi:type="notation:Node" xmi:id="_FgfaaC37EfCNAZ8pzYDEmA" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_FgfaaS37EfCNAZ8pzYDEmA" x="27" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_Fggogy37EfCNAZ8pzYDEmA" type="3005" element="_FgLRUS37EfCNAZ8pzYDEmA">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_FggohC37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FggohS37EfCNAZ8pzYDEmA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FgfaZi37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FgfaZy37EfCNAZ8pzYDEmA" x="17" y="158" width="26" height="26"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_CJlVhS3mEfCdbv_CeYwU5Q"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_CJlVhi3mEfCdbv_CeYwU5Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CJlVgS3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJlVgi3mEfCdbv_CeYwU5Q" x="230" y="124" width="129" height="212"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_CJlVhy3mEfCdbv_CeYwU5Q" type="2002" element="_CJPXRi3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJlVii3mEfCdbv_CeYwU5Q" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_CJlViy3mEfCdbv_CeYwU5Q" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_Fggohi37EfCNAZ8pzYDEmA" type="3007" element="_FgLRUy37EfCNAZ8pzYDEmA">
+              <children xmi:type="notation:Node" xmi:id="_FggoiS37EfCNAZ8pzYDEmA" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_Fggoii37EfCNAZ8pzYDEmA" x="27" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_Fgh2oC37EfCNAZ8pzYDEmA" type="3005" element="_FgLRVC37EfCNAZ8pzYDEmA">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_Fgh2oS37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fgh2oi37EfCNAZ8pzYDEmA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Fggohy37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FggoiC37EfCNAZ8pzYDEmA" x="21" y="67" width="26" height="26"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FghPkC37EfCNAZ8pzYDEmA" type="3007" element="_FgLRVi37EfCNAZ8pzYDEmA">
+              <children xmi:type="notation:Node" xmi:id="_FghPky37EfCNAZ8pzYDEmA" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_FghPlC37EfCNAZ8pzYDEmA" x="27" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_Fgh2oy37EfCNAZ8pzYDEmA" type="3005" element="_FgLRVy37EfCNAZ8pzYDEmA">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_Fgh2pC37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fgh2pS37EfCNAZ8pzYDEmA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FghPkS37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FghPki37EfCNAZ8pzYDEmA" x="21" y="111" width="26" height="26"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FghPlS37EfCNAZ8pzYDEmA" type="3007" element="_FgLRWS37EfCNAZ8pzYDEmA">
+              <children xmi:type="notation:Node" xmi:id="_FghPmC37EfCNAZ8pzYDEmA" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_FghPmS37EfCNAZ8pzYDEmA" x="27" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_Fgh2pi37EfCNAZ8pzYDEmA" type="3005" element="_FgLRWi37EfCNAZ8pzYDEmA">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_Fgh2py37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fgh2qC37EfCNAZ8pzYDEmA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FghPli37EfCNAZ8pzYDEmA" fontName=".AppleSystemUIFont" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FghPly37EfCNAZ8pzYDEmA" x="21" y="156" width="26" height="26"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_CJlVjC3mEfCdbv_CeYwU5Q"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_CJlVjS3mEfCdbv_CeYwU5Q"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_CJlViC3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJlViS3mEfCdbv_CeYwU5Q" x="423" y="125" width="128" height="210"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_CJOJIi3mEfCdbv_CeYwU5Q"/>
+        <edges xmi:type="notation:Edge" xmi:id="_CJmjuC3mEfCdbv_CeYwU5Q" type="4001" element="_CJP-WS3mEfCdbv_CeYwU5Q" source="_CJlVgC3mEfCdbv_CeYwU5Q" target="_CJX6IC3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJnKsC3mEfCdbv_CeYwU5Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnKsS3mEfCdbv_CeYwU5Q" x="3" y="-3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJnKsi3mEfCdbv_CeYwU5Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnKsy3mEfCdbv_CeYwU5Q" x="2" y="-2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJnKtC3mEfCdbv_CeYwU5Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnKtS3mEfCdbv_CeYwU5Q" x="4" y="-1"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_CJmjuS3mEfCdbv_CeYwU5Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_CJmjui3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CJmjuy3mEfCdbv_CeYwU5Q" points="[0, 0, 2, 49]$[-2, -49, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CJnKti3mEfCdbv_CeYwU5Q" id="(0.5196850393700787,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CJnKty3mEfCdbv_CeYwU5Q" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_CJnKuC3mEfCdbv_CeYwU5Q" type="4001" element="_CJP-Xi3mEfCdbv_CeYwU5Q" source="_CJgdAC3mEfCdbv_CeYwU5Q" target="_CJZIQC3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJnKvC3mEfCdbv_CeYwU5Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnKvS3mEfCdbv_CeYwU5Q" x="5" y="-2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJnKvi3mEfCdbv_CeYwU5Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnKvy3mEfCdbv_CeYwU5Q" x="-3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJnKwC3mEfCdbv_CeYwU5Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnKwS3mEfCdbv_CeYwU5Q" x="-1" y="-3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_CJnKuS3mEfCdbv_CeYwU5Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_CJnKui3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CJnKuy3mEfCdbv_CeYwU5Q" points="[0, 0, -1, 56]$[1, -56, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CJnKwi3mEfCdbv_CeYwU5Q" id="(0.4909090909090909,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CJnKwy3mEfCdbv_CeYwU5Q" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_CJnKxC3mEfCdbv_CeYwU5Q" type="4001" element="_CJQlYC3mEfCdbv_CeYwU5Q" source="_CJfO4C3mEfCdbv_CeYwU5Q" target="_CJgdAC3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJnKyC3mEfCdbv_CeYwU5Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnKyS3mEfCdbv_CeYwU5Q" y="-1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJnKyi3mEfCdbv_CeYwU5Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnKyy3mEfCdbv_CeYwU5Q" x="3" y="1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJnKzC3mEfCdbv_CeYwU5Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnKzS3mEfCdbv_CeYwU5Q" x="1" y="1"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_CJnKxS3mEfCdbv_CeYwU5Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_CJnKxi3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CJnKxy3mEfCdbv_CeYwU5Q" points="[0, 0, 0, 53]$[0, -53, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CJnKzi3mEfCdbv_CeYwU5Q" id="(0.4909090909090909,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CJnKzy3mEfCdbv_CeYwU5Q" id="(0.4909090909090909,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_CJnK0C3mEfCdbv_CeYwU5Q" type="4001" element="_CJQlZS3mEfCdbv_CeYwU5Q" source="_CJcyoC3mEfCdbv_CeYwU5Q" target="_CJlVgC3mEfCdbv_CeYwU5Q">
+          <children xmi:type="notation:Node" xmi:id="_CJnK1C3mEfCdbv_CeYwU5Q" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnK1S3mEfCdbv_CeYwU5Q" x="-1" y="-4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJnK1i3mEfCdbv_CeYwU5Q" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnK1y3mEfCdbv_CeYwU5Q" x="-2" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CJnK2C3mEfCdbv_CeYwU5Q" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CJnK2S3mEfCdbv_CeYwU5Q" x="-1" y="-10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_CJnK0S3mEfCdbv_CeYwU5Q"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_CJnK0i3mEfCdbv_CeYwU5Q" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CJnK0y3mEfCdbv_CeYwU5Q" points="[0, 0, -202, 63]$[136, -43, -66, 20]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CJnK2i3mEfCdbv_CeYwU5Q" id="(0.4909090909090909,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CJnK2y3mEfCdbv_CeYwU5Q" id="(0.5196850393700787,0.3238095238095238)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_X0GpwC39EfCUGp3mNnK2qQ" type="4001" element="_X0AjIC39EfCUGp3mNnK2qQ" source="_FgVCUC37EfCNAZ8pzYDEmA" target="_Fggohi37EfCNAZ8pzYDEmA">
+          <children xmi:type="notation:Node" xmi:id="_X0Ie8C39EfCUGp3mNnK2qQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X0Ie8S39EfCUGp3mNnK2qQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_X0JtEC39EfCUGp3mNnK2qQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X0JtES39EfCUGp3mNnK2qQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_X0KUIC39EfCUGp3mNnK2qQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X0KUIS39EfCUGp3mNnK2qQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_X0HQ0C39EfCUGp3mNnK2qQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_X0HQ0S39EfCUGp3mNnK2qQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_X0HQ0i39EfCUGp3mNnK2qQ" points="[13, 0, -184, 0]$[184, 0, -13, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_X0NXcC39EfCUGp3mNnK2qQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_X0NXcS39EfCUGp3mNnK2qQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_X0NXci39EfCUGp3mNnK2qQ" type="4001" element="_X0AjJS39EfCUGp3mNnK2qQ" source="_FgfaYC37EfCNAZ8pzYDEmA" target="_FghPlS37EfCNAZ8pzYDEmA">
+          <children xmi:type="notation:Node" xmi:id="_X0NXdi39EfCUGp3mNnK2qQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X0NXdy39EfCUGp3mNnK2qQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_X0NXeC39EfCUGp3mNnK2qQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X0NXeS39EfCUGp3mNnK2qQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_X0NXei39EfCUGp3mNnK2qQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X0NXey39EfCUGp3mNnK2qQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_X0NXcy39EfCUGp3mNnK2qQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_X0NXdC39EfCUGp3mNnK2qQ" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_X0NXdS39EfCUGp3mNnK2qQ" points="[13, 2, -184, -42]$[184, 41, -13, -3]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_X0NXfC39EfCUGp3mNnK2qQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_X0NXfS39EfCUGp3mNnK2qQ" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_CJQlai3mEfCdbv_CeYwU5Q" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_CJQlay3mEfCdbv_CeYwU5Q"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CJOJIy3mEfCdbv_CeYwU5Q" name="NetAppBlueXP" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="pcs:Environment" href="infrastructure.pcs#//@environment"/>
+      <semanticElements xmi:type="pcs:Environment" href="infrastructure.pcs#//@environment"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_CJOJJC3mEfCdbv_CeYwU5Q" labelSize="12" showIcon="false" workspacePath="/org.netapp.pcs.design/icons/Environment.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='Environment%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='Environment%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CJOwMS3mEfCdbv_CeYwU5Q" name="snapshotPolicyDefault" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="pcs:SnapshotPolicy" href="infrastructure.pcs#//@snapshotPolicy"/>
+      <semanticElements xmi:type="pcs:SnapshotPolicy" href="infrastructure.pcs#//@snapshotPolicy"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_CJOwMi3mEfCdbv_CeYwU5Q" labelSize="12" showIcon="false" workspacePath="/org.netapp.pcs.design/icons/SnapshotPolicy.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='SnapshotPolicy%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='SnapshotPolicy%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CJOwNC3mEfCdbv_CeYwU5Q" name="UK West" incomingEdges="_CJP-WS3mEfCdbv_CeYwU5Q" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="pcs:AWSNetworking" href="infrastructure.pcs#//@awsconfiguration.0"/>
+      <semanticElements xmi:type="pcs:AWSNetworking" href="infrastructure.pcs#//@awsconfiguration.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_CJOwNS3mEfCdbv_CeYwU5Q" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/org.netapp.pcs.design/icons/AWSNetworking.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='AWSNetworking%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='AWSNetworking%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CJOwNy3mEfCdbv_CeYwU5Q" name="US North" incomingEdges="_CJP-Xi3mEfCdbv_CeYwU5Q" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="pcs:AWSNetworkingHA" href="infrastructure.pcs#//@awsconfiguration.1"/>
+      <semanticElements xmi:type="pcs:AWSNetworkingHA" href="infrastructure.pcs#//@awsconfiguration.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_CJOwOC3mEfCdbv_CeYwU5Q" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/org.netapp.pcs.design/icons/AWSNetworkingHA.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='AWSNetworkingHA%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='AWSNetworkingHA%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CJOwOi3mEfCdbv_CeYwU5Q" name="CloudBackupMain" outgoingEdges="_CJQlZS3mEfCdbv_CeYwU5Q" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="pcs:CloudBackup" href="infrastructure.pcs#//@pcs.2"/>
+      <semanticElements xmi:type="pcs:CloudBackup" href="infrastructure.pcs#//@pcs.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_CJOwOy3mEfCdbv_CeYwU5Q" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/org.netapp.pcs.design/icons/CloudBackup.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CloudBackup']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CloudBackup']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CJOwPS3mEfCdbv_CeYwU5Q" name="CloudTieringDev" outgoingEdges="_CJQlYC3mEfCdbv_CeYwU5Q" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="pcs:CloudTiering" href="infrastructure.pcs#//@pcs.3"/>
+      <semanticElements xmi:type="pcs:CloudTiering" href="infrastructure.pcs#//@pcs.3"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_CJOwPi3mEfCdbv_CeYwU5Q" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" workspacePath="/org.netapp.pcs.design/icons/CloudTiering.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CloudTiering']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CloudTiering']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CJOwQC3mEfCdbv_CeYwU5Q" name="CVO_HA_2" outgoingEdges="_CJP-Xi3mEfCdbv_CeYwU5Q" incomingEdges="_CJQlYC3mEfCdbv_CeYwU5Q" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="pcs:CVO_HA" href="infrastructure.pcs#//@pcs.1"/>
+      <semanticElements xmi:type="pcs:CVO_HA" href="infrastructure.pcs#//@pcs.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_CJOwQS3mEfCdbv_CeYwU5Q" labelSize="12" showIcon="false" workspacePath="/org.netapp.pcs.design/icons/CVO_HA.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CVO_HA%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CVO_HA%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CJPXQC3mEfCdbv_CeYwU5Q" name="replicationPolicy" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="pcs:ReplicationPolicy" href="infrastructure.pcs#//@pcs.5"/>
+      <semanticElements xmi:type="pcs:ReplicationPolicy" href="infrastructure.pcs#//@pcs.5"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_CJPXQS3mEfCdbv_CeYwU5Q" labelSize="12" showIcon="false" workspacePath="/org.netapp.pcs.design/icons/ReplicationPolicy.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='ReplicationPolicy%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='ReplicationPolicy%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_CJPXQy3mEfCdbv_CeYwU5Q" name="CVO_1" outgoingEdges="_CJP-WS3mEfCdbv_CeYwU5Q" incomingEdges="_CJQlZS3mEfCdbv_CeYwU5Q">
+      <target xmi:type="pcs:CVO" href="infrastructure.pcs#//@pcs.0"/>
+      <semanticElements xmi:type="pcs:CVO" href="infrastructure.pcs#//@pcs.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_CJPXRC3mEfCdbv_CeYwU5Q" labelSize="12" iconPath="/org.netapp.pcs.design/icons/CVO_icon.png" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="194,239,255" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_FgKDMi37EfCNAZ8pzYDEmA" name="volumeA" outgoingEdges="_X0AjIC39EfCUGp3mNnK2qQ" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.0/@volumes.0"/>
+        <semanticElements xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.0/@volumes.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_FgKqQC37EfCNAZ8pzYDEmA" labelSize="12" showIcon="false" workspacePath="/org.netapp.pcs.design/icons/Volume.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_FgKqQi37EfCNAZ8pzYDEmA" name="volumeB" outgoingEdges="_X0AjJS39EfCUGp3mNnK2qQ" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.0/@volumes.1"/>
+        <semanticElements xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.0/@volumes.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_FgKqQy37EfCNAZ8pzYDEmA" labelSize="12" showIcon="false" workspacePath="/org.netapp.pcs.design/icons/Volume.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_FgLRUC37EfCNAZ8pzYDEmA" name="volumeC" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.0/@volumes.2"/>
+        <semanticElements xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.0/@volumes.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_FgLRUS37EfCNAZ8pzYDEmA" labelSize="12" showIcon="false" workspacePath="/org.netapp.pcs.design/icons/Volume.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_CJPXRi3mEfCdbv_CeYwU5Q" name="CVO_2">
+      <target xmi:type="pcs:CVO" href="infrastructure.pcs#//@pcs.4"/>
+      <semanticElements xmi:type="pcs:CVO" href="infrastructure.pcs#//@pcs.4"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_CJPXRy3mEfCdbv_CeYwU5Q" labelSize="12" iconPath="/org.netapp.pcs.design/icons/CVO_icon.png" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="194,239,255" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_FgLRUy37EfCNAZ8pzYDEmA" name="volume1" incomingEdges="_X0AjIC39EfCUGp3mNnK2qQ" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.4/@volumes.0"/>
+        <semanticElements xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.4/@volumes.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_FgLRVC37EfCNAZ8pzYDEmA" labelSize="12" showIcon="false" workspacePath="/org.netapp.pcs.design/icons/Volume.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_FgLRVi37EfCNAZ8pzYDEmA" name="volume2" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.4/@volumes.1"/>
+        <semanticElements xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.4/@volumes.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_FgLRVy37EfCNAZ8pzYDEmA" labelSize="12" showIcon="false" workspacePath="/org.netapp.pcs.design/icons/Volume.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_FgLRWS37EfCNAZ8pzYDEmA" name="volume3" incomingEdges="_X0AjJS39EfCUGp3mNnK2qQ" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.4/@volumes.2"/>
+        <semanticElements xmi:type="pcs:Volume" href="infrastructure.pcs#//@pcs.4/@volumes.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_FgLRWi37EfCNAZ8pzYDEmA" labelSize="12" showIcon="false" workspacePath="/org.netapp.pcs.design/icons/Volume.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_CJP-WS3mEfCdbv_CeYwU5Q" sourceNode="_CJPXQy3mEfCdbv_CeYwU5Q" targetNode="_CJOwNC3mEfCdbv_CeYwU5Q">
+      <target xmi:type="pcs:CVO" href="infrastructure.pcs#//@pcs.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_CJP-Wi3mEfCdbv_CeYwU5Q" size="2" strokeColor="39,76,114">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CVO%20AWSNetworking%20edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_CJP-Wy3mEfCdbv_CeYwU5Q" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CVO%20AWSNetworking%20edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_CJP-Xi3mEfCdbv_CeYwU5Q" sourceNode="_CJOwQC3mEfCdbv_CeYwU5Q" targetNode="_CJOwNy3mEfCdbv_CeYwU5Q">
+      <target xmi:type="pcs:CVO_HA" href="infrastructure.pcs#//@pcs.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_CJP-Xy3mEfCdbv_CeYwU5Q" size="2" strokeColor="39,76,114">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CVO_HA%20AWSNetworkingHA%20edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_CJP-YC3mEfCdbv_CeYwU5Q" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CVO_HA%20AWSNetworkingHA%20edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_CJQlYC3mEfCdbv_CeYwU5Q" sourceNode="_CJOwPS3mEfCdbv_CeYwU5Q" targetNode="_CJOwQC3mEfCdbv_CeYwU5Q">
+      <target xmi:type="pcs:CloudTiering" href="infrastructure.pcs#//@pcs.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_CJQlYS3mEfCdbv_CeYwU5Q" size="2" strokeColor="39,76,114">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CloudStorage%20edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_CJQlYi3mEfCdbv_CeYwU5Q" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CloudStorage%20edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_CJQlZS3mEfCdbv_CeYwU5Q" sourceNode="_CJOwOi3mEfCdbv_CeYwU5Q" targetNode="_CJPXQy3mEfCdbv_CeYwU5Q">
+      <target xmi:type="pcs:CloudBackup" href="infrastructure.pcs#//@pcs.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_CJQlZi3mEfCdbv_CeYwU5Q" size="2" strokeColor="39,76,114">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CloudStorage%20edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_CJQlZy3mEfCdbv_CeYwU5Q" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CloudStorage%20edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_X0AjIC39EfCUGp3mNnK2qQ" sourceNode="_FgKDMi37EfCNAZ8pzYDEmA" targetNode="_FgLRUy37EfCNAZ8pzYDEmA">
+      <target xmi:type="pcs:SnapMirror" href="infrastructure.pcs#//@pcs.5/@replication_mappings.0"/>
+      <semanticElements xmi:type="pcs:SnapMirror" href="infrastructure.pcs#//@pcs.5/@replication_mappings.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_X0AjIS39EfCUGp3mNnK2qQ" sourceArrow="InputArrow" size="4" strokeColor="239,41,41">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='SnapMirror%20Volume%20edge']/@conditionnalStyles.0/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_X0AjIi39EfCUGp3mNnK2qQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='SnapMirror%20Volume%20edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_X0AjJS39EfCUGp3mNnK2qQ" sourceNode="_FgKqQi37EfCNAZ8pzYDEmA" targetNode="_FgLRWS37EfCNAZ8pzYDEmA">
+      <target xmi:type="pcs:SnapMirror" href="infrastructure.pcs#//@pcs.5/@replication_mappings.1"/>
+      <semanticElements xmi:type="pcs:SnapMirror" href="infrastructure.pcs#//@pcs.5/@replication_mappings.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_X0BKMC39EfCUGp3mNnK2qQ" size="4" strokeColor="239,41,41">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='SnapMirror%20Volume%20edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_X0BKMS39EfCUGp3mNnK2qQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='SnapMirror%20Volume%20edge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_CJNiES3mEfCdbv_CeYwU5Q"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.netapp.pcs.design/description/pcs.odesign#//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer"/>
+    <target xmi:type="pcs:Deployment" href="infrastructure.pcs#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

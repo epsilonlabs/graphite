@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.netapp.pcs;singleton:=true
+Automatic-Module-Name: org.netapp.pcs
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: pcs,
+ pcs.impl,
+ pcs.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.xtext;bundle-version="2.29.0",
+ org.eclipse.ui,
+ org.netapp.pcs.grammarVolumes;bundle-version="1.0.0",
+ org.netapp.pcs.grammarVolumes.ui;bundle-version="1.0.0",
+ org.netapp.pcs.grammarSnapMirror,
+ org.netapp.pcs.grammarSnapMirror.ui;bundle-version="1.0.0",
+ graphite;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+

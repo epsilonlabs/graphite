@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="pcs" version="12.0.0.2017041100">
+  <ownedViewpoints name="ontap" modelFileExtension="pcs">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Deployment diagram" domainClass="pcs::Deployment" enablePopupBars="true">
+      <metamodel href="pcs.netapp.org#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Environment node" labelDirectEdit="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='name']" domainClass="pcs::Environment">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.netapp.pcs.design/icons/Environment.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="SnapshotPolicy node" labelDirectEdit="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='name']" domainClass="pcs::SnapshotPolicy">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.netapp.pcs.design/icons/SnapshotPolicy.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="AWSNetworking node" labelDirectEdit="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='region']" domainClass="pcs::AWSNetworking">
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="feature:region" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.netapp.pcs.design/icons/AWSNetworking.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="AWSNetworkingHA node" labelDirectEdit="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='region']" domainClass="pcs::AWSNetworkingHA">
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="feature:region" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.netapp.pcs.design/icons/AWSNetworkingHA.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="CloudBackup" labelDirectEdit="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='name']" domainClass="pcs::CloudBackup">
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.netapp.pcs.design/icons/CloudBackup.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="CloudTiering" labelDirectEdit="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='name']" domainClass="pcs::CloudTiering">
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.netapp.pcs.design/icons/CloudTiering.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="CVO_HA node" labelDirectEdit="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='name']" domainClass="pcs::CVO_HA">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.netapp.pcs.design/icons/CVO_HA.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ReplicationPolicy node" labelDirectEdit="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='name']" domainClass="pcs::ReplicationPolicy">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.netapp.pcs.design/icons/ReplicationPolicy.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="CVO AWSNetworking edge" deletionDescription="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CVO%20AWSNetworking%20edge']" sourceMapping="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']" targetMapping="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='AWSNetworking%20node']" targetFinderExpression="feature:awsnetworking" reconnections="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CVO-AWSNetworking']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CVO_HA AWSNetworkingHA edge" deletionDescription="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CVO_HA%20AWSNetworkingHA%20edge']" sourceMapping="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CVO_HA%20node']" targetMapping="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='AWSNetworkingHA%20node']" targetFinderExpression="feature:awsnetworkingha" reconnections="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CVO_HA-AWSNetworkingHA']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CloudStorage edge" deletionDescription="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CloudStorage%20edge']" sourceMapping="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CloudTiering'] //@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CloudBackup']" targetMapping="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node'] //@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CVO_HA%20node']" targetFinderExpression="feature:cloudstorage" reconnections="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CVO-CloudStorage']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SnapMirror Volume edge" sourceMapping="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']" targetMapping="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']" targetFinderExpression="feature:destination_volume" sourceFinderExpression="feature:source_volume" domainClass="pcs::SnapMirror" useDomainElement="true">
+          <style sizeComputationExpression="4">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="feature:bidirectional">
+            <style sourceArrow="InputArrow" sizeComputationExpression="4">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <centerLabelStyleDescription labelSize="12">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <containerMappings name="CVO node" labelDirectEdit="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='name']" synchronizationLock="true" domainClass="pcs::CVO">
+          <subNodeMappings name="Volume node" labelDirectEdit="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='name']" semanticCandidatesExpression="feature:volumes" domainClass="pcs::Volume">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.netapp.pcs.design/icons/Volume.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="0" arcHeight="0" borderSizeComputationExpression="1" labelSize="12" iconPath="/org.netapp.pcs.design/icons/CVO_icon.png" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Node Environment" nodeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='Environment%20node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pcs::Environment" referenceName="environment"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Node SnapshotPolicy" nodeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='SnapshotPolicy%20node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pcs::SnapshotPolicy" referenceName="snapshotPolicy"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Node AWSNetworking" nodeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='AWSNetworking%20node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pcs::AWSNetworking" referenceName="awsconfiguration"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Node AWSNetworkingHA" nodeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='AWSNetworkingHA%20node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pcs::AWSNetworkingHA" referenceName="awsconfiguration"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Node CloudBackup" nodeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CloudBackup']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pcs::CloudBackup" referenceName="pcs"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Node CloudTiering" nodeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CloudTiering']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pcs::CloudTiering" referenceName="pcs"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Node CVO_HA" nodeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@nodeMappings[name='CVO_HA%20node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pcs::CVO_HA" referenceName="pcs"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Node CVO" containerMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pcs::CVO" referenceName="pcs"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Node Volume" nodeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@containerMappings[name='CVO%20node']/@subNodeMappings[name='Volume%20node']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pcs::Volume" referenceName="volumes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="name">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="region">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="region" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Edge CVO-AWSNetworking" edgeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CVO%20AWSNetworking%20edge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="awsnetworking" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Edge CVO_HA-AWSNetworkingHA" edgeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CVO_HA%20AWSNetworkingHA%20edge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="awsnetworkingha" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Edge CVO-CloudStorage" edgeMappings="//@ownedViewpoints[name='ontap']/@ownedRepresentations[name='Deployment%20diagram']/@defaultLayer/@edgeMappings[name='CloudStorage%20edge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="cloudstorage" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="CVO_HA-AWSNetworkingHA">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="awsnetworkingha" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="CVO-AWSNetworking">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="awsnetworking" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="CVO-CloudStorage">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="cloudstorage" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="CVO AWSNetworking edge">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="awsnetworking"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="CVO_HA AWSNetworkingHA edge">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="awsnetworkingha"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="CloudStorage edge">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="cloudstorage"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.netapp.pcs.design.Services"/>
+    <ownedJavaExtensions qualifiedClassName="graphite.graphical.SiriusServices"/>
+  </ownedViewpoints>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="Graphite Properties">
+    <categories name="graphite">
+      <pages name="graphite_rules_page" labelExpression="aql:input.emfEditServices(self).getTabName()" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@categories.0/@groups.0"/>
+      <groups name="graphite_rules_group" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
+        <controls xsi:type="properties:DynamicMappingForDescription" name="graphite_rules_structural_features_for" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs name="graphite_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature) and not self.isParsedString(eStructuralFeature)">
+            <widget xsi:type="properties:TextDescription" name="graphite_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="graphite_rules_multi_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature) and not self.isParsedString(eStructuralFeature)">
+            <widget xsi:type="properties:TextAreaDescription" name="graphite_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="graphite_rules_string_xtext" predicateExpression="aql:self.isParsedString(eStructuralFeature)">
+            <widget xsi:type="properties:CustomDescription" name="graphite.xtextwidgetViewer" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)"/>
+          </ifs>
+          <ifs name="sirius_default_rules_mono_boolean" predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
+            <widget xsi:type="properties:CheckboxDescription" name="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="sirius_default_rules_enum_if" predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
+            <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="sirius_default_rules_eattribute_many_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EAttribute) and eStructuralFeature.many">
+            <widget xsi:type="properties:ListDescription" name="sirius_default_rules_eattribute_many" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)" displayExpression="var:value"/>
+          </ifs>
+          <ifs name="sirius_default_rules_ereference_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
+            <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
+          </ifs>
+        </controls>
+      </groups>
+    </categories>
+  </extensions>
+</description:Group>

@@ -1,0 +1,19 @@
+package [%=classImplQualifiedName%];
+
+import graphite.textual.XtextEObject;
+import graphite.shared.DerivedObjectProperties;
+import graphite.textual.DerivedObjectUtility;
+
+import [%=mainPackage.name%].impl.PropertiesData.DerivedObjectName;
+
+public class [%=classContainerName%] extends [%=classNameImpl%] implements XtextEObject {
+
+	[% for (a in attributePairs) {%]
+	@Override
+	public void [%=a.setParsedString%](String [%=a.parsedAttributeName%]) {
+		super.[%=a.setParsedString%]([%=a.parsedAttributeName%]);
+		DerivedObjectUtility.setDeriveObject((DerivedObjectProperties)derivedObjectsProperties.get(DerivedObjectName.[%=a.derivedAttributeNameStaticVariable%]), [%=a.parsedAttributeName%], [%=a.getDerivedAttribute%]());
+	}
+	
+	[%}%]
+} //[%=classContainerName%]

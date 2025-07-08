@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.netapp.pcs.grammarSnapMirror.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: org.netapp.pcs.grammarSnapMirror.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.netapp.pcs.grammarSnapMirror.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.netapp.pcs.grammarSnapMirror,
+ org.netapp.pcs,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.netapp.pcs.grammarSnapMirror.ide.contentassist.antlr.internal,
+ org.netapp.pcs.grammarSnapMirror.ide.contentassist.antlr

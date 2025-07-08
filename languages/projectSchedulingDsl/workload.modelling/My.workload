@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workload:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:workload="ProjectWorkloadsDSL">
+  <tasks name="Analysis" leader="//@people.0" effortsExpression="Alice : 6&#xA;Bob : 3"/>
+  <tasks name="Design" leader="//@people.1" dependencies="//@tasks.0"/>
+  <tasks name="Implementation" leader="//@people.2" dependencies="//@tasks.1" effortsExpression="Alice : 3&#xA;Bob : 6&#xA;Charlie : 8"/>
+  <people name="Alice"/>
+  <people name="Bob"/>
+  <people name="Charlie"/>
+</workload:Project>

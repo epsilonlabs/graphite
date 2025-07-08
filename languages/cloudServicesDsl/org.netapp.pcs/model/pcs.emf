@@ -1,0 +1,105 @@
+@namespace(uri="pcs.netapp.org", prefix="pcs")
+package pcs;
+
+class Deployment extends NamedElement {
+	val Environment environment;
+	val SnapshotPolicy snapshotPolicy;
+	val PCS[*] pcs;
+	val AWSConfiguration[*] awsconfiguration;
+}
+
+abstract class NamedElement {
+	attr String name;
+	attr String identifier;
+}
+
+abstract class PCS extends NamedElement {
+}
+
+abstract class CloudStorage extends PCS {
+	ref CloudBackup#cloudstorage backup_volumes_to_cbs;
+	ref CloudTiering#cloudstorage capacity_tier;
+}
+
+abstract class DataService extends PCS {
+}
+
+class Environment extends NamedElement {
+}
+
+class SnapshotPolicy extends NamedElement {
+}
+
+class SnapMirror extends DataService {
+	ref CVO source_cvo;
+	ref CVO destination_cvo;
+	ref Volume source_volume;
+	ref Volume destination_volume;
+	ref SnapshotPolicy policy;
+	attr int max_transfer_rate;
+	attr boolean bidirectional;
+}
+
+@syntax(feature="replication_mapping", derive="replication_mappings", grammar="org.netapp.pcs.grammarSnapMirror.ReplicationMappings", entryRule="ReplicationPolicy")
+class ReplicationPolicy extends PCS {
+	val SnapMirror[*] replication_mappings;
+	attr String replication_mapping;
+}
+
+class CloudTiering extends DataService {
+	ref CloudStorage[1]#capacity_tier cloudstorage;
+}
+
+class CloudBackup extends DataService {
+	ref CloudStorage[1]#backup_volumes_to_cbs cloudstorage;
+}
+
+@syntax(feature="volume", derive="volumes", grammar="org.netapp.pcs.grammarVolumes.Volumes", entryRule="CVO")
+class CVO extends CVOConfiguration {
+	ref AWSNetworking#cvo awsnetworking;	
+	val Volume[*] volumes;
+	attr String volume;
+}
+
+class CVO_HA extends CVOConfiguration {
+	ref AWSNetworkingHA#cvo_ha awsnetworkingha;
+}
+
+class AWSNetworking extends AWSConfiguration {
+	attr String subnet_id;
+	ref CVO[*]#awsnetworking cvo;
+}
+
+class AWSNetworkingHA extends AWSConfiguration {
+	ref CVO_HA[*]#awsnetworkingha cvo_ha;
+	attr String node1_subnet_id;
+	attr String node2_subnet_id;
+	attr String failover_mode;
+	attr String mediator_subnet_id;
+	attr String mediator_key_pair_name;
+	attr String cluster_floating_ip;
+	attr String data_floating_ip;
+	attr String data_floating_ip2;
+	attr String svm_floating_ip;
+}
+
+abstract class AWSConfiguration {
+	attr String region;
+	attr String vpc_id;
+}
+
+class Volume extends NamedElement {
+	ref Environment environment;
+	ref SnapshotPolicy snapshot_policy;
+	attr String state;
+	attr double size;
+	attr String size_unit;
+	attr String svm_name;
+	attr String export_policy_type;
+	attr String[*] export_policy_ip;
+	attr String[*] export_policy_nfs_version;
+	attr int multiplicity;
+}
+
+abstract class CVOConfiguration extends CloudStorage {
+}

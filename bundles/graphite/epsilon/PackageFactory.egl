@@ -1,0 +1,9 @@
+-	* @generated
+-	*/
+-	[%=packageData.factoryClass%] eINSTANCE = [%=packageData.classQualifiedName%].impl.[%=packageFactoryImpl%].init();
++	* @generated NOT
++	*/
++	[%=packageData.factoryClass%] eINSTANCE = [%=packageData.classQualifiedName%].impl.[%=xtextPackageFactoryImpl%].init();
+...
+-} //[%=packageData.factoryClass%]
++} //[%=packageData.factoryClass%] (Patched)

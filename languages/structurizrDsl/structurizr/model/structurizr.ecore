@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="structurizr" nsURI="structurizr" nsPrefix="structurizr">
+  <eClassifiers xsi:type="ecore:EClass" name="Workspace">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="views" eType="#//Views"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" eType="#//Configuration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Configuration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scope" eType="#//Scope"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//Visibility"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="users" upperBound="-1"
+        eType="#//User" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="permission" eType="#//UserPermission"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentifiableElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationships" upperBound="-1"
+        eType="#//Relationship" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C4Element" abstract="true" eSuperTypes="#//IdentifiableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="perspectives" upperBound="-1"
+        eType="#//Perspective" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//IdentifiableElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//IdentifiableElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="technology" eType="#//Technology"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="perspectives" upperBound="-1"
+        eType="#//Perspective" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Technology">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Perspective">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="softwareSystem" eType="#//SoftwareSystem"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="persons" upperBound="-1"
+        eType="#//Person" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Element" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deploymentEnvironments"
+        upperBound="-1" eType="#//DeploymentEnvironment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationships" upperBound="-1"
+        eType="#//Relationship" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" eSuperTypes="#//C4Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metadata" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="#//C4Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SoftwareSystem" eSuperTypes="#//C4Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
+        eType="#//Container" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//C4Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="technology" eType="#//Technology"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//C4Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="technology" eType="#//Technology"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentEnvironment" eSuperTypes="#//IdentifiableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deploymentGroups" upperBound="-1"
+        eType="#//DeploymentGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deploymentNodes" upperBound="-1"
+        eType="#//DeploymentNode" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentNode" eSuperTypes="#//C4Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="technology" eType="#//Technology"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deploymentNodes" upperBound="-1"
+        eType="#//DeploymentNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="infrastructureNodes" upperBound="-1"
+        eType="#//InfrastructureNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="softwareSystemInstances"
+        upperBound="-1" eType="#//SoftwareSystemInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerInstances" upperBound="-1"
+        eType="#//ContainerInstance" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InfrastructureNode" eSuperTypes="#//C4Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="technology" eType="#//Technology"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SoftwareSystemInstance" eSuperTypes="#//C4Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="softwareSystem" eType="#//SoftwareSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deploymentGroups" upperBound="-1"
+        eType="#//DeploymentGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="healthCheck" eType="#//HealthCheck"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerInstance" eSuperTypes="#//C4Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deploymentGroups" upperBound="-1"
+        eType="#//DeploymentGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="healthCheck" eType="#//HealthCheck"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HealthCheck">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeouts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Views">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="viewElements" upperBound="-1"
+        eType="#//ViewElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="styles" upperBound="-1"
+        eType="#//Style" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="autoLayout" eType="#//AutoLayout"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="include" eType="#//ConditionElement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exclude" eType="#//ConditionElement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="includeExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="excludeExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemLandscapeView" eSuperTypes="#//ViewElement">
+    <eAnnotations source="syntax">
+      <details key="feature" value="includeExpression"/>
+      <details key="derive" value="include"/>
+      <details key="grammar" value="structurizr.expressions.StructurizrExpressions"/>
+      <details key="entryRule" value="SystemLandscapeView_Include"/>
+    </eAnnotations>
+    <eAnnotations source="syntax">
+      <details key="feature" value="excludeExpression"/>
+      <details key="derive" value="exclude"/>
+      <details key="grammar" value="structurizr.expressions.StructurizrExpressions"/>
+      <details key="entryRule" value="SystemLandscapeView_Exclude"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemContextView" eSuperTypes="#//ViewElement">
+    <eAnnotations source="syntax">
+      <details key="feature" value="includeExpression"/>
+      <details key="derive" value="include"/>
+      <details key="grammar" value="structurizr.expressions.StructurizrExpressions"/>
+      <details key="entryRule" value="SystemContextView_Include"/>
+    </eAnnotations>
+    <eAnnotations source="syntax">
+      <details key="feature" value="excludeExpression"/>
+      <details key="derive" value="exclude"/>
+      <details key="grammar" value="structurizr.expressions.StructurizrExpressions"/>
+      <details key="entryRule" value="SystemContextView_Exclude"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="softwareSystem" eType="#//SoftwareSystem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerView" eSuperTypes="#//ViewElement">
+    <eAnnotations source="syntax">
+      <details key="feature" value="includeExpression"/>
+      <details key="derive" value="include"/>
+      <details key="grammar" value="structurizr.expressions.StructurizrExpressions"/>
+      <details key="entryRule" value="ContainerView_Include"/>
+    </eAnnotations>
+    <eAnnotations source="syntax">
+      <details key="feature" value="excludeExpression"/>
+      <details key="derive" value="exclude"/>
+      <details key="grammar" value="structurizr.expressions.StructurizrExpressions"/>
+      <details key="entryRule" value="ContainerView_Exclude"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="softwareSystem" eType="#//SoftwareSystem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentView" eSuperTypes="#//ViewElement">
+    <eAnnotations source="syntax">
+      <details key="feature" value="includeExpression"/>
+      <details key="derive" value="include"/>
+      <details key="grammar" value="structurizr.expressions.StructurizrExpressions"/>
+      <details key="entryRule" value="ComponentView_Include"/>
+    </eAnnotations>
+    <eAnnotations source="syntax">
+      <details key="feature" value="excludeExpression"/>
+      <details key="derive" value="exclude"/>
+      <details key="grammar" value="structurizr.expressions.StructurizrExpressions"/>
+      <details key="entryRule" value="ComponentView_Exclude"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AutoLayout">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoLayoutOption" eType="#//AutoLayoutOption"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rankSeparation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodeSeparation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Style" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementStyle" eSuperTypes="#//Style">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//Tag"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strokeWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="opacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metadata" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="border" eType="#//Border"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shape" eType="#//Shape"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipStyle" eSuperTypes="#//Style">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//Tag"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="thickness" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="opacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="#//Border"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="routing" eType="#//Routing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AutoLayoutOption">
+    <eLiterals name="LeftToRight" value="1"/>
+    <eLiterals name="RightToLeft" value="2"/>
+    <eLiterals name="BottomToTop" value="3"/>
+    <eLiterals name="TopToBottom" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Routing">
+    <eLiterals name="Direct" value="1"/>
+    <eLiterals name="Orthogonal" value="2"/>
+    <eLiterals name="Curved" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Border">
+    <eLiterals name="Solid" value="1"/>
+    <eLiterals name="Dashed" value="2"/>
+    <eLiterals name="Dotted" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Scope">
+    <eLiterals name="Landscape" value="1"/>
+    <eLiterals name="SoftwareSystem" value="2"/>
+    <eLiterals name="None" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Visibility">
+    <eLiterals name="Private" value="1"/>
+    <eLiterals name="Public" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UserPermission">
+    <eLiterals name="Read" value="1"/>
+    <eLiterals name="Write" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Shape">
+    <eLiterals name="Box" value="1"/>
+    <eLiterals name="RoundedBox" value="2"/>
+    <eLiterals name="Circle" value="3"/>
+    <eLiterals name="Ellipse" value="4"/>
+    <eLiterals name="Hexagon" value="5"/>
+    <eLiterals name="Cylinder" value="6"/>
+    <eLiterals name="Pipe" value="7"/>
+    <eLiterals name="Person" value="8"/>
+    <eLiterals name="Robot" value="9"/>
+    <eLiterals name="Folder" value="10"/>
+    <eLiterals name="WebBrowser" value="11"/>
+    <eLiterals name="MobileDevicePortrait" value="12"/>
+    <eLiterals name="MobileDeviceLandscape" value="13"/>
+    <eLiterals name="Component" value="14"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NoFilterCondition" eSuperTypes="#//ConditionElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FilterCondition" abstract="true" eSuperTypes="#//ConditionElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementFilterCondition" abstract="true"
+      eSuperTypes="#//FilterCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipFilterCondition" abstract="true"
+      eSuperTypes="#//FilterCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeCondition" eSuperTypes="#//FilterCondition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//FilterCondition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOperation" eType="#//ConditionLogicalOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//FilterCondition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementTagCondition" eSuperTypes="#//ElementFilterCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparisonOperation" eType="#//ConditionComparisonOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementTechnologyCondition" eSuperTypes="#//ElementFilterCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparisonOperation" eType="#//ConditionComparisonOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="technology" eType="#//Technology"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementTypeCondition" eSuperTypes="#//ElementFilterCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparisonOperation" eType="#//ConditionComparisonOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//FilterType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementPropertyCondition" eSuperTypes="#//ElementFilterCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparisonOperation" eType="#//ConditionComparisonOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementParentCondition" eSuperTypes="#//ElementFilterCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparisonOperation" eType="#//ConditionComparisonOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//IdentifiableElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipTagCondition" eSuperTypes="#//RelationshipFilterCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparisonOperation" eType="#//ConditionComparisonOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipPropertyCondition" eSuperTypes="#//RelationshipFilterCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparisonOperation" eType="#//ConditionComparisonOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipSourceCondition" eSuperTypes="#//RelationshipFilterCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparisonOperation" eType="#//ConditionComparisonOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//IdentifiableElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipDestinationCondition" eSuperTypes="#//RelationshipFilterCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparisonOperation" eType="#//ConditionComparisonOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//IdentifiableElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConditionComparisonOperation">
+    <eLiterals name="EQUALS" value="1"/>
+    <eLiterals name="NOT_EQUALS" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FilterType">
+    <eLiterals name="Person" value="1"/>
+    <eLiterals name="SoftwareSystem" value="2"/>
+    <eLiterals name="Container" value="3"/>
+    <eLiterals name="Component" value="4"/>
+    <eLiterals name="DeploymentNode" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConditionLogicalOperation">
+    <eLiterals name="AND" value="1"/>
+    <eLiterals name="OR" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

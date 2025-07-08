@@ -1,0 +1,66 @@
+target "Graphite Target Platform" environment JavaSE-17 with configurePhase requirements source
+
+location "https://download.eclipse.org/cbi/updates/license" {
+	org.eclipse.license.feature.group lazy
+}
+
+location "https://download.eclipse.org/releases/2022-12" {
+	org.eclipse.e4.core.tools.feature.feature.group lazy
+	org.eclipse.eef.sdk.feature.feature.group lazy
+	org.eclipse.emf.sdk.feature.group lazy
+	org.eclipse.emf.validation.sdk.feature.group lazy
+	org.eclipse.emf.cdo.sdk.feature.group lazy
+	org.eclipse.equinox.sdk.feature.group lazy
+	org.eclipse.jdt.feature.group lazy
+	org.eclipse.jdt.apt.ui lazy
+	org.eclipse.jdt.ui lazy
+	org.eclipse.pde.feature.group lazy
+	org.eclipse.platform.feature.group lazy
+	org.eclipse.sdk lazy
+	org.eclipse.rcp.feature.group lazy
+	org.eclipse.sdk.ide lazy
+	org.eclipse.egit.feature.group lazy
+	org.eclipse.ocl.all.sdk.feature.group lazy
+	org.eclipse.gef.sdk.feature.group lazy
+	org.eclipse.gef.common.sdk.feature.group lazy
+	org.eclipse.gmf.feature.group lazy
+	org.eclipse.gmf.runtime.notation.sdk.feature.group lazy
+	org.eclipse.gmf.runtime.sdk.feature.group lazy
+	org.eclipse.swt.tools.feature.feature.group lazy
+	org.eclipse.sirius.runtime.feature.group lazy
+	org.eclipse.sirius.specifier.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.feature.group lazy
+	org.eclipse.sirius.properties.feature.feature.group lazy
+	org.eclipse.sirius.specifier.properties.feature.feature.group lazy
+	org.eclipse.xsd.sdk.feature.group lazy
+	org.eclipse.m2m.qvt.oml.sdk.feature.group lazy
+	org.eclipse.xtext.sdk.feature.group lazy
+	org.eclipse.xtext.xtext.generator lazy
+	org.eclipse.xtext.runtime.feature.group lazy
+	org.eclipse.xtend.sdk.feature.group lazy
+	org.eclipse.ui.navigator.resources lazy
+	org.eclipse.e4.ui.css.swt.theme lazy
+	org.apache.commons.logging lazy
+	org.apache.commons.lang3 lazy
+	com.google.inject lazy
+}
+
+location "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
+	org.eclipse.acceleo.ui.interpreter.feature.group lazy
+}
+
+location "http://download.eclipse.org/epsilon/updates/2.5/" {
+	org.eclipse.epsilon.dt.epackageregistryexplorer lazy
+	org.eclipse.epsilon.emc.emf lazy
+	org.eclipse.epsilon.common.dt lazy
+	org.eclipse.epsilon.eol.dt lazy
+	org.eclipse.epsilon.egl.engine lazy
+	org.eclipse.epsilon.evl.emf.validation lazy
+	org.eclipse.epsilon.evl.engine lazy
+	org.eclipse.epsilon.emc.emf.dt lazy
+	org.eclipse.epsilon.emc.plainxml lazy
+}
+
+location "http://download.eclipse.org/emfatic/update" {
+   	org.eclipse.emf.emfatic.feature.group lazy
+}

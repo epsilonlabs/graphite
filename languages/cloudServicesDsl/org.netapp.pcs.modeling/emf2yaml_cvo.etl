@@ -1,0 +1,163 @@
+rule Deployment_Rule
+    transform x : Emf!Deployment
+    to y : Yaml!ListNode {
+		if (x.pcs.isDefined()) {
+			for (pcs_item in x.pcs) {
+				if(pcs_item.isKindOf(Emf!CVOConfiguration)) {
+					y.value.addRow();
+					y.value.last().appendEntries(pcs_item.equivalent().value);
+				}
+			}	
+		}
+		Yaml.root.value = y;
+}
+
+rule CVO_Rule
+    transform x : Emf!CVO
+    to y : Yaml!MappingNode {
+		
+		var playbookName_node = new Yaml!ScalarNode("name", "Create NetApp Cloud Manager CVO for AWS single");
+		y.value.appendNode(playbookName_node);
+		
+		var configuration_node = new Yaml!MappingNode("netapp.cloudmanager.na_cloudmanager_cvo_aws");
+		
+		var is_ha_node = new Yaml!ScalarNode("is_ha", false);
+		configuration_node.value.appendNode(is_ha_node);
+		
+		if (x.name.isDefined()) {
+			var name_node = new Yaml!ScalarNode("name", x.name);
+			configuration_node.value.appendNode(name_node);
+		}
+		if (x.awsnetworking.isDefined()) {		
+			configuration_node.value.appendEntries(x.awsnetworking.equivalent().value);
+		}
+		if (x.backup_volumes_to_cbs.isDefined()) {
+			configuration_node.value.appendEntries(x.backup_volumes_to_cbs.equivalent().value);
+		}
+		if (x.capacity_tier.isDefined()) {
+			configuration_node.value.appendEntries(x.capacity_tier.equivalent().value);
+		}
+		if (configuration_node.value.size() > 0) {
+			y.value.appendNode(configuration_node);
+		}
+}
+
+rule CVO_HA_Rule
+    transform x : Emf!CVO_HA
+    to y : Yaml!MappingNode {
+
+		var playbookName_node = new Yaml!ScalarNode("name", "Create NetApp Cloud Manager CVO for AWS HA");
+		y.value.appendNode(playbookName_node);
+		
+		var configuration_node = new Yaml!MappingNode("netapp.cloudmanager.na_cloudmanager_cvo_aws");
+		
+		var is_ha_node = new Yaml!ScalarNode("is_ha", true);
+		configuration_node.value.appendNode(is_ha_node);
+		
+		if (x.name.isDefined()) {
+			var name_node = new Yaml!ScalarNode("name", x.name);
+			configuration_node.value.appendNode(name_node);
+		}
+		if (x.awsnetworkingha.isDefined()) {		
+			configuration_node.value.appendEntries(x.awsnetworkingha.equivalent().value);
+		}
+		if (x.backup_volumes_to_cbs.isDefined()) {
+			configuration_node.value.appendEntries(x.backup_volumes_to_cbs.equivalent().value);
+		}
+		if (x.capacity_tier.isDefined()) {
+			configuration_node.value.appendEntries(x.capacity_tier.equivalent().value);
+		}
+		if (configuration_node.value.size() > 0) {
+			y.value.appendNode(configuration_node);
+		}
+}
+
+rule AWSNetworking_Rule
+    transform x : Emf!AWSNetworking
+    to y : Yaml!MappingNode {
+    
+    	if (x.region.isDefined()) {
+			var region_node = new Yaml!ScalarNode("region", x.region);
+			y.value.appendNode(region_node);
+		}	
+		if (x.vpc_id.isDefined()) {
+			var vpc_id_node = new Yaml!ScalarNode("vpc_id", x.vpc_id);
+			y.value.appendNode(vpc_id_node);
+		}
+		if (x.subnet_id.isDefined()) {
+			var subnet_id_node = new Yaml!ScalarNode("subnet_id", x.subnet_id);
+			y.value.appendNode(subnet_id_node);
+		}
+}
+
+rule AWSNetworkingHA_Rule
+    transform x : Emf!AWSNetworkingHA
+    to y : Yaml!MappingNode {
+    
+    	if (x.region.isDefined()) {
+			var region_node = new Yaml!ScalarNode("region", x.region);
+			y.value.appendNode(region_node);
+		}	
+		if (x.vpc_id.isDefined()) {
+			var vpc_id_node = new Yaml!ScalarNode("vpc_id", x.vpc_id);
+			y.value.appendNode(vpc_id_node);
+		}
+		if (x.node1_subnet_id.isDefined()) {
+			var node1_subnet_id_node = new Yaml!ScalarNode("node1_subnet_id", x.node1_subnet_id);
+			y.value.appendNode(node1_subnet_id_node);
+		}
+		if (x.node2_subnet_id.isDefined()) {
+			var node2_subnet_id_node = new Yaml!ScalarNode("node2_subnet_id", x.node2_subnet_id);
+			y.value.appendNode(node2_subnet_id_node);
+		}
+		if (x.failover_mode.isDefined()) {
+			var failover_mode_node = new Yaml!ScalarNode("failover_mode", x.failover_mode);
+			y.value.appendNode(failover_mode_node);
+		}
+		if (x.mediator_subnet_id.isDefined()) {
+			var mediator_subnet_id_node = new Yaml!ScalarNode("mediator_subnet_id", x.mediator_subnet_id);
+			y.value.appendNode(mediator_subnet_id_node);
+		}		
+		if (x.mediator_key_pair_name.isDefined()) {
+			var mediator_key_pair_name_node = new Yaml!ScalarNode("mediator_key_pair_name", x.mediator_key_pair_name);
+			y.value.appendNode(mediator_key_pair_name_node);
+		}	
+		if (x.cluster_floating_ip.isDefined()) {
+			var cluster_floating_ip_node = new Yaml!ScalarNode("cluster_floating_ip", x.cluster_floating_ip);
+			y.value.appendNode(cluster_floating_ip_node);
+		}	
+		if (x.data_floating_ip.isDefined()) {
+			var data_floating_ip_node = new Yaml!ScalarNode("data_floating_ip", x.data_floating_ip);
+			y.value.appendNode(data_floating_ip_node);
+		}		
+		if (x.data_floating_ip2.isDefined()) {
+			var data_floating_ip2_node = new Yaml!ScalarNode("data_floating_ip2", x.data_floating_ip2);
+			y.value.appendNode(data_floating_ip2_node);
+		}	
+		if (x.svm_floating_ip.isDefined()) {
+			var svm_floating_ip_node = new Yaml!ScalarNode("svm_floating_ip", x.svm_floating_ip);
+			y.value.appendNode(svm_floating_ip_node);
+		}
+}
+
+rule CloudBackup_Rule
+    transform x : Emf!CloudBackup
+    to y : Yaml!MappingNode {
+
+		var backup_volumes_to_cbs_node = new Yaml!ScalarNode('backup_volumes_to_cbs', 'yes');
+		y.value.appendNode(backup_volumes_to_cbs_node);
+}
+
+rule CloudTiering_Rule
+    transform x : Emf!CloudTiering
+    to y : Yaml!MappingNode {
+
+		var capacity_tier_node = new Yaml!ScalarNode('capacity_tier', 'S3');
+		y.value.appendNode(capacity_tier_node);
+}
+
+operation Native("java.util.LinkedHashMap") appendEntries(source : Native("java.util.LinkedHashMap")) {
+	for (entry in source.entrySet()) {
+		self.appendNode(entry);
+	}
+}

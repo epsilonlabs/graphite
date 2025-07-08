@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<structurizr:Workspace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structurizr="structurizr">
+  <model>
+    <softwareSystem identifier="ss" name="Software System">
+      <containers identifier="twx" name="PTC ThingWorx">
+        <properties name="serviceIdentifier" value="thingworx"/>
+        <properties name="image" value="thingworx/platform-postgres:9.3"/>
+        <properties name="hostPort" value="8080"/>
+        <properties name="containerPort" value="8080"/>
+      </containers>
+      <containers identifier="psql" name="PostgreSQL">
+        <properties name="type" value="db"/>
+        <properties name="serviceIdentifier" value="postgresql"/>
+        <properties name="image" value="postgres:9.4"/>
+        <properties name="hostPort" value="5432"/>
+        <properties name="containerPort" value="5432"/>
+      </containers>
+    </softwareSystem>
+    <persons identifier="p1" name="Alice">
+      <tags name="personMain"/>
+    </persons>
+    <persons identifier="p2" name="Bob">
+      <tags name="personOptional"/>
+    </persons>
+    <relationships source="p1" target="twx" description="Uses">
+      <tags name="first"/>
+    </relationships>
+    <relationships source="p2" target="psql" description="Uses"/>
+    <relationships source="twx" target="psql"/>
+  </model>
+  <views>
+    <viewElements xsi:type="structurizr:ContainerView" title="Diagram2" description="" includeExpression="( element.tag  !x= personMain)" excludeExpression="{(relationship.destination=x=psql) &amp;&amp; {(element.tag==personOptional) || {(relationship.source!=twx) &amp;&amp; }}}">
+      <include xsi:type="structurizr:ElementTagCondition" comparisonOperation="NOT_EQUALS" tags="//@model/@persons.0/@tags.0"/>
+      <exclude xsi:type="structurizr:CompositeCondition">
+        <left xsi:type="structurizr:RelationshipDestinationCondition" destination="psql"/>
+        <right xsi:type="structurizr:CompositeCondition" logicalOperation="OR">
+          <left xsi:type="structurizr:ElementTagCondition" tags="//@model/@persons.1/@tags.0"/>
+          <right xsi:type="structurizr:CompositeCondition">
+            <left xsi:type="structurizr:RelationshipSourceCondition" comparisonOperation="NOT_EQUALS" source="twx"/>
+          </right>
+        </right>
+      </exclude>
+    </viewElements>
+    <viewElements xsi:type="structurizr:SystemContextView" title="Diagram1" includeExpression="*" excludeExpression="(relationship.source==p1)"/>
+  </views>
+</structurizr:Workspace>
