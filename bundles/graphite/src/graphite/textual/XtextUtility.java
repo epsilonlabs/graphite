@@ -17,30 +17,24 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.AbstractRule;
 import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.IGrammarAccess;
-import org.eclipse.xtext.ISetup;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.impl.AssignmentImpl;
 import org.eclipse.xtext.impl.CrossReferenceImpl;
 import org.eclipse.xtext.impl.GroupImpl;
-import org.eclipse.xtext.resource.FileExtensionProvider;
 import org.eclipse.xtext.resource.IResourceFactory;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.eclipse.xtext.resource.XtextResource;
 
 import com.google.inject.Injector;
-
 import graphite.shared.DerivedObjectProperties;
 
 @SuppressWarnings("restriction")
 public class XtextUtility {
 	
 	public static Resource deserializeString(DerivedObjectProperties derivedObjectProperties, String parsedString) {
-		Injector grammarInjector = derivedObjectProperties.getGrammar().createInjectorAndDoEMFRegistration();
-		IGrammarAccess grammarAccess = grammarInjector.getInstance(IGrammarAccess.class);	
-		ParserRule entryParserRule = (ParserRule) GrammarUtil.findRuleForName(grammarAccess.getGrammar(), derivedObjectProperties.getGrammarEntryRule());		
-		FileExtensionProvider fileExtensionProvider = grammarInjector.getInstance(FileExtensionProvider.class);
+		Injector grammarInjector = derivedObjectProperties.getGrammarInjector();	
+		registerInjector(grammarInjector, derivedObjectProperties.getExtension());
 		ResourceSet resourceSet = grammarInjector.getInstance(ResourceSet.class);
 		EList<Resource> resources = (derivedObjectProperties.getContainerObject().eResource() != null && derivedObjectProperties.getContainerObject().eResource().getResourceSet() != null) ? ((ResourceSet)derivedObjectProperties.getContainerObject().eResource().getResourceSet()).getResources() : null;
 		if (resources != null) {
@@ -49,9 +43,9 @@ public class XtextUtility {
 			}
 		}
 		String uuid = UUID.randomUUID().toString().replace("-", "");
-		String uri = "dummy:/parsed" + uuid + "." + fileExtensionProvider.getPrimaryFileExtension();	
+		String uri = "dummy:/parsed" + uuid + "." + derivedObjectProperties.getExtension();	
 		XtextResource derivedResource = (XtextResource) resourceSet.createResource(URI.createURI(uri));
-		derivedResource.setEntryPoint((ParserRule) entryParserRule);
+		derivedResource.setEntryPoint(derivedObjectProperties.getEntryParserRule());
 		try {
 			InputStream in = new ByteArrayInputStream(parsedString.getBytes());
 			derivedResource.load(in, resourceSet.getLoadOptions());
@@ -59,7 +53,7 @@ public class XtextUtility {
 			e.printStackTrace();
 		}		
 		if (derivedResource.getErrors().size() == 0) {
-			EcoreUtil.resolveAll(resourceSet);
+			EcoreUtil.resolveAll(derivedResource);
 		}
 		derivedObjectProperties.setInvalid((derivedResource.getErrors().size() > 0));
 		derivedObjectProperties.setParseErrors(derivedResource.getErrors());
@@ -67,24 +61,21 @@ public class XtextUtility {
 		return derivedResource;
 	}
 	
-	public static String serializeObject(EObject object, ISetup grammar) {
-		Injector grammarInjector = grammar.createInjectorAndDoEMFRegistration();
+	public static String serializeObject(DerivedObjectProperties derivedObjectProperties, EObject object) {
+		Injector grammarInjector = derivedObjectProperties.getGrammarInjector();
+		registerInjector(grammarInjector, derivedObjectProperties.getExtension());
 		CustomSerializer serializer = grammarInjector.getInstance(CustomSerializer.class);
 		return serializer.serialize(object);
 	}
-
-	public static FileExtensionProvider register(Injector injector) {
-		IResourceFactory resourceFactory = injector.getInstance(IResourceFactory.class);
-		IResourceServiceProvider serviceProvider = injector.getInstance(IResourceServiceProvider.class);
-		FileExtensionProvider fileExtensionProvider = injector.getInstance(FileExtensionProvider.class);
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(fileExtensionProvider.getPrimaryFileExtension(), resourceFactory);
-		IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put(fileExtensionProvider.getPrimaryFileExtension(), serviceProvider);	
-		return fileExtensionProvider;
+	
+	public static void registerInjector(Injector grammarInjector, String extension) {
+		IResourceFactory resourceFactory = grammarInjector.getInstance(IResourceFactory.class);
+		IResourceServiceProvider serviceProvider = grammarInjector.getInstance(IResourceServiceProvider.class);
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(extension, resourceFactory);
+		IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put(extension, serviceProvider);
 	}
 	
-	public static Set<EClassifier> getReferencedTypes(ISetup setup) {
-		Injector injector = setup.createInjectorAndDoEMFRegistration();		
-		IGrammarAccess grammarAccess = injector.getInstance(IGrammarAccess.class);		
+	public static Set<EClassifier> getReferencedTypes(IGrammarAccess grammarAccess) {	
         Grammar grammar = grammarAccess.getGrammar();
         Set<EClassifier> referencedTypes = new HashSet<>();   
         for (AbstractRule rule : grammar.getRules()) {

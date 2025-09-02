@@ -28,7 +28,7 @@ public class CustomXMISaveImpl extends XMISaveImpl {
 			XtextEObject object = (XtextEObject) o;
 			if (object.getDerivedObjectsProperties().containsKey(f.getName())) {
 				DerivedObjectProperties derivedObjectProperties = object.getDerivedObjectsProperties().get(f.getName());
-				DerivedObjectUtility.setDeriveObject(derivedObjectProperties);
+				//DerivedObjectUtility.setDeriveObject(derivedObjectProperties); //may be necessary later
 				return derivedObjectProperties.isInvalid();
 			}
 			else {

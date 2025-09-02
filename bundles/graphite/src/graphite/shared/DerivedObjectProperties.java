@@ -12,6 +12,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.ISetup;
+import org.eclipse.xtext.ParserRule;
+
+import com.google.inject.Injector;
 
 import graphite.textual.XtextEObject;
 
@@ -28,7 +31,7 @@ public class DerivedObjectProperties {
 	protected Method identifierGetterMethod;
 	protected Map<EObject, EList<EObject>> recerencingAndReferencedObjects;
 	protected EList<Diagnostic> parseErrors;
-
+	
 	public DerivedObjectProperties(DerivedPropertyData derivedPropertyData, XtextEObject containerObject) {
 		try {
 			this.derivedPropertyData = derivedPropertyData;
@@ -92,6 +95,18 @@ public class DerivedObjectProperties {
 		return derivedPropertyData.getParsedStringName();
 	}
 	
+	public String getExtension() {
+		return derivedPropertyData.getExtension();
+	}
+	
+	public String getGrammarName() {
+		return derivedPropertyData.getGrammarName();
+	}
+	
+	public String getGrammarEntryRule() {
+		return derivedPropertyData.getGrammarEntryRule();
+	}
+	
 	public Class getType() {
 		return derivedPropertyData.getType();
 	}
@@ -136,20 +151,20 @@ public class DerivedObjectProperties {
 		return derivedPropertyData.getParsedStringField();
 	}
 	
-	public String getGrammarName() {
-		return derivedPropertyData.getGrammarName();
-	}
-	
-	public String getGrammarEntryRule() {
-		return derivedPropertyData.getGrammarEntryRule();
-	}
-	
 	public ISetup getGrammar() {
 		return derivedPropertyData.getGrammar();
 	}
 	
 	public Plugin getGrammarPlugin() {
 		return derivedPropertyData.getGrammarPlugin();
+	}
+	
+	public Injector getGrammarInjector() {
+		return derivedPropertyData.getGrammarInjector();
+	}
+		
+	public ParserRule getEntryParserRule() {
+		return derivedPropertyData.getEntryParserRule();
 	}
 	
 	public boolean isMany() {

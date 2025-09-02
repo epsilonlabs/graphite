@@ -23,7 +23,6 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.TypedListener;
 import org.eclipse.ui.texteditor.ITextEditorActionConstants;
-import org.eclipse.xtext.resource.FileExtensionProvider;
 import org.eclipse.xtext.resource.ResourceSetReferencingResourceSet;
 import org.eclipse.xtext.resource.ResourceSetReferencingResourceSetImpl;
 import org.eclipse.xtext.ui.editor.embedded.ActivationCodeTrigger;
@@ -66,10 +65,10 @@ public class XtextPartialViewerLifecycleManager extends AbstractEEFWidgetLifecyc
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		try {
 			Injector grammarInjector = DerivedObjectUtility.getGrammarInjector(derivedObjectProperties);
-			FileExtensionProvider fileExtensionProvider = XtextUtility.register(grammarInjector);
+			XtextUtility.registerInjector(grammarInjector, derivedObjectProperties.getExtension());
 			grammarInjector.injectMembers(this);
 			EmbeddedResourceProvider resProvider = grammarInjector.getInstance(EmbeddedResourceProvider.class);
-			resProvider.setFileExtensionProvider(fileExtensionProvider);
+			resProvider.setFileExtension(derivedObjectProperties.getExtension());
 			resProvider.setSiriusResourceSet(getSiriusResourceSet());
 			EmbeddedEditorFactory factory = grammarInjector.getInstance(EmbeddedEditorFactory.class);
 			editingContextAdapter = super.editingContextAdapter;

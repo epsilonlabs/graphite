@@ -195,7 +195,7 @@ public class DerivedObjectUtility {
 				Object containerObject = derivedObjectProperties.getSuperclazzConstructor().newInstance();
 				Object derivedObject = derivedObjectProperties.getDerivedObjectField().get(derivedObjectProperties.getContainerObject());
 				derivedObjectProperties.getDerivedObjectField().set(containerObject, derivedObject);
-				String serializationResult = XtextUtility.serializeObject((EObject)containerObject, derivedObjectProperties.getGrammar());
+				String serializationResult = XtextUtility.serializeObject(derivedObjectProperties, (EObject)containerObject);
 				derivedObjectProperties.getParsedStringField().set(derivedObjectProperties.getContainerObject(), serializationResult);
 				if (derivedObjectProperties.isInvalid()) { //serializationResult is always a syntactically correct string
 					derivedObjectProperties.setInvalid(true);

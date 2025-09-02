@@ -8,7 +8,14 @@ import java.util.Set;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.xtext.GrammarUtil;
+import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.ISetup;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.resource.FileExtensionProvider;
+
+import com.google.inject.Injector;
+
 import graphite.textual.XtextUtility;
 
 
@@ -17,10 +24,13 @@ public class DerivedPropertyData {
 
 	protected String derivedObjectName;
 	protected String parsedStringName;
+	protected String extension;
 	protected String grammarName;
 	protected String grammarEntryRule;
 	protected ISetup grammar;
 	protected Plugin grammarPlugin;
+	protected Injector grammarInjector;
+	protected ParserRule entryParserRule;
 	protected Class type;
 	protected Class clazz;
 	protected Class superclazz;
@@ -33,7 +43,7 @@ public class DerivedPropertyData {
 	protected Field derivedObjectField;
 	protected Field parsedStringField;
 	protected boolean isMany;
-
+	
 	public DerivedPropertyData(String derivedObjectName, String parsedStringName, String grammarName, String grammarEntryRule, ISetup grammar, Plugin grammarPlugin, Class clazz, Class type, boolean isMany) {
 		try {
 			this.derivedObjectName = derivedObjectName;
@@ -53,7 +63,11 @@ public class DerivedPropertyData {
 			this.grammarEntryRule = grammarEntryRule;
 			this.grammar = grammar;
 			this.grammarPlugin = grammarPlugin;
-			this.referencedTypes = XtextUtility.getReferencedTypes(grammar);
+			this.grammarInjector = grammar.createInjectorAndDoEMFRegistration();
+			this.extension = grammarInjector.getInstance(FileExtensionProvider.class).getPrimaryFileExtension();
+			IGrammarAccess grammarAccess = grammarInjector.getInstance(IGrammarAccess.class);	
+			this.entryParserRule = (ParserRule) GrammarUtil.findRuleForName(grammarAccess.getGrammar(), grammarEntryRule);
+			this.referencedTypes = XtextUtility.getReferencedTypes(grammarAccess);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -67,6 +81,10 @@ public class DerivedPropertyData {
 	public String getParsedStringName() {
 		return parsedStringName;
 	}
+	
+	public String getExtension() {
+		return extension;
+	}
 
 	public String getGrammarName() {
 		return grammarName;
@@ -75,13 +93,21 @@ public class DerivedPropertyData {
 	public String getGrammarEntryRule() {
 		return grammarEntryRule;
 	}
-	
+		
 	public ISetup getGrammar() {
 		return grammar;
 	}
 	
 	public Plugin getGrammarPlugin() {
 		return grammarPlugin;
+	}
+	
+	public Injector getGrammarInjector() {
+		return grammarInjector;
+	}
+
+	public ParserRule getEntryParserRule() {
+		return entryParserRule;
 	}
 	
 	public Class getType() {
