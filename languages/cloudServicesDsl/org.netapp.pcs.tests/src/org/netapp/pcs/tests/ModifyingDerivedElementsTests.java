@@ -55,7 +55,7 @@ public class ModifyingDerivedElementsTests {
 		XtextCVOImpl cvo = (XtextCVOImpl)deployment.getPcs().get(0);
 		SnapMirror snapMirror = replicationPolicy.getReplication_mappings().get(0);
 		snapMirror.setSource_volume(cvo.getVolumes().get(0));
-		assertEquals("ReplicationPolicy has the final expected mappings", "CVO_1 . volume1 <-> CVO_2 . volume22 { policy : snapshotPolicyDefault , max_transfer_rate : 55 }", replicationPolicy.getReplication_mapping());
+		assertEquals("ReplicationPolicy has the final expected mappings", "CVO_1 . volume1 <-> CVO_2 .volume22 { policy : snapshotPolicyDefault , max_transfer_rate : 55 }", replicationPolicy.getReplication_mapping());
 	}
 	
 	@Test
@@ -65,7 +65,7 @@ public class ModifyingDerivedElementsTests {
 		assertEquals("ReplicationPolicy has the initial expected mappings", "CVO_1 . volume3 <-> CVO_2 .volume22 { policy : snapshotPolicyDefault , max_transfer_rate : 55 }", replicationPolicy.getReplication_mapping());
 		SnapMirror snapMirror = replicationPolicy.getReplication_mappings().get(0);
 		snapMirror.setMax_transfer_rate(1);
-		assertEquals("ReplicationPolicy has the final expected mappings", "CVO_1 . volume3 <-> CVO_2 . volume22 { policy : snapshotPolicyDefault , max_transfer_rate : 1 }", replicationPolicy.getReplication_mapping());
+		assertEquals("ReplicationPolicy has the final expected mappings", "CVO_1 . volume3 <-> CVO_2 .volume22 { policy : snapshotPolicyDefault , max_transfer_rate : 1 }", replicationPolicy.getReplication_mapping());
 	}
 	
 	@Test
@@ -75,7 +75,7 @@ public class ModifyingDerivedElementsTests {
 		assertEquals("ReplicationPolicy has the initial expected mappings", "CVO_1 . volume3 <-> CVO_2 .volume22 { policy : snapshotPolicyDefault , max_transfer_rate : 55 }", replicationPolicy.getReplication_mapping());
 		SnapMirror snapMirror = replicationPolicy.getReplication_mappings().get(0);
 		snapMirror.setSource_volume(null);
-		assertEquals("ReplicationPolicy has the final expected mappings", "CVO_1 . <-> CVO_2 . volume22 { policy : snapshotPolicyDefault , max_transfer_rate : 55 }", replicationPolicy.getReplication_mapping());	
+		assertEquals("ReplicationPolicy has the final expected mappings", "CVO_1 . <-> CVO_2 .volume22 { policy : snapshotPolicyDefault , max_transfer_rate : 55 }", replicationPolicy.getReplication_mapping());
 	}
 	
 	@Test

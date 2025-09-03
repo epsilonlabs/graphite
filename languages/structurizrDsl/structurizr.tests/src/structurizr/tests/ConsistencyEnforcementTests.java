@@ -57,7 +57,7 @@ public class ConsistencyEnforcementTests {
 		assertEquals("ContainerView has the initial expected include", "( element.tag  != personMain)", containerView.getIncludeExpression());
 		Tag tag = workspace.getModel().getPersons().get(0).getTags().get(0);
 		tag.setName("personInvalid");
-		assertEquals("ContainerView has the final expected include", "( element . tag != personInvalid )", containerView.getIncludeExpression());
+		assertEquals("ContainerView has the final expected include", "( element . tag != personInvalid)", containerView.getIncludeExpression());
 	}
 	
 	@Test
@@ -67,7 +67,7 @@ public class ConsistencyEnforcementTests {
 		assertEquals("ContainerView has the initial expected exclude", "{(relationship.destination==psql) && {(element.tag==personOptional) || {(relationship.source!=twx) && }}}", containerView.getExcludeExpression());
 		Container container = workspace.getModel().getSoftwareSystem().getContainers().get(1);
 		container.setIdentifier("containerInvalid");
-		assertEquals("ContainerView has the final expected exclude", "{ ( relationship . destination ==containerInvalid ) && { ( element . tag ==personOptional ) || { ( relationship . source !=twx ) && } } }", containerView.getExcludeExpression());
+		assertEquals("ContainerView has the final expected exclude", "{ (relationship.destination==containerInvalid) && {(element.tag==personOptional) || {(relationship.source!=twx) && }}}", containerView.getExcludeExpression());
 	}
 	
 	@Test

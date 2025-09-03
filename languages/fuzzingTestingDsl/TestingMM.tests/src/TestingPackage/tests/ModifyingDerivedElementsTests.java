@@ -59,7 +59,7 @@ public class ModifyingDerivedElementsTests {
 		StreamMetric collisionOccurance = testingSpace.getMetrics().stream().filter(x -> (x instanceof StreamMetric && ((StreamMetric)x).getName().equals("collisionOccurance"))).map(x -> (StreamMetric) x).collect(Collectors.toList()).get(0);
 		ConditionVariable conditionVariable = (ConditionVariable)(((BasicCondition)(((CompositeCondition)((CompositeCondition)conditionBasedActivation.getStarting().getC()).getRight()).getLeft())).getLeft());
 		conditionVariable.setMetric(collisionOccurance);
-		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ { ( @ collisionOccurance=2 ) AND { ( @ collisionOccurance>4 ) AND { ( @ entryToTriggerZone1< @ jointExtremeR3200Link0Pos ) OR ( @ entryToTriggerZone1=43 ) } } } ]", conditionBasedActivation.getStartingExpression());		
+		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ {(@collisionOccurance=2) AND {(@collisionOccurance>4) AND {(@entryToTriggerZone1<@jointExtremeR3200Link0Pos) OR (@entryToTriggerZone1=43)}}}]", conditionBasedActivation.getStartingExpression());
 	}
 	
 	@Test
@@ -69,7 +69,7 @@ public class ModifyingDerivedElementsTests {
 		assertEquals("ConditionBasedActivation has the initial expected starting condition", "[ {(@collisionOccurance=2) AND {(@fuzzingOperationTimes>4) AND {(@entryToTriggerZone1<@jointExtremeR3200Link0Pos) OR (@entryToTriggerZone1=43)}}}]", conditionBasedActivation.getStartingExpression());
 		ConditionInteger conditionInteger = (ConditionInteger)(((BasicCondition)(((CompositeCondition)((CompositeCondition)conditionBasedActivation.getStarting().getC()).getRight()).getLeft())).getRight());
 		conditionInteger.setValue(5);
-		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ { ( @ collisionOccurance=2 ) AND { ( @ fuzzingOperationTimes>5 ) AND { ( @ entryToTriggerZone1< @ jointExtremeR3200Link0Pos ) OR ( @ entryToTriggerZone1=43 ) } } } ]", conditionBasedActivation.getStartingExpression());
+		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ {(@collisionOccurance=2) AND {(@fuzzingOperationTimes>5) AND {(@entryToTriggerZone1<@jointExtremeR3200Link0Pos) OR (@entryToTriggerZone1=43)}}}]", conditionBasedActivation.getStartingExpression());
 	}
 	
 	@Test
@@ -79,7 +79,7 @@ public class ModifyingDerivedElementsTests {
 		assertEquals("ConditionBasedActivation has the initial expected starting condition", "[ {(@collisionOccurance=2) AND {(@fuzzingOperationTimes>4) AND {(@entryToTriggerZone1<@jointExtremeR3200Link0Pos) OR (@entryToTriggerZone1=43)}}}]", conditionBasedActivation.getStartingExpression());
 		ConditionVariable conditionVariable = (ConditionVariable)(((BasicCondition)(((CompositeCondition)((CompositeCondition)conditionBasedActivation.getStarting().getC()).getRight()).getLeft())).getLeft());
 		conditionVariable.setMetric(null);
-		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ { ( @ collisionOccurance=2 ) AND { ( @ >4 ) AND { ( @ entryToTriggerZone1< @ jointExtremeR3200Link0Pos ) OR ( @ entryToTriggerZone1=43 ) } } } ]", conditionBasedActivation.getStartingExpression());
+		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ {(@collisionOccurance=2) AND {(@>4) AND {(@entryToTriggerZone1<@jointExtremeR3200Link0Pos) OR (@entryToTriggerZone1=43)}}}]", conditionBasedActivation.getStartingExpression());
 	}
 	
 	@Test
@@ -93,7 +93,7 @@ public class ModifyingDerivedElementsTests {
 		} catch (EolRuntimeException e) {
 			e.printStackTrace();
 		}
-		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ { ( @ collisionOccurance=2 ) AND { ( @ fuzzingOperationTimes> ) AND { ( @ entryToTriggerZone1< @ jointExtremeR3200Link0Pos ) OR ( @ entryToTriggerZone1=43 ) } } } ]", conditionBasedActivation.getStartingExpression());
+		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ {(@collisionOccurance=2) AND {(@fuzzingOperationTimes> ) AND {(@entryToTriggerZone1<@jointExtremeR3200Link0Pos) OR (@entryToTriggerZone1=43)}}}]", conditionBasedActivation.getStartingExpression());
 	}
 	
 	@Test
@@ -107,7 +107,7 @@ public class ModifyingDerivedElementsTests {
 		} catch (EolRuntimeException e) {
 			e.printStackTrace();
 		}
-		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ { ( @ collisionOccurance=2 ) AND { AND { ( @ entryToTriggerZone1< @ jointExtremeR3200Link0Pos ) OR ( @ entryToTriggerZone1=43 ) } } } ]", conditionBasedActivation.getStartingExpression());
+		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ {(@collisionOccurance=2) AND { AND {(@entryToTriggerZone1<@jointExtremeR3200Link0Pos) OR (@entryToTriggerZone1=43)}}}]", conditionBasedActivation.getStartingExpression());
 	}
 	
 	@Test
@@ -121,7 +121,7 @@ public class ModifyingDerivedElementsTests {
 		} catch (EolRuntimeException e) {
 			e.printStackTrace();
 		}
-		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ { ( @ collisionOccurance=2 ) AND } ]", conditionBasedActivation.getStartingExpression());
+		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ {(@collisionOccurance=2) AND } ]", conditionBasedActivation.getStartingExpression());
 	}
 	
 	@Test

@@ -56,7 +56,7 @@ public class ConsistencyEnforcementTests {
 		assertEquals("ConditionBasedActivation has the initial expected starting condition", "[ {(@collisionOccurance=2) AND {(@fuzzingOperationTimes>4) AND {(@entryToTriggerZone1<@jointExtremeR3200Link0Pos) OR (@entryToTriggerZone1=43)}}}]", conditionBasedActivation.getStartingExpression());
 		FuzzingOperationTimesMetric fuzzingOperationTimesMetric = testingSpace.getMetrics().stream().filter(x -> x instanceof FuzzingOperationTimesMetricImpl).map(x -> (FuzzingOperationTimesMetricImpl) x).collect(Collectors.toList()).get(0);
 		fuzzingOperationTimesMetric.setName("fuzzingOperationTimesX");
-		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ { ( @ collisionOccurance=2 ) AND { ( @ fuzzingOperationTimesX>4 ) AND { ( @ entryToTriggerZone1< @ jointExtremeR3200Link0Pos ) OR ( @ entryToTriggerZone1=43 ) } } } ]", conditionBasedActivation.getStartingExpression());
+		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ {(@collisionOccurance=2) AND {(@fuzzingOperationTimesX>4) AND {(@entryToTriggerZone1<@jointExtremeR3200Link0Pos) OR (@entryToTriggerZone1=43)}}}]", conditionBasedActivation.getStartingExpression());
 	}
 	
 	@Test
@@ -70,7 +70,7 @@ public class ConsistencyEnforcementTests {
 		} catch (EolRuntimeException e) {
 			e.printStackTrace();
 		}
-		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ { ( @ collisionOccurance=2 ) AND { ( @ >4 ) AND { ( @ entryToTriggerZone1< @ jointExtremeR3200Link0Pos ) OR ( @ entryToTriggerZone1=43 ) } } } ]", conditionBasedActivation.getStartingExpression());
+		assertEquals("ConditionBasedActivation has the final expected starting condition", "[ {(@collisionOccurance=2) AND {(@>4) AND {(@entryToTriggerZone1<@jointExtremeR3200Link0Pos) OR (@entryToTriggerZone1=43)}}}]", conditionBasedActivation.getStartingExpression());
 	}
 	
 	@Test

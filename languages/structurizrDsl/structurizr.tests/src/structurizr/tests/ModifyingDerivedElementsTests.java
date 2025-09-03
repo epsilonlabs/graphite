@@ -63,7 +63,7 @@ public class ModifyingDerivedElementsTests {
 		Person person = workspace.getModel().getPersons().get(0);
 		RelationshipDestinationCondition relationshipDestinationCondition = (RelationshipDestinationCondition)((CompositeCondition)containerView.getExclude()).getLeft();
 		relationshipDestinationCondition.setDestination(person);
-		assertEquals("ContainerView has the final expected exclude", "{ ( relationship . destination ==p1 ) && { ( element . tag ==personOptional ) || { ( relationship . source !=twx ) && } } }", containerView.getExcludeExpression());
+		assertEquals("ContainerView has the final expected exclude", "{ (relationship.destination==p1) && {(element.tag==personOptional) || {(relationship.source!=twx) && }}}", containerView.getExcludeExpression());
 	}
 	
 	@Test
@@ -75,7 +75,7 @@ public class ModifyingDerivedElementsTests {
 		assertTrue("Left element of Exclude condition is RelationshipDestinationCondition", ((CompositeCondition)containerView.getExclude()).getLeft() instanceof RelationshipDestinationCondition);
 		RelationshipDestinationCondition relationshipDestinationCondition = (RelationshipDestinationCondition)((CompositeCondition)containerView.getExclude()).getLeft();
 		relationshipDestinationCondition.setComparisonOperation(ConditionComparisonOperation.NOT_EQUALS);
-		assertEquals("ContainerView has the final expected exclude", "{ ( relationship . destination !=psql ) && { ( element . tag ==personOptional ) || { ( relationship . source !=twx ) && } } }", containerView.getExcludeExpression());	
+		assertEquals("ContainerView has the final expected exclude", "{ (relationship.destination!=psql) && {(element.tag==personOptional) || {(relationship.source!=twx) && }}}", containerView.getExcludeExpression());
 	}
 	
 	@Test
@@ -87,7 +87,7 @@ public class ModifyingDerivedElementsTests {
 		assertTrue("Left element of Exclude condition is RelationshipDestinationCondition", ((CompositeCondition)containerView.getExclude()).getLeft() instanceof RelationshipDestinationCondition);
 		RelationshipDestinationCondition relationshipDestinationCondition = (RelationshipDestinationCondition)((CompositeCondition)containerView.getExclude()).getLeft();
 		relationshipDestinationCondition.setDestination(null);
-		assertEquals("ContainerView has the final expected exclude", "{ ( relationship . destination == ) && { ( element . tag ==personOptional ) || { ( relationship . source !=twx ) && } } }", containerView.getExcludeExpression());	
+		assertEquals("ContainerView has the final expected exclude", "{ (relationship.destination== ) && {(element.tag==personOptional) || {(relationship.source!=twx) && }}}", containerView.getExcludeExpression());
 	}
 		
 	@Test
@@ -100,7 +100,7 @@ public class ModifyingDerivedElementsTests {
 		CompositeCondition compositeCondition = (CompositeCondition)((CompositeCondition)containerView.getExclude()).getRight();
 		assertTrue("Left element of CompositeCondition is ElementTagCondition", compositeCondition.getLeft() instanceof ElementTagCondition);		
 		((ElementTagCondition)compositeCondition.getLeft()).getTags().remove(0);
-		assertEquals("ContainerView has the final expected exclude", "{ ( relationship . destination ==psql ) && { ( element . tag == ) || { ( relationship . source !=twx ) && } } }", containerView.getExcludeExpression());
+		assertEquals("ContainerView has the final expected exclude", "{ (relationship.destination==psql) && {(element.tag== ) || {(relationship.source!=twx) && }}}", containerView.getExcludeExpression());
 	}
 	
 	@Test
@@ -114,7 +114,7 @@ public class ModifyingDerivedElementsTests {
 		assertTrue("Left element of CompositeCondition is ElementTagCondition", compositeCondition.getLeft() instanceof ElementTagCondition);		
 		Tag tag = workspace.getModel().getPersons().get(0).getTags().get(0);
 		((ElementTagCondition)compositeCondition.getLeft()).getTags().add(tag);
-		assertEquals("ContainerView has the final expected exclude", "{ ( relationship . destination ==psql ) && { ( element . tag ==personOptional , personMain ) || { ( relationship . source !=twx ) && } } }", containerView.getExcludeExpression());
+		assertEquals("ContainerView has the final expected exclude", "{ (relationship.destination==psql) && {(element.tag==personOptional , personMain ) || {(relationship.source!=twx) && }}}", containerView.getExcludeExpression());
 	}
 
 	@Test
@@ -130,7 +130,7 @@ public class ModifyingDerivedElementsTests {
 		} catch (EolRuntimeException e) {
 			e.printStackTrace();
 		}
-		assertEquals("ContainerView has the final expected exclude", "{ && { ( element . tag ==personOptional ) || { ( relationship . source !=twx ) && } } }", containerView.getExcludeExpression());
+		assertEquals("ContainerView has the final expected exclude", "{ && {(element.tag==personOptional) || {(relationship.source!=twx) && }}}", containerView.getExcludeExpression());
 	}
 	
 	@Test
@@ -146,7 +146,7 @@ public class ModifyingDerivedElementsTests {
 		} catch (EolRuntimeException e) {
 			e.printStackTrace();
 		}
-		assertEquals("ContainerView has the final expected exclude", "{ ( relationship . destination ==psql ) && { ( element . tag ==personOptional ) || } }", containerView.getExcludeExpression());
+		assertEquals("ContainerView has the final expected exclude", "{ (relationship.destination==psql) && {(element.tag==personOptional) || } }", containerView.getExcludeExpression());
 	}
 	
 	@Test
@@ -177,7 +177,7 @@ public class ModifyingDerivedElementsTests {
 		} catch (EolRuntimeException e) {
 			e.printStackTrace();
 		}
-		assertEquals("ContainerView has the final expected exclude", "{ ( relationship . destination ==psql ) && }", containerView.getExcludeExpression());
+		assertEquals("ContainerView has the final expected exclude", "{ (relationship.destination==psql) && }", containerView.getExcludeExpression());
 	}
 	
 	@Test
@@ -194,7 +194,7 @@ public class ModifyingDerivedElementsTests {
 		elementTypeCondition.setComparisonOperation(ConditionComparisonOperation.EQUALS);
 		elementTypeCondition.setType(FilterType.SOFTWARE_SYSTEM);
 		((CompositeCondition)compositeCondition.getRight()).setRight(elementTypeCondition);		
-		assertEquals("ContainerView has the final expected exclude", "{ ( relationship . destination ==psql ) && { ( element . tag ==personOptional ) || { ( relationship . source !=twx ) && ( element . type == SoftwareSystem ) } } }", containerView.getExcludeExpression());
+		assertEquals("ContainerView has the final expected exclude", "{ (relationship.destination==psql) && {(element.tag==personOptional) || {(relationship.source!=twx) && ( element . type == SoftwareSystem ) } }}", containerView.getExcludeExpression());
 	}
 	
 }
