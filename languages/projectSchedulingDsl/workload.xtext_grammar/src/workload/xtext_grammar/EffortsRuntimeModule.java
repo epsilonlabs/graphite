@@ -33,8 +33,10 @@ public class EffortsRuntimeModule extends AbstractEffortsRuntimeModule { // (Pat
 		return CustomQualifiedNameProvider.class;
 	}
 
+	/*
+	//Binding used for allowing referencing by attributes other than "name"; Side effect: increases parsing/load time of models
 	public Class<? extends ResourceSetBasedResourceDescriptions> bindResourceSetBasedResourceDescriptions() {
 		return CustomResourceSetBasedResourceDescriptions.class;
 	}
-	
+	*/
 }
