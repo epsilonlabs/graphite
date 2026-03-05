@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:flow="http://www.obeo.fr/dsl/designer/sample/flow" usage="standard" name="Sys_Large">
+  <elements xsi:type="flow:CompositeProcessor" consumption="1" usage="standard" name="CentralUnitM" temperature="10" weight="20" routingRules="" load="2">
+    <elements xsi:type="flow:CompositeProcessor" name="SubNav" temperature="15" weight="16" routingRules="" load="4">
+      <elements xsi:type="flow:Processor" name="Nav_Engine">
+        <outgoingFlows usage="standard" target="//@elements.0/@elements.0/@elements.1"/>
+      </elements>
+      <elements xsi:type="flow:Processor" incomingFlows="//@elements.0/@elements.1/@outgoingFlows.0 //@elements.0/@elements.0/@elements.0/@outgoingFlows.0" name="DSP"/>
+    </elements>
+    <elements xsi:type="flow:Processor" name="Gateway">
+      <outgoingFlows target="//@elements.0/@elements.0/@elements.1"/>
+    </elements>
+    <elements xsi:type="flow:CompositeProcessor" usage="standard" name="SubVision" temperature="14" weight="12" routingRules="Case CentralUnitM . Temperature > 10 °C : LOW&#xA;Case CentralUnitM . Temperature > 20 : MEDIUM&#xA;Case CentralUnitM . Temperature > 30 : HIGH&#xA;Case CentralUnitM . Temperature &lt; 5 °C : LOW&#xA;Case CentralUnitM . Temperature == 25 : MEDIUM&#xA;Case CentralUnitM . Weight > 50 kg : LOW&#xA;Case CentralUnitM . Weight > 100 kg : MEDIUM&#xA;Case CentralUnitM . Weight > 150 kg : HIGH&#xA;Case CentralUnitM . Weight == 110 lb : MEDIUM" load="3">
+      <elements xsi:type="flow:DataSource" usage="standard" name="Cam0">
+        <outgoingFlows usage="low" target="//@elements.0/@elements.2/@elements.3"/>
+        <outgoingFlows usage="standard" target="//@elements.0/@elements.2/@elements.4/@elements.0"/>
+      </elements>
+      <elements xsi:type="flow:DataSource" usage="standard" name="Radar">
+        <outgoingFlows usage="standard" target="//@elements.0/@elements.2/@elements.3"/>
+      </elements>
+      <elements xsi:type="flow:Processor" name="Vision_Engine">
+        <outgoingFlows usage="standard"/>
+        <outgoingFlows usage="low"/>
+      </elements>
+      <elements xsi:type="flow:Processor" incomingFlows="//@elements.0/@elements.2/@elements.0/@outgoingFlows.0 //@elements.0/@elements.2/@elements.1/@outgoingFlows.0" name="Vision_Ingest"/>
+      <elements xsi:type="flow:CompositeProcessor" name="Vision_ModuleA" routingRules="Case SubNav . Temperature &lt; 20 °F : BLOCKER">
+        <elements xsi:type="flow:Processor" incomingFlows="//@elements.0/@elements.2/@elements.0/@outgoingFlows.1" name="Proc0">
+          <outgoingFlows usage="high"/>
+        </elements>
+        <routingRulesList unit="Fahrenheit" value="20" systemStatus="BLOCKER">
+          <target href="Medium_Model.flow#//@elements.0/@elements.1"/>
+        </routingRulesList>
+      </elements>
+      <routingRulesList comparisonOperator="Greather_than" value="10">
+        <target href="Medium_Model.flow#//@elements.0"/>
+      </routingRulesList>
+      <routingRulesList comparisonOperator="Greather_than" value="20" systemStatus="MEDIUM">
+        <target href="Medium_Model.flow#//@elements.0"/>
+      </routingRulesList>
+      <routingRulesList comparisonOperator="Greather_than" value="30" systemStatus="HIGH">
+        <target href="Medium_Model.flow#//@elements.0"/>
+      </routingRulesList>
+      <routingRulesList value="5">
+        <target href="Medium_Model.flow#//@elements.0"/>
+      </routingRulesList>
+      <routingRulesList comparisonOperator="Equals" value="25" systemStatus="MEDIUM">
+        <target href="Medium_Model.flow#//@elements.0"/>
+      </routingRulesList>
+      <routingRulesList propertyName="Weight" unit="Kilograms" comparisonOperator="Greather_than" value="50">
+        <target href="Medium_Model.flow#//@elements.0"/>
+      </routingRulesList>
+      <routingRulesList propertyName="Weight" unit="Kilograms" comparisonOperator="Greather_than" value="100" systemStatus="MEDIUM">
+        <target href="Medium_Model.flow#//@elements.0"/>
+      </routingRulesList>
+      <routingRulesList propertyName="Weight" unit="Kilograms" comparisonOperator="Greather_than" value="150" systemStatus="HIGH">
+        <target href="Medium_Model.flow#//@elements.0"/>
+      </routingRulesList>
+      <routingRulesList propertyName="Weight" unit="Pounds" comparisonOperator="Equals" value="110" systemStatus="MEDIUM">
+        <target href="Medium_Model.flow#//@elements.0"/>
+      </routingRulesList>
+    </elements>
+  </elements>
+  <elements xsi:type="flow:CompositeProcessor" name="M_AuxUnit" routingRules="Case M_AuxUnit . Temperature == 20 : HIGH&#xA;Case M_AuxUnit . Weight > 30 kg : MEDIUM&#xA;Case M_AuxUnit . Weight &lt; 20 kg : NON_CRITICAL&#xA;Case CentralUnitM . Temperature &lt; 17 °C : LOW&#xA;Case CentralUnitM . Temperature > 19 °C : LOW&#xA;Case CentralUnitM . Temperature == 25 : HIGH&#xA;Case CentralUnitM . Weight > 31 kg : MEDIUM&#xA;Case CentralUnitM . Weight &lt; 20 kg : NON_CRITICAL&#xA;Case CentralUnitM . Weight &lt; 30 kg : CRITICAL">
+    <routingRulesList comparisonOperator="Equals" value="20" systemStatus="HIGH">
+      <target href="Medium_Model.flow#//@elements.1"/>
+    </routingRulesList>
+    <routingRulesList propertyName="Weight" unit="Kilograms" comparisonOperator="Greather_than" value="30" systemStatus="MEDIUM">
+      <target href="Medium_Model.flow#//@elements.1"/>
+    </routingRulesList>
+    <routingRulesList propertyName="Weight" unit="Kilograms" value="20" systemStatus="NON_CRITICAL">
+      <target href="Medium_Model.flow#//@elements.1"/>
+    </routingRulesList>
+    <routingRulesList value="17">
+      <target href="Medium_Model.flow#//@elements.0"/>
+    </routingRulesList>
+    <routingRulesList comparisonOperator="Greather_than" value="19">
+      <target href="Medium_Model.flow#//@elements.0"/>
+    </routingRulesList>
+    <routingRulesList comparisonOperator="Equals" value="25" systemStatus="HIGH">
+      <target href="Medium_Model.flow#//@elements.0"/>
+    </routingRulesList>
+    <routingRulesList propertyName="Weight" unit="Kilograms" comparisonOperator="Greather_than" value="31" systemStatus="MEDIUM">
+      <target href="Medium_Model.flow#//@elements.0"/>
+    </routingRulesList>
+    <routingRulesList propertyName="Weight" unit="Kilograms" value="20" systemStatus="NON_CRITICAL">
+      <target href="Medium_Model.flow#//@elements.0"/>
+    </routingRulesList>
+    <routingRulesList propertyName="Weight" unit="Kilograms" value="30" systemStatus="CRITICAL">
+      <target href="Medium_Model.flow#//@elements.0"/>
+    </routingRulesList>
+  </elements>
+</flow:System>

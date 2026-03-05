@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><!--
+ <copyright>
+ </copyright>
+
+ $Id$
+--><plugin>
+                            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <extension point="org.eclipse.emf.ecore.generated_package">
+                                                        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <package class="fr.obeo.dsl.designer.sample.flow.FlowPackage" genModel="model/flow.genmodel" uri="http://www.obeo.fr/dsl/designer/sample/flow"/>
+                                                     
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </extension>
+                             
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+                                                    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    <resourceServiceProvider class="graphite.xtextxmi.ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider" uriExtension="flow"/>
+  </extension>
+                        
+
+
+
+
+
+
+
+
+
+
+   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated flow -->
+      <package
+            uri="http://www.obeo.fr/dsl/designer/sample/flow"
+            class="flow.FlowPackage"
+            genModel="model/flow.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated flow -->
+      <parser
+            type="flow"
+            class="flow.util.FlowResourceFactoryImpl"/>
+   </extension>
+     
+</plugin>

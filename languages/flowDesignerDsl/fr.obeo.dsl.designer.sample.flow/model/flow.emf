@@ -1,0 +1,134 @@
+@namespace(uri="http://www.obeo.fr/dsl/designer/sample/flow", prefix="flow")
+package flow;
+
+class Fan extends FlowElement, Powered {
+	attr int[1] speed = 100;
+	attr int[1] weight = 3;
+}
+
+class Physical {
+}
+
+@syntax(feature="routingRules", derive="routingRulesList", grammar="fr.obeo.dsl.designer.sample.flow.xtext.FlowDesigner", entryRule="Main")
+class CompositeProcessor extends System, FlowTarget, CapacityBound, FlowSource {
+}
+
+class DataFlow extends CapacityBound {
+	ref FlowTarget[1]#incomingFlows target;
+	ref FlowSource[1]#outgoingFlows source;
+}
+
+abstract class CapacityBound extends FlowElement {
+	attr int[1] capacity = 10;
+	attr int[1] load = 0;
+}
+
+class System extends Powered, FlowSource, Named {
+	val FlowElement[*] elements;
+	attr int temperature = 0;
+	attr int weight = 0;
+	val PowerOutput[*] powerOutputs;
+	val PowerInput[*] powerInputs;
+	attr String routingRules;
+	val RoutingRule[*] routingRulesList;
+}
+
+class RoutingRule {
+	ref System target;
+	attr SystemProperty propertyName;
+	attr PropertyUnit unit;
+	attr ComparisonOperator comparisonOperator;
+	attr int value;
+	attr SystemStatus systemStatus;
+}
+
+enum SystemStatus {
+	LOW = 0;
+	MEDIUM = 1;
+	HIGH = 2;
+	NON_CRITICAL = 3;
+	CRITICAL = 4;
+	BLOCKER = 5;
+}  
+  
+enum ComparisonOperator {
+	Lower_than = 0;
+	Greather_than = 1;
+	Equals = 2;
+}
+
+enum SystemProperty {
+	Temperature = 0;
+	Weight = 1;
+}
+
+enum PropertyUnit {
+	Celsius = 0;
+	Fahrenheit = 1;
+	Kilograms = 2;
+	Pounds = 3;
+}
+
+class PowerOutput {
+	attr int[1] power = 1000;
+	val PowerLink[*]#source links;
+}
+
+abstract class Powered {
+	attr int consumption = 0;
+	attr PoweredStatus[1] powerStatus;
+}
+
+enum PoweredStatus {
+	none = 0;
+	low = 1;
+	ok = 2;
+}
+
+class PowerInput {
+}
+
+class PowerLink {
+	ref PowerInput target;
+	ref PowerOutput#links source;
+}
+
+abstract class FlowSource extends FlowElement {
+	val DataFlow[*]#source outgoingFlows;
+}
+
+class Processor extends FlowTarget, CapacityBound, FlowSource, Powered, Named {
+	attr int[1] volume = 2;
+	attr int[1] weight = 10;
+}
+
+abstract class FlowTarget extends FlowElement {
+	ref DataFlow[*]#target incomingFlows;
+}
+
+class DataSource extends FlowSource, Named {
+	attr int[1] volume = 2;
+}
+
+abstract class FlowElement {
+	attr FlowElementStatus[1] status = "active";
+	attr FlowElementUsage[1] usage;
+}
+
+enum FlowElementStatus {
+	inactive = 0;
+	active = 1;
+}
+
+enum FlowElementUsage {
+	unused = 0;
+	low = 1;
+	standard = 2;
+	high = 3;
+	over = 4;
+}
+
+class Named {
+	attr String name;
+}
+
